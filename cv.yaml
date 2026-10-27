@@ -1,0 +1,463 @@
+# Single source of truth for the CV, resume, and website.
+# Entries with `tags: resume` also go into the industry resume, without their highlights.
+# There, `resume_summary` (when given) replaces `summary` as the one line shown.
+# The publications section is filled from papers.bib at build time.
+cv:
+  name: Sina Abdipoor (思纳), Ph.D.
+  headline: AI Engineer, Researcher, and Teacher specializing in Operations Research, Optimization, and Machine Learning
+  location: Kuala Lumpur, Malaysia
+  email: sinaa@sunway.edu.my
+  website: https://sinaabdipoor.github.io
+  social_networks:
+    - network: LinkedIn
+      username: sina-abdipoor
+    - network: GitHub
+      username: SinaAbdipoor
+    - network: Google Scholar
+      username: ayRKtBEAAAAJ
+    - network: ResearchGate
+      username: Sina-Abdipoor
+    - network: ORCID
+      username: 0000-0001-8411-5451
+  custom_connections:
+    - placeholder: Full CV
+      url: https://sinaabdipoor.github.io/cv/
+      fontawesome_icon: file-lines
+    - placeholder: Scopus
+      url: https://www.scopus.com/authid/detail.uri?authorId=58404520000
+      fontawesome_icon: magnifying-glass
+    - placeholder: All publications
+      url: https://sinaabdipoor.github.io/publications/
+      fontawesome_icon: book
+  sections:
+    summary:
+      - I'm a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia. I use Operations Research, Optimization, and Machine Learning to solve real-world problems, especially scheduling and timetabling. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
+      - My research focuses on metaheuristics and hybrid algorithms for combinatorial and stochastic optimization. I have published in IEEE Access, Intelligent Systems with Applications, and GECCO, and I have won two Best Paper Awards. I collaborate with researchers in Malaysia and China, and I review for Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems.
+      - From 2020 to 2025, I also worked as an independent Operations Research consultant. I helped organizations find inefficiencies, built optimization and prediction models, and presented the results to management.
+      - I have taught since 2016, first English and later computer science and AI. Today I teach machine learning and software engineering, and I supervise Master's and undergraduate research.
+
+    research_interests:
+      - label: Research
+        details: Artificial Intelligence, Operations Research, Combinatorial Optimization, Metaheuristics, Evolutionary Computing, Scheduling and Timetabling, Machine Learning
+        tags: resume
+      - label: Teaching
+        details: Machine Learning, Artificial Intelligence, Optimization and Search Algorithms, Evolutionary Computing, Programming, Software Engineering
+      - label: SDGs
+        details: SDG 9 (Industry, Innovation, and Infrastructure), SDG 11 (Sustainable Cities and Communities), SDG 12 (Responsible Consumption and Production)
+
+    experience:
+      - company: Sunway University
+        position: Lecturer, Department of Data Science and Artificial Intelligence
+        start_date: 2025-12
+        end_date: present
+        tags: resume
+        resume_summary: Teaching machine learning and software engineering, leading more than 20 student projects, and developing optimization methods for real-world scheduling.
+        highlights:
+          - Teaching postgraduate and undergraduate courses in machine learning, software engineering, and data science capstone projects.
+          - Supervising 2 Master's students and more than 20 undergraduate final year projects.
+          - Researching metaheuristics and hybrid optimization for real-world scheduling and timetabling, with 8 papers published in 2026.
+          - Collaborating with Hefei University, China, on timetabling and evolutionary computation, with joint papers at GECCO 2026 and PATAT 2026.
+          - Contributing to program development, quality assurance, and department committees.
+      - company: Universiti Putra Malaysia
+        position: Graduate Researcher & Tutor
+        start_date: 2020-09
+        end_date: 2025-09
+        tags: resume
+        resume_summary: Developed hybrid metaheuristics for large university timetabling problems, and taught programming and machine learning.
+        highlights:
+          - Researched hybrid metaheuristics for university course timetabling for my Ph.D., published in IEEE Access and Intelligent Systems with Applications.
+          - Taught Computer Programming 2 (SSK3101) and Machine Learning (SSK5603) at undergraduate and postgraduate levels.
+      - company: Independent Consultant
+        position: Operations Research Engineer
+        start_date: 2020-01
+        end_date: 2025-03
+        tags: resume
+        resume_summary: Found inefficiencies in client workflows, built and deployed optimization and prediction models, and presented the results to management.
+        highlights:
+          - Partnered with organizations to analyze workflows and find inefficiencies in resource allocation.
+          - Designed, proposed, and deployed optimization models.
+          - Presented findings and recommendations to stakeholders and management.
+      - company: Putra Graduate Association, Universiti Putra Malaysia
+        position: Chief Exco of International Relations Affairs & Alumni
+        start_date: 2022-07
+        end_date: 2023-07
+        highlights:
+          - Organized programs for international postgraduate students and alumni.
+          - Coordinated postgraduate clubs and student country representatives, in Malaysia and abroad.
+          - Maintained the UPM postgraduate alumni records.
+          - Represented the association at iPutra and Education Malaysia Global Services (EMGS).
+      - company: Pars Six Sigma Excellence
+        position: Software Engineer
+        start_date: 2017-07
+        end_date: 2019-07
+        tags: resume
+        resume_summary: Built and maintained a CRM system with a Java backend and a SQL database in a small software team.
+        highlights:
+          - Designed, built, and maintained a CRM system for employees and customers in a small team of software engineers.
+          - Developed the Java backend using a variety of libraries, frameworks, and APIs.
+          - Designed and implemented the SQL database.
+      - company: Kish Institute of Science and Technology
+        position: Senior English Teacher & Supervisor
+        start_date: 2016-11
+        end_date: 2019-05
+        tags: resume
+        resume_summary: Taught advanced English, ran IELTS workshops, and supervised and interviewed teachers.
+        highlights:
+          - Taught Upper-Intermediate and Advanced English (B2 to C2) to teenagers and adults, following Oxford's syllabus.
+          - Led IELTS workshops, level assessments, and teacher interviews.
+          - Observed classes to keep teaching standards high.
+      - company: IKCO
+        position: Android Developer (Internship)
+        start_date: 2016-06
+        end_date: 2016-09
+        highlights:
+          - Built an Android app with SQLite that lets assembly line workers check parts stock in real time and order parts without leaving their station.
+      - company: ParsOnline
+        position: Network Engineer
+        start_date: 2014-06
+        end_date: 2015-03
+        highlights:
+          - Installed and configured network equipment.
+
+    education:
+      - institution: Universiti Putra Malaysia
+        degree: Ph.D.
+        area: Computer Science
+        start_date: 2020
+        end_date: 2026
+        tags: resume
+        summary: "Thesis: Optimality and Generality of Metaheuristics in University Course Timetabling"
+        highlights:
+          - Proposed a hybrid metaheuristic for University Course Timetabling with Student Sectioning (UCTSSP), tested on the International Timetabling Competition 2019 benchmark.
+          - "Supervisor: Associate Professor Dr. Razali Yaakob. Committee: Professor Dr. Salwani Abdullah, Dr. Khairul Azhar Kasmiran, Dr. Hazlina Hamdan"
+          - "Collaborators: Associate Professor Dr. Say Leng Goh, Professor Graham Kendall"
+      - institution: K. N. Toosi University of Technology
+        degree: M.Sc.
+        area: Computer Engineering, Artificial Intelligence and Robotics
+        start_date: 2016
+        end_date: 2019
+        tags: resume
+        summary: "Thesis: Analyzing Parameter Tuning of Evolutionary Algorithms in Optimization Problems"
+        highlights:
+          - "Supervisor: Associate Professor Dr. Amin Nikanjam"
+          - "Courses: Machine Learning, Reinforcement Learning, Evolutionary Computing, Pattern Recognition, Probabilistic Graphical Models, Artificial Neural Networks, Big Data"
+      - institution: Imam Khomeini International University
+        degree: B.Sc.
+        area: Computer Engineering, Software Engineering
+        start_date: 2012
+        end_date: 2016
+        tags: resume
+        highlights:
+          - "Final year project: Designing, Implementing, and Launching a Restaurant Management System for a Local Cafe"
+          - "Supervisor: Associate Professor Dr. Morteza Mohammadi Zanjireh"
+          - "Courses: Artificial Intelligence, Data Mining, Algorithm Design, Database Design, Object-Oriented Programming, Data Structures"
+
+    publications:
+      - Filled from papers.bib at build time.
+
+    awards:
+      - name: Best Paper Award
+        summary: 19th International Conference on Advanced Computer Theory and Engineering (ICACTE)
+        date: 2026-08
+        tags: resume
+      - name: National Finalist, 3 Minute Thesis (3MT) Competition
+        summary: Universiti Kebangsaan Malaysia
+        date: 2024-06
+        tags: resume
+      - name: Winner, 3 Minute Thesis (3MT) Competition
+        summary: Universiti Putra Malaysia
+        date: 2024-03
+        tags: resume
+      - name: Best Paper Award
+        summary: 20th IEEE International Colloquium on Signal Processing & Its Applications (CSPA)
+        date: 2024-03
+        tags: resume
+      - name: Special Jury Award, Postgraduate Colloquium
+        summary: Universiti Putra Malaysia
+        date: 2023-10
+      - name: Special Graduate Research Allowance (SGRA)
+        summary: Universiti Putra Malaysia, grant FRGS/1/2020/ICT02/UPM/02/5
+        date: 2021-06
+      - name: Rank 18, National University Entrance Exam (Konkoor), Private Universities, Computer Engineering
+        summary: National Organization for Educational Testing (Sanjesh)
+        date: 2016-05
+      - name: Rank 179, National University Entrance Exam (Konkoor), Governmental Universities, Computer Engineering
+        summary: National Organization for Educational Testing (Sanjesh)
+        date: 2016-05
+      - name: Silver Medal, National Universities Swimming Championship
+        summary: Imam Khomeini International University
+        date: 2013
+
+    talks:
+      - name: "[Applied Operations Research in Driving Sustainability](https://thomasweise.github.io/posts/2026-08-24-abdipoor/)"
+        summary: Guest talk, Hefei University
+        location: China
+        date: 2026-08
+      - name: "Preparing New UPM Ph.D. Students for 3MT 2025"
+        summary: Sharing session, Universiti Putra Malaysia
+        location: Malaysia
+        date: 2025
+
+    conference_presentations:
+      - name: 19th International Conference on Advanced Computer Theory and Engineering (ICACTE 2026)
+        location: China
+        date: 2026
+      - name: 15th Conference on the Practice and Theory of Automated Timetabling (PATAT 2026)
+        location: United Kingdom
+        date: 2026
+      - name: 67th Annual Conference of the Canadian Operational Research Society (CORS)
+        location: Canada
+        date: 2026
+      - name: Genetic and Evolutionary Computation Conference (GECCO 2026)
+        location: Costa Rica
+        date: 2026
+      - name: IEEE International Conference on Automatic Control & Intelligent Systems (I2CACIS)
+        location: Malaysia
+        date: 2026
+      - name: 22nd IEEE International Colloquium on Signal Processing & Its Applications (CSPA)
+        location: Malaysia
+        date: 2026
+      - name: 2nd IEEE International Conference on Robotics and Technologies for Industrial Automation (ROBOTHIA)
+        location: Malaysia
+        date: 2026
+      - name: 13th IEEE Conference on Systems, Process & Control (ICSPC)
+        location: Malaysia
+        date: 2025
+      - name: 66th Annual Conference of the Canadian Operational Research Society (CORS)
+        location: Canada
+        date: 2025
+      - name: 10th IEEE International Conference on Control Science and Systems Engineering (ICCSSE)
+        location: China
+        date: 2024
+      - name: 65th Annual Conference of the Canadian Operational Research Society (CORS)
+        location: Canada
+        date: 2024
+      - name: 20th IEEE International Colloquium on Signal Processing & Its Applications (CSPA)
+        location: Malaysia
+        date: 2024
+      - name: 8th IEEE International Conference on Smart Cloud (SmartCloud)
+        location: Japan
+        date: 2023
+      - name: IEEE International Conference on Automatic Control & Intelligent Systems (I2CACIS)
+        location: Malaysia
+        date: 2023
+
+    teaching:
+      - name: Applied Machine Learning (MAI5043)
+        summary: Lecturer, Master in Artificial Intelligence, Sunway University
+        date: 2026-02
+      - name: Software Engineering (SEG2202)
+        summary: Lecturer, B.Sc. Computer Science, Sunway University
+        date: 2026-02
+      - name: Capstone Project 1 and 2 (MRP5015, MRP5025)
+        summary: Lecturer, Master in Data Science (ODL), Sunway University
+        date: 2026-03
+      - name: Machine Learning (SSK5603)
+        summary: Tutor, Universiti Putra Malaysia
+        date: 2020
+      - name: Computer Programming 2 (SSK3101)
+        summary: Tutor, Universiti Putra Malaysia
+        date: 2020
+      - name: Evolutionary Computing
+        summary: Teaching Assistant, K. N. Toosi University of Technology
+        date: 2018
+      - name: Algorithm Design
+        summary: Teaching Assistant, Imam Khomeini International University
+        date: 2014
+
+    supervision:
+      - name: Whong Ye Wen
+        summary: Master in Data Science, Sunway University, Main Supervisor
+        start_date: 2026
+        end_date: present
+        tags: resume
+      - name: Tan Yi Wei
+        summary: Master in Artificial Intelligence, Sunway University, Main Supervisor
+        start_date: 2026
+        end_date: present
+        tags: resume
+      - name: More than 20 undergraduate final year projects
+        summary: Sunway University
+        start_date: 2026
+        end_date: present
+        tags: resume
+      - name: Mingxuan Li
+        summary: B.Sc., Queen Mary University of London, Main Supervisor
+        start_date: 2025
+        end_date: present
+        tags: resume
+
+    peer_review:
+      - name: "[Applied Soft Computing](https://www.sciencedirect.com/journal/applied-soft-computing), Elsevier"
+        date: 2026
+        tags: resume
+      - name: "[IEEE Transactions on Intelligent Transportation Systems](https://ieee-itss.org/pub/t-its/)"
+        date: 2026
+        tags: resume
+      - name: "[Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications), Elsevier"
+        date: 2025
+        tags: resume
+      - name: "[Intelligent Systems with Applications](https://www.sciencedirect.com/journal/intelligent-systems-with-applications), Elsevier"
+        start_date: 2023
+        end_date: 2025
+        tags: resume
+      - name: "[IEEE Access](https://ieeeaccess.ieee.org/)"
+        date: 2024
+        tags: resume
+      - name: "[International Journal of Artificial Intelligence](https://ijai.iaescore.com/index.php/IJAI)"
+        date: 2024
+
+    professional_memberships:
+      - name: Canadian Operational Research Society (CORS)
+        summary: Member
+        start_date: 2024-04
+        end_date: present
+        tags: resume
+
+    projects:
+      - name: "[ESA Space Optimisation Competition (SpOC 4)](https://www.esa.int/gsp/ACT/news/spoc-2026/)"
+        date: 2026
+        tags: resume
+        summary: Ranked 4th globally in one track of the European Space Agency's space logistics optimization challenge at GECCO 2026, using permutation encodings and simulated annealing. Our solutions were published as two GECCO 2026 papers.
+      - name: "[UPM Thesis LaTeX Template](https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template)"
+        date: 2024
+        summary: A LaTeX thesis template for Universiti Putra Malaysia, built from the official Microsoft Word template.
+      - name: International Timetabling Competition 2019
+        date: 2022
+        tags: resume
+        summary: An implementation of the International Timetabling Competition 2019 benchmark, the latest benchmark for university course timetabling, built as the core of my Ph.D.
+      - name: Car Evaluation Dataset
+        date: 2021
+        summary: A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
+      - name: Java Framework for Genetic Algorithms
+        date: 2019
+        tags: resume
+        summary: A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my master's research.
+      - name: "[Tic-Tac-Toe Game](https://github.com/SinaAbdipoor/TicTacToe)"
+        date: 2018
+        summary: A game with an AI opponent that uses Q-Learning and has several difficulty levels. Built for a Reinforcement Learning course.
+      - name: Photo Noise Reduction
+        date: 2018
+        summary: Reduces image noise with a message passing technique. Final project for a Probabilistic Graphical Models course.
+      - name: Weather and Traffic Forecasting Software
+        date: 2017
+        summary: Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
+      - name: Auto Parts Finder
+        date: 2016
+        summary: An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.
+
+    skills:
+      - label: Operations Research
+        details: Combinatorial Optimization, Mixed Integer Programming, Stochastic Optimization, Constraint Programming, Metaheuristics, Linear and Mathematical Programming, Gurobi, Google OR-Tools
+        tags: resume
+      - label: Data Science
+        details: Predictive Modeling, Supervised and Unsupervised Learning, Data Visualization, TensorFlow, Scikit-Learn, NumPy, Pandas, Matplotlib, Power BI, Tableau, Excel
+        tags: resume
+      - label: Programming
+        details: Python, Java, SQL, MySQL, SQLite, XML, Git, GitHub, UML
+        tags: resume
+      - label: Research and Teaching
+        details: Scientific Writing, LaTeX, Public Speaking, Presenting, Teaching
+      - label: Languages
+        details: English (Bilingual, IELTS 8), Mandarin (Intermediate), Malay (Basic)
+        tags: resume
+
+    certificates:
+      - name: Supervisory Training Certificate (SURE)
+        date: 2026
+      - name: Full Course Curriculum Design Workshop and Certificates for MOHE and CQM
+        summary: OBE, Table 4, ODL, and rubrics
+        date: 2026
+      - name: Chinese (Mandarin) Certificate
+        summary: Peking University
+        date: 2021-05
+        tags: resume
+      - name: Google Data Analytics Certificate
+        summary: Google
+        date: 2021-04
+        tags: resume
+      - name: IELTS Academic, Overall Band 8
+        summary: IELTS
+        date: 2019-06
+      - name: Certificate in Advanced English (CAE), C2
+        summary: Cambridge Assessment English
+        date: 2016-10
+      - name: Cambridge Teacher Training Course (TTC)
+        summary: Kish Institute of Science and Technology
+        date: 2016-07
+
+    research_projects:
+      - name: Performance Analysis of Classification Methods in Predicting Chinese International Students' Decision to Return Home due to the COVID-19 Outbreak
+        date: 2021
+      - name: A Model for Evaluating the Impact of Incrementing Size of Population on the Performance of Evolutionary Algorithms
+        date: 2020
+
+    workshops_and_seminars:
+      - name: "Classifying Problems by Computational Complexity: P vs NP and Beyond, by Professor Paul Goldberg"
+        date: 2025
+      - name: CORS Micro-event on Hybrid Quantum-Classical Computing for Internet of Everything Optimization, by Dr. Mahzabeen Emu
+        date: 2025
+      - name: Best Practices of Teaching Supply Chain Analytics to Meet Job Market Requirements
+        date: 2025
+      - name: Deutscher Akademischer Austauschdienst (DAAD) Webinar
+        date: 2025
+      - name: Google I/O
+        date: 2025
+      - name: "CORS Transportation & Logistics SIG Seminar: The Future of Mobility, From Gridlock to Green Solutions, by Leandro Coelho"
+        date: 2025
+      - name: "CORS Micro-event on Public Transit and Supply Chains: How Data Can Support Optimization in Public Transit Operations, by Professor Martin Trepanier"
+        date: 2025
+      - name: "CORS Micro-event on Analytics: An OR Tale of Analytics, AI, and Auctions, by Professor Fredrik Ødegaard"
+        date: 2024
+      - name: How to (Ethically) Increase Your Citations, by Professor Graham Kendall
+        date: 2024
+      - name: "CORS SIG in Energy, Environment, and Sustainability: Optimization Challenges in Electric Vehicle Charging Operations, by Professor Miguel Anjos"
+        date: 2024
+      - name: "Expert Talk: Graph-based Explainable and Fair Recommendation, by Professor Guandong Xu"
+        date: 2024
+      - name: 2nd CORS Micro-Event on Circular Economy and Autonomous Mobility
+        date: 2024
+      - name: Tips and Guide for Publishing in High-Impact Journals
+        date: 2024
+      - name: "Elsevier Workshop on Research Data Management: Dive Into the Details"
+        date: 2024
+      - name: AI Tools for Literature Review Search and Writing
+        date: 2024
+      - name: "Online Database Classes: Scopus"
+        date: 2024
+      - name: United States Air Force Office of Scientific Research (AFOSR) International Grant Funding Briefing
+        date: 2024
+      - name: NVIDIA Research Workshop
+        date: 2023
+      - name: Postgraduate Colloquium, Universiti Putra Malaysia
+        date: 2023
+      - name: Research Showcase at FSKTM Open Day, Universiti Putra Malaysia
+        date: 2023
+      - name: Elsevier Young Researchers Workshop
+        date: 2023
+      - name: UPM Workshop on High-Impact Publishing
+        date: 2022
+      - name: IEEE Young Professionals Malaysia Seminar
+        date: 2021
+      - name: Workshop on How to Publish with Oxford Journals
+        date: 2021
+
+    references:
+      - name: Associate Professor Dr. Razali Yaakob
+        summary: Universiti Putra Malaysia, [razaliy@upm.edu.my](mailto:razaliy@upm.edu.my)
+      - name: Professor Salwani Abdullah
+        summary: Universiti Kebangsaan Malaysia, [salwani@ukm.edu.my](mailto:salwani@ukm.edu.my)
+      - name: Professor Dr. Thomas Weise
+        summary: Hefei University, [tweise@hfuu.edu.cn](mailto:tweise@hfuu.edu.cn)
+      - name: Professor Anwar P. P. Abdul Majeed
+        summary: Head of Department of Data Science and Artificial Intelligence, Sunway University, [anwarm@sunway.edu.my](mailto:anwarm@sunway.edu.my)
+      - name: Professor Graham Kendall
+        summary: University of Nottingham, [graham.kendall@nottingham.ac.uk](mailto:graham.kendall@nottingham.ac.uk)
+
+design:
+  theme: classic
+  page:
+    size: a4
+  sections:
+    space_between_regular_entries: 0.8em
+    show_time_spans_in: []
