@@ -4,6 +4,11 @@ title: about
 permalink: /
 subtitle: 思纳 · Ph.D. · AI Engineer, Researcher, and Teacher · Lecturer at <a href='https://sunwayuniversity.edu.my/'>Sunway University</a>, Malaysia
 
+profile:
+  align: right
+  image: illustration.jpg
+  image_circular: false # crops the image to make it circular
+
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
@@ -26,6 +31,8 @@ Thanks for stopping by, and have a great day!
 
 ## biography
 
-Feel free to copy this short bio for talks, events, and publications.
+<img src="/assets/img/headshot.jpg" alt="Sina Abdipoor" class="float-right rounded z-depth-1 ml-3 mb-2" width="120">
+
+Feel free to copy this short bio and photo for talks, events, and publications.
 
 > Dr. Sina Abdipoor (思纳) is a Lecturer in the Department of Data Science and Artificial Intelligence, Faculty of Engineering and Technology, Sunway University, Malaysia. His research applies Operations Research, metaheuristics, and machine learning to real-world optimization problems, with a focus on hybrid methods for scheduling and timetabling. He has published in IEEE Access, Intelligent Systems with Applications, and GECCO, and has won two Best Paper Awards. He reviews for journals including Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems. He holds a Ph.D. in Computer Science from Universiti Putra Malaysia and has taught computer science, AI, and English since 2016. Alongside his research, he has worked as a software engineer and as an independent Operations Research consultant. He is a member of the Canadian Operational Research Society.
