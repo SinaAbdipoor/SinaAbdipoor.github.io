@@ -33,7 +33,7 @@ cv:
   sections:
     Summary:
       - I'm a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia. I use Operations Research, Optimization, and Machine Learning to solve real-world problems, especially scheduling and timetabling. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
-      - My research focuses on metaheuristics and hybrid algorithms for combinatorial and stochastic optimization. I have published in IEEE Access, Intelligent Systems with Applications, and GECCO, and I have won two Best Paper Awards. I collaborate with researchers in Malaysia and China, and I review for Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems.
+      - My research focuses on metaheuristics and hybrid algorithms for combinatorial and stochastic optimization, and on judging algorithms by how well they generalize rather than how well they fit one benchmark. I have published in IEEE Access, Intelligent Systems with Applications, and GECCO. I collaborate with researchers in Malaysia and China, and I review for Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems.
       - From 2020 to 2025, I also worked as an independent Operations Research consultant. I helped organizations find inefficiencies, built optimization and prediction models, and presented the results to management.
       - I have taught since 2016, first English and later computer science and AI. Today I teach machine learning and software engineering, and I supervise Master's and undergraduate research.
 

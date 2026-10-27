@@ -11,3 +11,8 @@ I took part in the European Space Agency's Space Optimisation Competition (SpOC 
 Our solutions were published as two GECCO 2026 papers.
 
 [Visit the project](https://www.esa.int/gsp/ACT/news/spoc-2026/)
+
+## Papers
+
+- [SpOC 4 Challenges 1 Beginner: Permutation Encodings and Challenge 3: Simulated Annealing for the Luna Tomato Advertising](https://doi.org/10.1145/3795101.3815558), GECCO 2026
+- [Solving the SpOC 4 Challenge 2 with a Multi-Step Permutation Encoding for the Keplerian Traveling Salesperson](https://doi.org/10.1145/3795101.3815557), GECCO 2026

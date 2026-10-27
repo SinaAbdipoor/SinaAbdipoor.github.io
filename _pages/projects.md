@@ -4,12 +4,15 @@ title: projects
 permalink: /projects/
 description: Research and engineering projects.
 nav: true
-nav_order: 3
+nav_order: 2
 display_categories: [research, earlier]
 horizontal: false
 ---
 
 <!-- pages/projects.md -->
+
+You'll find the code for many of these on my [GitHub](https://github.com/SinaAbdipoor).
+
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}
   <!-- Display categorized projects -->

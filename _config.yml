@@ -7,7 +7,7 @@ first_name: Sina
 middle_name:
 last_name: Abdipoor
 contact_note: >
-  Email is the best way to reach me.
+  Email is the best way to reach me. To meet in person or online, <a href="/contact/">book a time</a>.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   AI Engineer, Researcher, and Teacher specializing in Operations Research, Optimization, and Machine Learning.
 footer_text: >

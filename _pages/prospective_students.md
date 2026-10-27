@@ -1,10 +1,10 @@
 ---
 layout: page
-permalink: /prospective-students/
-title: prospective students
-description: Open Ph.D. and M.Sc. positions, and how to apply.
+permalink: /students/
+title: students
+description: Open Ph.D. and M.Sc. positions for prospective students, and how to apply.
 nav: true
-nav_order: 7
+nav_order: 4
 ---
 
 ## Available positions
