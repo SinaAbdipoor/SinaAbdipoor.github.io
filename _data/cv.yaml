@@ -1,7 +1,8 @@
 # Single source of truth for the CV, resume, and website.
 # Entries with `tags: resume` also go into the industry resume, without their highlights.
 # There, `resume_summary` (when given) replaces `summary` as the one line shown.
-# The publications section is filled from papers.bib at build time.
+# The Publications section is filled from papers.bib when the PDFs are built.
+# Section names are in Title Case so the website's CV page recognizes them.
 cv:
   name: Sina Abdipoor (思纳), Ph.D.
   headline: AI Engineer, Researcher, and Teacher specializing in Operations Research, Optimization, and Machine Learning
@@ -30,13 +31,13 @@ cv:
       url: https://sinaabdipoor.github.io/publications/
       fontawesome_icon: book
   sections:
-    summary:
+    Summary:
       - I'm a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia. I use Operations Research, Optimization, and Machine Learning to solve real-world problems, especially scheduling and timetabling. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
       - My research focuses on metaheuristics and hybrid algorithms for combinatorial and stochastic optimization. I have published in IEEE Access, Intelligent Systems with Applications, and GECCO, and I have won two Best Paper Awards. I collaborate with researchers in Malaysia and China, and I review for Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems.
       - From 2020 to 2025, I also worked as an independent Operations Research consultant. I helped organizations find inefficiencies, built optimization and prediction models, and presented the results to management.
       - I have taught since 2016, first English and later computer science and AI. Today I teach machine learning and software engineering, and I supervise Master's and undergraduate research.
 
-    research_interests:
+    Research Interests:
       - label: Research
         details: Artificial Intelligence, Operations Research, Combinatorial Optimization, Metaheuristics, Evolutionary Computing, Scheduling and Timetabling, Machine Learning
         tags: resume
@@ -45,7 +46,7 @@ cv:
       - label: SDGs
         details: SDG 9 (Industry, Innovation, and Infrastructure), SDG 11 (Sustainable Cities and Communities), SDG 12 (Responsible Consumption and Production)
 
-    experience:
+    Experience:
       - company: Sunway University
         position: Lecturer, Department of Data Science and Artificial Intelligence
         start_date: 2025-12
@@ -119,7 +120,7 @@ cv:
         highlights:
           - Installed and configured network equipment.
 
-    education:
+    Education:
       - institution: Universiti Putra Malaysia
         degree: Ph.D.
         area: Computer Science
@@ -152,10 +153,10 @@ cv:
           - "Supervisor: Associate Professor Dr. Morteza Mohammadi Zanjireh"
           - "Courses: Artificial Intelligence, Data Mining, Algorithm Design, Database Design, Object-Oriented Programming, Data Structures"
 
-    publications:
-      - Filled from papers.bib at build time.
+    Publications:
+      - See the [full list of publications](https://sinaabdipoor.github.io/publications/).
 
-    awards:
+    Awards:
       - name: Best Paper Award
         summary: 19th International Conference on Advanced Computer Theory and Engineering (ICACTE)
         date: 2026-08
@@ -188,7 +189,7 @@ cv:
         summary: Imam Khomeini International University
         date: 2013
 
-    talks:
+    Talks:
       - name: "[Applied Operations Research in Driving Sustainability](https://thomasweise.github.io/posts/2026-08-24-abdipoor/)"
         summary: Guest talk, Hefei University
         location: China
@@ -198,7 +199,7 @@ cv:
         location: Malaysia
         date: 2025
 
-    conference_presentations:
+    Conference Presentations:
       - name: 19th International Conference on Advanced Computer Theory and Engineering (ICACTE 2026)
         location: China
         date: 2026
@@ -242,7 +243,7 @@ cv:
         location: Malaysia
         date: 2023
 
-    teaching:
+    Teaching:
       - name: Applied Machine Learning (MAI5043)
         summary: Lecturer, Master in Artificial Intelligence, Sunway University
         date: 2026-02
@@ -265,7 +266,7 @@ cv:
         summary: Teaching Assistant, Imam Khomeini International University
         date: 2014
 
-    supervision:
+    Supervision:
       - name: Whong Ye Wen
         summary: Master in Data Science, Sunway University, Main Supervisor
         start_date: 2026
@@ -287,7 +288,7 @@ cv:
         end_date: present
         tags: resume
 
-    peer_review:
+    Peer Review:
       - name: "[Applied Soft Computing](https://www.sciencedirect.com/journal/applied-soft-computing), Elsevier"
         date: 2026
         tags: resume
@@ -307,14 +308,14 @@ cv:
       - name: "[International Journal of Artificial Intelligence](https://ijai.iaescore.com/index.php/IJAI)"
         date: 2024
 
-    professional_memberships:
+    Professional Memberships:
       - name: Canadian Operational Research Society (CORS)
         summary: Member
         start_date: 2024-04
         end_date: present
         tags: resume
 
-    projects:
+    Projects:
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://www.esa.int/gsp/ACT/news/spoc-2026/)"
         date: 2026
         tags: resume
@@ -346,7 +347,7 @@ cv:
         date: 2016
         summary: An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.
 
-    skills:
+    Skills:
       - label: Operations Research
         details: Combinatorial Optimization, Mixed Integer Programming, Stochastic Optimization, Constraint Programming, Metaheuristics, Linear and Mathematical Programming, Gurobi, Google OR-Tools
         tags: resume
@@ -362,7 +363,7 @@ cv:
         details: English (Bilingual, IELTS 8), Mandarin (Intermediate), Malay (Basic)
         tags: resume
 
-    certificates:
+    Certificates:
       - name: Supervisory Training Certificate (SURE)
         date: 2026
       - name: Full Course Curriculum Design Workshop and Certificates for MOHE and CQM
@@ -386,13 +387,13 @@ cv:
         summary: Kish Institute of Science and Technology
         date: 2016-07
 
-    research_projects:
+    Research Projects:
       - name: Performance Analysis of Classification Methods in Predicting Chinese International Students' Decision to Return Home due to the COVID-19 Outbreak
         date: 2021
       - name: A Model for Evaluating the Impact of Incrementing Size of Population on the Performance of Evolutionary Algorithms
         date: 2020
 
-    workshops_and_seminars:
+    Workshops and Seminars:
       - name: "Classifying Problems by Computational Complexity: P vs NP and Beyond, by Professor Paul Goldberg"
         date: 2025
       - name: CORS Micro-event on Hybrid Quantum-Classical Computing for Internet of Everything Optimization, by Dr. Mahzabeen Emu
@@ -442,7 +443,7 @@ cv:
       - name: Workshop on How to Publish with Oxford Journals
         date: 2021
 
-    references:
+    References:
       - name: Associate Professor Dr. Razali Yaakob
         summary: Universiti Putra Malaysia, [razaliy@upm.edu.my](mailto:razaliy@upm.edu.my)
       - name: Professor Salwani Abdullah

@@ -1,2 +1,4 @@
-rendercv[full]==2.8
-bibtexparser==2.1.0
+nbconvert
+pyyaml
+rendercv[full]
+scholarly
