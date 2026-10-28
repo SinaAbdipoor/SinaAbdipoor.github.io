@@ -20,16 +20,6 @@ cv:
       username: Sina-Abdipoor
     - network: ORCID
       username: 0000-0001-8411-5451
-  custom_connections:
-    - placeholder: Full CV
-      url: https://sinaabdipoor.github.io/cv/
-      fontawesome_icon: file-lines
-    - placeholder: Scopus
-      url: https://www.scopus.com/authid/detail.uri?authorId=58404520000
-      fontawesome_icon: magnifying-glass
-    - placeholder: All publications
-      url: https://sinaabdipoor.github.io/publications/
-      fontawesome_icon: book
   sections:
     Summary:
       - I'm a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia. I use Operations Research, Optimization, and Machine Learning to solve real-world problems, especially scheduling and timetabling. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
@@ -247,6 +237,9 @@ cv:
         date: 2023
 
     Teaching:
+      - name: Algorithms for Optimization (BAI3184)
+        summary: Subject Lead, Bachelor in Artificial Intelligence, Sunway University
+        date: 2026-09
       - name: Applied Machine Learning (MAI5043)
         summary: Lecturer, Master in Artificial Intelligence, Sunway University
         date: 2026-02
@@ -293,23 +286,17 @@ cv:
 
     Peer Review:
       - name: "[Applied Soft Computing](https://www.sciencedirect.com/journal/applied-soft-computing), Elsevier"
-        date: 2026
+        start_date: 2026
+        end_date: present
         tags: resume
       - name: "[IEEE Transactions on Intelligent Transportation Systems](https://ieee-itss.org/pub/t-its/)"
-        date: 2026
+        start_date: 2026
+        end_date: present
         tags: resume
       - name: "[Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications), Elsevier"
-        date: 2025
+        start_date: 2025
+        end_date: present
         tags: resume
-      - name: "[Intelligent Systems with Applications](https://www.sciencedirect.com/journal/intelligent-systems-with-applications), Elsevier"
-        start_date: 2023
-        end_date: 2025
-        tags: resume
-      - name: "[IEEE Access](https://ieeeaccess.ieee.org/)"
-        date: 2024
-        tags: resume
-      - name: "[International Journal of Artificial Intelligence](https://ijai.iaescore.com/index.php/IJAI)"
-        date: 2024
 
     Professional Memberships:
       - name: Canadian Operational Research Society (CORS)
@@ -319,34 +306,34 @@ cv:
         tags: resume
 
     Projects:
-      - name: "[ESA Space Optimisation Competition (SpOC 4)](https://www.esa.int/gsp/ACT/news/spoc-2026/)"
+      - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
         summary: Ranked 4th globally in one track of the European Space Agency's space logistics optimization challenge at GECCO 2026, using permutation encodings and simulated annealing. Our solutions were published as two GECCO 2026 papers.
-      - name: "[UPM Thesis LaTeX Template](https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template)"
+      - name: "[UPM Thesis LaTeX Template](https://sinaabdipoor.github.io/projects/3_upm_latex/)"
         date: 2024
         summary: A LaTeX thesis template for Universiti Putra Malaysia, built from the official Microsoft Word template.
-      - name: International Timetabling Competition 2019
+      - name: "[International Timetabling Competition 2019](https://sinaabdipoor.github.io/projects/2_itc2019/)"
         date: 2022
         tags: resume
         summary: An implementation of the International Timetabling Competition 2019 benchmark, the latest benchmark for university course timetabling, built as the core of my Ph.D.
-      - name: Car Evaluation Dataset
+      - name: "[Car Evaluation Dataset](https://sinaabdipoor.github.io/projects/5_car_evaluation/)"
         date: 2021
         summary: A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
-      - name: Java Framework for Genetic Algorithms
+      - name: "[Java Framework for Genetic Algorithms](https://sinaabdipoor.github.io/projects/4_ga_framework/)"
         date: 2019
         tags: resume
         summary: A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my master's research.
-      - name: "[Tic-Tac-Toe Game](https://github.com/SinaAbdipoor/TicTacToe)"
+      - name: "[Tic-Tac-Toe Game](https://sinaabdipoor.github.io/projects/6_tictactoe/)"
         date: 2018
         summary: A game with an AI opponent that uses Q-Learning and has several difficulty levels. Built for a Reinforcement Learning course.
-      - name: Photo Noise Reduction
+      - name: "[Photo Noise Reduction](https://sinaabdipoor.github.io/projects/7_noise_reduction/)"
         date: 2018
         summary: Reduces image noise with a message passing technique. Final project for a Probabilistic Graphical Models course.
-      - name: Weather and Traffic Forecasting Software
+      - name: "[Weather and Traffic Forecasting Software](https://sinaabdipoor.github.io/projects/8_forecasting/)"
         date: 2017
         summary: Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
-      - name: Auto Parts Finder
+      - name: "[Auto Parts Finder](https://sinaabdipoor.github.io/projects/9_auto_parts/)"
         date: 2016
         summary: An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.
 
@@ -389,12 +376,6 @@ cv:
       - name: Cambridge Teacher Training Course (TTC)
         summary: Kish Institute of Science and Technology
         date: 2016-07
-
-    Research Projects:
-      - name: Performance Analysis of Classification Methods in Predicting Chinese International Students' Decision to Return Home due to the COVID-19 Outbreak
-        date: 2021
-      - name: A Model for Evaluating the Impact of Incrementing Size of Population on the Performance of Evolutionary Algorithms
-        date: 2020
 
     Workshops and Seminars:
       - name: "Classifying Problems by Computational Complexity: P vs NP and Beyond, by Professor Paul Goldberg"
@@ -447,14 +428,14 @@ cv:
         date: 2021
 
     References:
+      - name: Professor Anwar P. P. Abdul Majeed
+        summary: Sunway University, [anwarm@sunway.edu.my](mailto:anwarm@sunway.edu.my)
+      - name: Professor Dr. Thomas Weise
+        summary: Hefei University, [tweise@hfuu.edu.cn](mailto:tweise@hfuu.edu.cn)
       - name: Associate Professor Dr. Razali Yaakob
         summary: Universiti Putra Malaysia, [razaliy@upm.edu.my](mailto:razaliy@upm.edu.my)
       - name: Professor Salwani Abdullah
         summary: Universiti Kebangsaan Malaysia, [salwani@ukm.edu.my](mailto:salwani@ukm.edu.my)
-      - name: Professor Dr. Thomas Weise
-        summary: Hefei University, [tweise@hfuu.edu.cn](mailto:tweise@hfuu.edu.cn)
-      - name: Professor Anwar P. P. Abdul Majeed
-        summary: Head of Department of Data Science and Artificial Intelligence, Sunway University, [anwarm@sunway.edu.my](mailto:anwarm@sunway.edu.my)
       - name: Professor Graham Kendall
         summary: University of Nottingham, [graham.kendall@nottingham.ac.uk](mailto:graham.kendall@nottingham.ac.uk)
 
@@ -465,3 +446,7 @@ design:
   sections:
     space_between_regular_entries: 0.8em
     show_time_spans_in: []
+
+locale:
+  language: english
+  month_abbreviations: [Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec]

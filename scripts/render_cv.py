@@ -108,6 +108,10 @@ def main():
     render(cv, out / "cv.yaml", extra_args)
 
     cv["cv"]["sections"] = resume_sections(sections)
+    # Only the resume links to the full CV.
+    cv["cv"]["custom_connections"] = [
+        {"placeholder": "Full CV", "url": f"{cv['cv']['website']}/cv/", "fontawesome_icon": "file-lines"}
+    ]
     render(cv, out / "resume.yaml", extra_args)
 
 

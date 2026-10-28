@@ -11,6 +11,7 @@ I have taught since 2016, first English and later computer science and AI. Cours
 
 ## Sunway University
 
+- **Algorithms for Optimization (BAI3184)**<br>Subject Lead, Bachelor in Artificial Intelligence, Sep 2026
 - **Applied Machine Learning (MAI5043)**<br>Master in Artificial Intelligence, Feb 2026
 - **Capstone Project 1 and 2 (MRP5015, MRP5025)**<br>Master in Data Science (ODL), Mar 2026
 - **Software Engineering (SEG2202)**<br>B.Sc. Computer Science, Feb 2026, [course code on GitHub](https://github.com/SinaAbdipoor/2603-seg2202)
