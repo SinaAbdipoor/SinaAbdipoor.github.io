@@ -1,0 +1,34 @@
+---
+# Replaces al_folio_core's main.scss to set the theme colors and a few sizes.
+---
+@charset "utf-8";
+
+@use "sass:math";
+@use "sass:string";
+
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }},
+  $purple-color: #1f5f99, // light theme color
+  $cyan-color: #7fb3e6 // dark theme color
+);
+
+@use "themes";
+@use "layout";
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+.social .contact-icons {
+  font-size: 2.2rem;
+}
+
+.projects .card-title {
+  font-size: 1.25rem;
+}
