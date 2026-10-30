@@ -17,7 +17,8 @@ jobs:
           python-version: "3.12"
       - name: Look for new papers
         run: |
-          python scripts/orcid_sync.py > summary.md
+          python scripts/orcid_sync.py > summary.md 2> counts.txt || { cat counts.txt; exit 1; }
+          echo "::notice title=ORCID sync::$(cat counts.txt)"
           cat summary.md >> "$GITHUB_STEP_SUMMARY"
       - name: Open a pull request with the new papers
         env:

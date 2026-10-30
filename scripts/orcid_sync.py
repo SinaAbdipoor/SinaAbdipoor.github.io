@@ -9,6 +9,7 @@ Usage: python scripts/orcid_sync.py
 
 import json
 import re
+import sys
 import urllib.request
 from pathlib import Path
 
@@ -50,8 +51,9 @@ def main():
     bib = BIB.read_text()
     dois, titles = known_papers(bib)
 
+    works = orcid_works(orcid_id)
     added, by_hand = [], []
-    for work in orcid_works(orcid_id):
+    for work in works:
         if work["doi"] in dois or normalize(work["title"]) in titles:
             continue
         if work["doi"]:
@@ -72,6 +74,7 @@ def main():
         lines.append("\nNew works on ORCID without a DOI, to add by hand if wanted:\n")
         lines += [f"- {w['title']}" for w in by_hand]
     print("\n".join(lines) if lines else "papers.bib already has every public work on ORCID.")
+    print(f"ORCID lists {len(works)} public works: {len(added)} added, {len(by_hand)} new without a DOI.", file=sys.stderr)
 
 
 if __name__ == "__main__":
