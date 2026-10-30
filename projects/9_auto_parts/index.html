@@ -1,0 +1,213 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> Auto Parts Finder | Sina Abdipoor </title> <meta name="author" content="Sina Abdipoor"> <meta name="description" content="An Android app for the IKCO assembly line"> <meta name="keywords" content="operations research, optimization, metaheuristics, timetabling, machine learning"> <meta property="og:site_name" content="Sina Abdipoor"> <meta property="og:type" content="website"> <meta property="og:title" content="Sina Abdipoor | Auto Parts Finder"> <meta property="og:url" content="https://sinaabdipoor.github.io/projects/9_auto_parts/"> <meta property="og:description" content="An Android app for the IKCO assembly line"> <meta property="og:image" content="https://sinaabdipoor.github.io/assets/img/headshot.jpg"> <meta property="og:locale" content="en"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="Auto Parts Finder"> <meta name="twitter:description" content="An Android app for the IKCO assembly line"> <meta name="twitter:image" content="https://sinaabdipoor.github.io/assets/img/headshot.jpg"> <script type="application/ld+json">
+    {
+        "author":
+        {
+            "@type": "Person",
+            "name": "Sina Abdipoor"
+        },
+        "url": "https://sinaabdipoor.github.io/projects/9_auto_parts/",
+        "@type": "WebSite",
+        "description": "An Android app for the IKCO assembly line",
+        "headline": "Auto Parts Finder",
+        
+        "sameAs": [null,"https://www.linkedin.com/in/sina-abdipoor","https://github.com/SinaAbdipoor","https://scholar.google.com/citations?user=ayRKtBEAAAAJ","https://orcid.org/0000-0001-8411-5451","https://www.researchgate.net/profile/Sina-Abdipoor/","https://www.scopus.com/authid/detail.uri?authorId=58404520000"],
+        
+        "name": "Sina Abdipoor",
+        "@context": "https://schema.org"
+    }
+  </script> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="/assets/img/favicon.svg?v=6789d4cf7145ae3b96f671f31fc1ac71"> <link rel="stylesheet" href="/assets/css/main.css?v=3116ba77db9ee1581d05bb3e86fbf7f1"> <link rel="canonical" href="https://sinaabdipoor.github.io/projects/9_auto_parts/"> <script src="/assets/js/theme.js?v=5286c3e4c334d0ecb8fc0c40ff4fa7ec"></script> <link defer rel="stylesheet" href="/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav sticky-bottom-footer"> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Sina</span> Abdipoor </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/projects/">projects <span class="sr-only">(current)</span> </a> </li> <li class="nav-item "> <a class="nav-link" href="/teaching/">teaching </a> </li> <li class="nav-item "> <a class="nav-link" href="/students/">students </a> </li> <li class="nav-item "> <a class="nav-link" href="/cv/">CV </a> </li> <li class="nav-item "> <a class="nav-link" href="/contact/">contact </a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">Auto Parts Finder</h1> <p class="post-description">An Android app for the IKCO assembly line</p> </header> <article> <p>An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.</p> </article> </div> </div> <footer class="sticky-bottom mt-5" role="contentinfo"> <div class="container"> © Copyright 2026 Sina Abdipoor. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/assets/al_math/js/mathjax-setup.js"></script> <script src="/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/assets/al_img_tools/js/zoom.js"></script> <script defer src="/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/";
+    },
+  },{id: "nav-publications",
+          title: "publications",
+          description: "All my papers, newest first. Type in the box to filter.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Research and engineering projects.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/projects/";
+          },
+        },{id: "nav-teaching",
+          title: "teaching",
+          description: "Courses I teach and have taught, and the students I supervise.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/teaching/";
+          },
+        },{id: "nav-students",
+          title: "students",
+          description: "Open Ph.D. and M.Sc. positions for prospective students, and how to apply.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/students/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "My full academic CV and my two-page industry resume.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/cv/";
+          },
+        },{id: "nav-contact",
+          title: "contact",
+          description: "How to reach me, where to find me, and how to book a meeting.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/contact/";
+          },
+        },{id: "projects-esa-space-optimisation-competition",
+          title: 'ESA Space Optimisation Competition',
+          description: "Ranked 4th globally in one track of ESA&#39;s SpOC 4",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_spoc/";
+            },},{id: "projects-international-timetabling-competition-2019",
+          title: 'International Timetabling Competition 2019',
+          description: "The core of my Ph.D. on university course timetabling",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_itc2019/";
+            },},{id: "projects-upm-thesis-latex-template",
+          title: 'UPM Thesis LaTeX Template',
+          description: "A LaTeX thesis template for Universiti Putra Malaysia",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_upm_latex/";
+            },},{id: "projects-java-framework-for-genetic-algorithms",
+          title: 'Java Framework for Genetic Algorithms',
+          description: "Evolutionary algorithms, from my master&#39;s research",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/4_ga_framework/";
+            },},{id: "projects-car-evaluation-dataset",
+          title: 'Car Evaluation Dataset',
+          description: "Feature engineering and classification",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/5_car_evaluation/";
+            },},{id: "projects-tic-tac-toe-game",
+          title: 'Tic-Tac-Toe Game',
+          description: "An AI opponent that learns with Q-Learning",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/6_tictactoe/";
+            },},{id: "projects-photo-noise-reduction",
+          title: 'Photo Noise Reduction',
+          description: "Message passing on probabilistic graphical models",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/7_noise_reduction/";
+            },},{id: "projects-weather-and-traffic-forecasting",
+          title: 'Weather and Traffic Forecasting',
+          description: "Neural networks trained on historical data",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/8_forecasting/";
+            },},{id: "projects-auto-parts-finder",
+          title: 'Auto Parts Finder',
+          description: "An Android app for the IKCO assembly line",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_auto_parts/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/assets/pdf/Sina_Abdipoor_CV.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%73%69%6E%61%61@%73%75%6E%77%61%79.%65%64%75.%6D%79", "_blank");
+        },
+      },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/sina-abdipoor", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/SinaAbdipoor", "_blank");
+        },
+      },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=ayRKtBEAAAAJ", "_blank");
+        },
+      },{
+        id: 'social-orcid',
+        title: 'ORCID',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://orcid.org/0000-0001-8411-5451", "_blank");
+        },
+      },{
+        id: 'social-researchgate',
+        title: 'ResearchGate',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.researchgate.net/profile/Sina-Abdipoor/", "_blank");
+        },
+      },{
+        id: 'social-scopus',
+        title: 'Scopus',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.scopus.com/authid/detail.uri?authorId=58404520000", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/assets/al_search/js/shortcut-key.js"></script> </body> </html>
