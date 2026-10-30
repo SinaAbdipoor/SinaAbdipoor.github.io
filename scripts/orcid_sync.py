@@ -3,6 +3,7 @@
 For each new work with a DOI, the BibTeX entry is fetched from doi.org and
 appended to papers.bib. Works without a DOI are only listed, to add by hand.
 Prints a Markdown summary, which the workflow uses as the pull request text.
+Also lists papers in papers.bib that are missing from ORCID, to add there by hand.
 
 Usage: python scripts/orcid_sync.py
 """
@@ -40,16 +41,22 @@ def orcid_works(orcid_id):
     return works
 
 
-def known_papers(bib):
-    dois = {d.lower() for d in re.findall(r"^\s*doi\s*=\s*\{([^}]*)\}", bib, re.M | re.I)}
-    titles = {normalize(t) for t in re.findall(r"^\s*title\s*=\s*\{(.*)\},?\s*$", bib, re.M | re.I)}
-    return dois, titles
+def bib_papers(bib):
+    papers = []
+    for entry in re.split(r"(?m)^@", bib)[1:]:
+        title = re.search(r"^\s*title\s*=\s*\{(.*)\},?\s*$", entry, re.M | re.I)
+        doi = re.search(r"^\s*doi\s*=\s*\{([^}]*)\}", entry, re.M | re.I)
+        if title:
+            papers.append({"title": title.group(1), "doi": doi.group(1).lower() if doi else None})
+    return papers
 
 
 def main():
     orcid_id = re.search(r"^orcid_id:\s*(\S+)", SOCIALS.read_text(), re.M).group(1)
     bib = BIB.read_text()
-    dois, titles = known_papers(bib)
+    papers = bib_papers(bib)
+    dois = {p["doi"] for p in papers if p["doi"]}
+    titles = {normalize(p["title"]) for p in papers}
 
     works = orcid_works(orcid_id)
     added, by_hand = [], []
@@ -73,8 +80,18 @@ def main():
     if by_hand:
         lines.append("\nNew works on ORCID without a DOI, to add by hand if wanted:\n")
         lines += [f"- {w['title']}" for w in by_hand]
-    print("\n".join(lines) if lines else "papers.bib already has every public work on ORCID.")
-    print(f"ORCID lists {len(works)} public works: {len(added)} added, {len(by_hand)} new without a DOI.", file=sys.stderr)
+    on_orcid_dois = {w["doi"] for w in works if w["doi"]}
+    on_orcid_titles = {normalize(w["title"]) for w in works}
+    missing = [p for p in papers if p["doi"] not in on_orcid_dois and normalize(p["title"]) not in on_orcid_titles]
+    if missing:
+        lines.append("\nPapers in `papers.bib` that are missing from ORCID, to add there by hand:\n")
+        lines += [f"- {p['title']}" + (f" (https://doi.org/{p['doi']})" if p["doi"] else "") for p in missing]
+    print("\n".join(lines) if lines else "papers.bib and ORCID list the same papers.")
+    # GitHub Actions shows these lines as notices on the run page.
+    print(f"::notice title=ORCID sync::ORCID lists {len(works)} public works: {len(added)} added, "
+          f"{len(by_hand)} new without a DOI, {len(missing)} missing from ORCID.", file=sys.stderr)
+    for p in missing:
+        print(f"::notice title=Missing from ORCID::{p['title']}", file=sys.stderr)
 
 
 if __name__ == "__main__":
