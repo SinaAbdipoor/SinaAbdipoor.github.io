@@ -106,3 +106,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
+          # Keep only the latest build, so old builds don't pile up in the history.
+          single-commit: true
