@@ -1,0 +1,35 @@
+name: Sync papers from ORCID
+on:
+  schedule:
+    # Every Monday at 01:00 UTC
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Look for new papers
+        run: |
+          python scripts/orcid_sync.py > summary.md
+          cat summary.md >> "$GITHUB_STEP_SUMMARY"
+      - name: Open a pull request with the new papers
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet _bibliography/papers.bib; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B orcid-sync
+          git add _bibliography/papers.bib
+          git commit -m "Add new papers from ORCID"
+          git push --force origin orcid-sync
+          if [ -z "$(gh pr list --head orcid-sync --json number --jq '.[]')" ]; then
+            gh pr create --head orcid-sync --title "Add new papers from ORCID" --body-file summary.md
+          fi
