@@ -1,4 +1,4 @@
-"""Render the full CV and the resume PDFs from cv.yaml and papers.bib.
+"""Render the full CV and the resume PDFs from _data/cv.yaml and _bibliography/papers.bib.
 
 The resume is industry focused: it shows RESUME_SECTIONS in that order, keeping
 only entries tagged `resume`, without their highlights, and with `resume_summary`
@@ -23,13 +23,13 @@ from ruamel.yaml import YAML
 ROOT = Path(__file__).resolve().parent.parent
 ME = "Sina Abdipoor"
 RESUME_SECTIONS = [
-    "experience",
-    "skills",
-    "projects",
-    "education",
-    "publications",
-    "awards",
-    "certificates",
+    "Experience",
+    "Skills",
+    "Projects",
+    "Education",
+    "Publications",
+    "Awards",
+    "Certificates",
 ]
 
 
@@ -57,7 +57,7 @@ def publication(entry):
 
 def publications():
     library = bibtexparser.parse_file(
-        ROOT / "papers.bib",
+        ROOT / "_bibliography" / "papers.bib",
         append_middleware=[
             LatexDecodingMiddleware(),
             MonthIntMiddleware(True),
@@ -77,9 +77,16 @@ def resume_entry(entry):
 
 
 def resume_sections(sections):
+    # The CV splits work into academic and professional sections. The resume merges them.
+    sections = dict(sections)
+    sections["Experience"] = sorted(
+        sections["Academic Positions"] + sections["Professional Experience"],
+        key=lambda e: str(e["start_date"]),
+        reverse=True,
+    )
     kept = {}
     for name in RESUME_SECTIONS:
-        kept["selected_publications" if name == "publications" else name] = [
+        kept["Selected Publications" if name == "Publications" else name] = [
             resume_entry(e)
             for e in sections[name]
             if isinstance(e, dict) and "resume" in e.get("tags", "")
@@ -102,12 +109,16 @@ def main():
     out.mkdir(parents=True, exist_ok=True)
     extra_args = sys.argv[2:]
 
-    cv = YAML().load(ROOT / "cv.yaml")
+    cv = YAML().load(ROOT / "_data" / "cv.yaml")
     sections = cv["cv"]["sections"]
-    sections["publications"] = publications()
+    sections["Publications"] = publications()
     render(cv, out / "cv.yaml", extra_args)
 
     cv["cv"]["sections"] = resume_sections(sections)
+    # Only the resume links to the full CV.
+    cv["cv"]["custom_connections"] = [
+        {"placeholder": "Full CV", "url": f"{cv['cv']['website']}/cv/", "fontawesome_icon": "file-lines"}
+    ]
     render(cv, out / "resume.yaml", extra_args)
 
 
