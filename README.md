@@ -6,7 +6,7 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 
 - `_data/cv.yaml`: all CV content, in [RenderCV](https://rendercv.com) format. Entries tagged `resume` also go into the resume.
 - `_bibliography/papers.bib`: all publications. Papers with `selected = {true}` go on the home page and into the resume.
-- `_news/`: short news items on the home page (newest five), all listed at `/news/`.
+- `_news/`: news items, each with its own page. The home page lists the newest five, and `/news/` lists all. Photos go in `assets/img/news/`.
 - `_includes/news.liquid`: al-folio's news list, showing month and year only.
 - `scripts/render_cv.py`: renders the full CV and the resume PDFs.
 - `scripts/requirements.txt`: pinned Python dependencies for the script.
