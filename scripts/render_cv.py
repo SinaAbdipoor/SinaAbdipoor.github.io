@@ -125,6 +125,7 @@ def main():
     render(cv, out / "cv.yaml", extra_args)
 
     cv["cv"]["headline"] = resume["headline"]
+    cv["settings"] = {"pdf_title": "NAME - Resume"}
     cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
     # Only the resume links to the full CV.
     cv["cv"]["custom_connections"] = [
