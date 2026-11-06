@@ -26,7 +26,7 @@ I use Operations Research, optimization, and machine learning to solve real-worl
 
 I have taught since 2016, first English and later computer science and AI, to students from all over the world. I love sharing what I know, learning what I don't, and helping students build a brighter future. If you'd like to do a Ph.D. or M.Sc. with me, have a look at [prospective students](/students/).
 
-I share my news on [LinkedIn](https://www.linkedin.com/in/sina-abdipoor/recent-activity/all/), and you'll find the full story in my [CV](/cv/).
+I share my news on [LinkedIn](https://www.linkedin.com/in/sina-abdipoor/recent-activity/all/), and you can find a short summary in my [resume](/resume/).
 
 Thanks for stopping by, and have a great day!
 

@@ -1,7 +1,7 @@
 """Render the full CV and the resume PDFs from _data/cv.yaml and _bibliography/papers.bib.
 
-The resume is industry focused: it uses the headline and summary from the
-top-level `resume` block, then shows RESUME_SECTIONS in that order, keeping only
+The resume is industry focused: it uses the headline, summary, social networks,
+and footer from the top-level `resume` block, then shows RESUME_SECTIONS in that order, keeping only
 entries tagged `resume`, with `resume_summary` and `resume_highlights` in place
 of `summary` and `highlights` (dropped when an entry has no `resume_highlights`).
 
@@ -125,12 +125,10 @@ def main():
     render(cv, out / "cv.yaml", extra_args)
 
     cv["cv"]["headline"] = resume["headline"]
-    cv["settings"] = {"pdf_title": "NAME - Resume"}
+    cv["cv"]["social_networks"] = [s for s in cv["cv"]["social_networks"] if s["network"] in resume["networks"]]
     cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
-    # Only the resume links to the full CV.
-    cv["cv"]["custom_connections"] = [
-        {"placeholder": "Full CV", "url": f"{cv['cv']['website']}/cv/", "fontawesome_icon": "file-lines"}
-    ]
+    cv["design"]["templates"]["footer"] = resume["footer"]
+    cv["settings"] = {"pdf_title": "NAME - Resume"}
     render(cv, out / "resume.yaml", extra_args)
 
 

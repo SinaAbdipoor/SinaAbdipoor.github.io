@@ -1,7 +1,7 @@
 # Single source of truth for the CV, resume, and website.
 # Entries with `tags: resume` also go into the industry resume, without their highlights.
 # There, `resume_summary` (when given) replaces `summary`, and `resume_highlights` (when given) are shown as bullets.
-# The `resume` block at the end gives the resume its own headline and summary.
+# The `resume` block at the end gives the resume its own headline, summary, social networks, and footer.
 # The Publications section is filled from papers.bib when the PDFs are built.
 # Section names are in Title Case so the website's CV page recognizes them.
 cv:
@@ -503,6 +503,8 @@ cv:
 resume:
   headline: AI Engineer specializing in Optimization, Operations Research, and Machine Learning
   summary: AI Engineer with a Ph.D. in Computer Science and 5 years of experience as an Operations Research consultant. I build optimization and machine learning models for real scheduling, allocation, and forecasting problems, and I explain the results clearly to management.
+  networks: [LinkedIn, GitHub, Google Scholar]
+  footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
 
 design:
   theme: classic
