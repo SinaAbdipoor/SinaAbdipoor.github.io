@@ -102,14 +102,12 @@ def resume_sections(sections, summary):
     return kept
 
 
-def render(data, path, extra_args, png=False):
+def render(data, path, extra_args):
     with path.open("w") as f:
         YAML().dump(data, f)
-    # The website shows the resume as PNG pages, since phones can't show PDFs inline.
-    png_args = ["--png-path", str(path.with_suffix(".png"))] if png else ["-nopng"]
     subprocess.run(
         ["rendercv", "render", str(path), "--pdf-path", str(path.with_suffix(".pdf")),
-         "--typst-path", str(path.with_suffix(".typ")), "-nomd", "-nohtml", *png_args, *extra_args],
+         "--typst-path", str(path.with_suffix(".typ")), "-nomd", "-nohtml", "-nopng", *extra_args],
         check=True,
     )
 
@@ -131,7 +129,7 @@ def main():
     cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
     cv["design"]["templates"].update(resume["templates"])
     cv["settings"] = {"pdf_title": "NAME - Resume"}
-    render(cv, out / "resume.yaml", extra_args, png=True)
+    render(cv, out / "resume.yaml", extra_args)
 
 
 if __name__ == "__main__":
