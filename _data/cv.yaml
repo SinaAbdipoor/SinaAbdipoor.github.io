@@ -1,6 +1,6 @@
 # Single source of truth for the CV, resume, and website.
 # Entries with `tags: resume` also go into the industry resume, without their highlights.
-# There, `resume_summary` (when given) replaces `summary` as the one line shown.
+# There, `resume_summary` (when given) replaces `summary`, and `resume_highlights` (when given) are shown as bullets.
 # The `resume` block at the end gives the resume its own headline and summary.
 # The Publications section is filled from papers.bib when the PDFs are built.
 # Section names are in Title Case so the website's CV page recognizes them.
@@ -148,14 +148,17 @@ cv:
         summary: Invited talk, Baoshan University
         location: China
         date: 2026-08
+        tags: resume
       - name: "[Applied Operations Research in Driving Sustainability](https://thomasweise.github.io/posts/2026-08-24-abdipoor/)"
         summary: Guest talk, Hefei University
         location: China
         date: 2026-08
+        tags: resume
       - name: "[Applied Operations Research in Developing Sustainable Cities](https://luma.com/1zb0whw8)"
         summary: Organizer and speaker, Sunway Tech Club, Sunway University
         location: Malaysia
         date: 2026-08
+        tags: resume
       - name: AI in Higher Education and AI Governance
         summary: Invited interview, University of Lincoln
         date: 2026-05
@@ -296,7 +299,10 @@ cv:
         start_date: 2020-01
         end_date: 2025-03
         tags: resume
-        resume_summary: Found inefficiencies in client workflows, built and deployed optimization and prediction models, and presented the results to management.
+        resume_highlights:
+          - Analyzed client workflows to find inefficiencies in scheduling and resource allocation.
+          - Designed, built, and deployed optimization and prediction models for real operations.
+          - Presented findings and recommendations to stakeholders and management.
         highlights:
           - Partnered with organizations to analyze workflows and find inefficiencies in resource allocation.
           - Designed, proposed, and deployed optimization models.
@@ -306,7 +312,9 @@ cv:
         start_date: 2017-07
         end_date: 2019-07
         tags: resume
-        resume_summary: Built and maintained a CRM system with a Java backend and a SQL database in a small software team.
+        resume_highlights:
+          - Designed, built, and maintained a CRM system for employees and customers in a small software team.
+          - Developed the Java backend with a variety of libraries, frameworks, and APIs, and designed the SQL database.
         highlights:
           - Designed, built, and maintained a CRM system for employees and customers in a small team of software engineers.
           - Developed the Java backend using a variety of libraries, frameworks, and APIs.
@@ -351,6 +359,7 @@ cv:
         summary: A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
       - name: "[Java Framework for Genetic Algorithms](https://sinaabdipoor.github.io/projects/4_ga_framework/)"
         date: 2019
+        tags: resume
         summary: A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my master's research.
       - name: "[Tic-Tac-Toe Game](https://sinaabdipoor.github.io/projects/6_tictactoe/)"
         date: 2018

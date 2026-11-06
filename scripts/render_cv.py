@@ -2,8 +2,8 @@
 
 The resume is industry focused: it uses the headline and summary from the
 top-level `resume` block, then shows RESUME_SECTIONS in that order, keeping only
-entries tagged `resume`, without their highlights, and with `resume_summary` in
-place of `summary` when an entry has one.
+entries tagged `resume`, with `resume_summary` and `resume_highlights` in place
+of `summary` and `highlights` (dropped when an entry has no `resume_highlights`).
 
 Usage: python scripts/render_cv.py OUTPUT_DIR [extra rendercv args]
 """
@@ -30,6 +30,7 @@ RESUME_SECTIONS = [
     "Education",
     "Publications",
     "Awards",
+    "Talks",
     "Certificates",
 ]
 
@@ -69,10 +70,17 @@ def publications():
     return sorted(items, key=lambda item: str(item["date"]), reverse=True)
 
 
+def cv_entry(entry):
+    if not isinstance(entry, dict):
+        return entry
+    return {key: value for key, value in entry.items() if not key.startswith("resume_")}
+
+
 def resume_entry(entry):
     entry = {key: value for key, value in entry.items() if key != "highlights"}
-    if "resume_summary" in entry:
-        entry["summary"] = entry.pop("resume_summary")
+    for field in ("summary", "highlights"):
+        if f"resume_{field}" in entry:
+            entry[field] = entry.pop(f"resume_{field}")
     return entry
 
 
@@ -113,6 +121,7 @@ def main():
     resume = cv.pop("resume")
     sections = cv["cv"]["sections"]
     sections["Publications"] = publications()
+    cv["cv"]["sections"] = {name: [cv_entry(e) for e in entries] for name, entries in sections.items()}
     render(cv, out / "cv.yaml", extra_args)
 
     cv["cv"]["headline"] = resume["headline"]
