@@ -1,8 +1,9 @@
 """Render the full CV and the resume PDFs from _data/cv.yaml and _bibliography/papers.bib.
 
-The resume is industry focused: it shows RESUME_SECTIONS in that order, keeping
-only entries tagged `resume`, without their highlights, and with `resume_summary`
-in place of `summary` when an entry has one.
+The resume is industry focused: it uses the headline and summary from the
+top-level `resume` block, then shows RESUME_SECTIONS in that order, keeping only
+entries tagged `resume`, without their highlights, and with `resume_summary` in
+place of `summary` when an entry has one.
 
 Usage: python scripts/render_cv.py OUTPUT_DIR [extra rendercv args]
 """
@@ -49,8 +50,7 @@ def publication(entry):
         item["url"] = fields["url"]
     if "note" in fields:
         item["summary"] = fields["note"]
-    # al-folio's `selected` flag also picks the papers for the resume.
-    if fields.get("selected") == "true":
+    if fields.get("resume") == "true":
         item["tags"] = "resume"
     return item
 
@@ -76,7 +76,7 @@ def resume_entry(entry):
     return entry
 
 
-def resume_sections(sections):
+def resume_sections(sections, summary):
     # The CV splits work into academic and professional sections. The resume merges them.
     sections = dict(sections)
     sections["Experience"] = sorted(
@@ -84,7 +84,7 @@ def resume_sections(sections):
         key=lambda e: str(e["start_date"]),
         reverse=True,
     )
-    kept = {}
+    kept = {"Summary": [summary]}
     for name in RESUME_SECTIONS:
         kept["Selected Publications" if name == "Publications" else name] = [
             resume_entry(e)
@@ -110,11 +110,13 @@ def main():
     extra_args = sys.argv[2:]
 
     cv = YAML().load(ROOT / "_data" / "cv.yaml")
+    resume = cv.pop("resume")
     sections = cv["cv"]["sections"]
     sections["Publications"] = publications()
     render(cv, out / "cv.yaml", extra_args)
 
-    cv["cv"]["sections"] = resume_sections(sections)
+    cv["cv"]["headline"] = resume["headline"]
+    cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
     # Only the resume links to the full CV.
     cv["cv"]["custom_connections"] = [
         {"placeholder": "Full CV", "url": f"{cv['cv']['website']}/cv/", "fontawesome_icon": "file-lines"}

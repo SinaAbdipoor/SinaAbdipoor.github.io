@@ -396,6 +396,7 @@ filtered_bibtex_keywords:
     pmid,
     poster,
     preview,
+    resume,
     selected,
     slides,
     supp,

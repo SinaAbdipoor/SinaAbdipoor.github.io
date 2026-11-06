@@ -1,6 +1,7 @@
 # Single source of truth for the CV, resume, and website.
 # Entries with `tags: resume` also go into the industry resume, without their highlights.
 # There, `resume_summary` (when given) replaces `summary` as the one line shown.
+# The `resume` block at the end gives the resume its own headline and summary.
 # The Publications section is filled from papers.bib when the PDFs are built.
 # Section names are in Title Case so the website's CV page recognizes them.
 cv:
@@ -30,7 +31,6 @@ cv:
     Research Interests:
       - label: Research
         details: Optimization, Operations Research, Artificial Intelligence, Game Theory, Multi-Agent Systems
-        tags: resume
       - label: Teaching
         details: Optimization, Search Algorithms, Evolutionary Computing, Applied Machine Learning, Software Engineering, Programming, Game Theory, Multi-Agent Systems, Artificial Intelligence in Sustainability
       - label: SDGs
@@ -44,6 +44,7 @@ cv:
         end_date: 2026
         tags: resume
         summary: "Thesis: Optimality and Generality of Metaheuristics in University Course Timetabling"
+        resume_summary: "Thesis: Optimality and Generality of Metaheuristics in University Course Timetabling. CGPA: 4.0/4.0"
         highlights:
           - "CGPA: 4.0/4.0"
           - Proposed a hybrid metaheuristic for University Course Timetabling with Student Sectioning (UCTSSP), tested on the International Timetabling Competition 2019 benchmark.
@@ -64,7 +65,6 @@ cv:
         area: Computer Engineering, Software Engineering
         start_date: 2012
         end_date: 2016
-        tags: resume
         highlights:
           - "Final year project: Designing and Launching a Restaurant Management System for a Local Cafe"
           - "Supervisor: Associate Professor Dr. Morteza Mohammadi Zanjireh"
@@ -80,7 +80,7 @@ cv:
         start_date: 2025-12
         end_date: present
         tags: resume
-        resume_summary: Leading an optimization research group, teaching optimization, machine learning, and software engineering, and supervising more than 20 student projects.
+        resume_summary: Leading an optimization research group that solves real-world scheduling problems, and teaching optimization, machine learning, and software engineering.
         highlights:
           - Head of ScholORs, an optimization research group that sometimes works with other experts in the field, such as the optimization research group at Lancaster University.
           - Researching metaheuristics and hybrid optimization for real-world timetabling, with 9 papers in 2026.
@@ -94,7 +94,7 @@ cv:
         start_date: 2020-09
         end_date: 2025-09
         tags: resume
-        resume_summary: Developed hybrid metaheuristics for large university timetabling problems, and taught programming and machine learning.
+        resume_summary: Built hybrid metaheuristics that solve large real-world university timetabling problems, and taught programming and machine learning.
         highlights:
           - Researched hybrid metaheuristics for university course timetabling for my Ph.D., published in IEEE Access and Intelligent Systems with Applications.
           - Taught Computer Programming 2 (SSK3101) and Machine Learning (SSK5603) at undergraduate and postgraduate levels.
@@ -118,7 +118,6 @@ cv:
       - name: Best Paper Award
         summary: 20th IEEE International Colloquium on Signal Processing & Its Applications (CSPA)
         date: 2024-03
-        tags: resume
       - name: Special Jury Award, Postgraduate Colloquium
         summary: Universiti Putra Malaysia
         date: 2023-10
@@ -243,36 +242,29 @@ cv:
         summary: Master in Data Science, Sunway University, Main Supervisor
         start_date: 2026
         end_date: present
-        tags: resume
       - name: Tan Yi Wei
         summary: Master in Artificial Intelligence, Sunway University, Main Supervisor
         start_date: 2026
         end_date: present
-        tags: resume
       - name: More than 20 undergraduate final year projects
         summary: Sunway University
         start_date: 2026
         end_date: present
-        tags: resume
       - name: Mingxuan Li
         summary: B.Sc., Queen Mary University of London, Main Supervisor
         start_date: 2025
         end_date: present
-        tags: resume
 
     Peer Review:
       - name: "[Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications), Elsevier"
         start_date: 2025
         end_date: present
-        tags: resume
       - name: "[IEEE Transactions on Intelligent Transportation Systems](https://ieee-itss.org/pub/t-its/)"
         start_date: 2026
         end_date: present
-        tags: resume
       - name: "[Applied Soft Computing](https://www.sciencedirect.com/journal/applied-soft-computing), Elsevier"
         start_date: 2026
         end_date: present
-        tags: resume
 
     Service and Leadership:
       - company: Sunway University
@@ -297,7 +289,6 @@ cv:
         summary: Member
         start_date: 2024-04
         end_date: present
-        tags: resume
 
     Professional Experience:
       - company: Independent Consultant
@@ -324,8 +315,6 @@ cv:
         position: Senior English Teacher & Supervisor
         start_date: 2016-11
         end_date: 2019-05
-        tags: resume
-        resume_summary: Taught advanced English, ran IELTS workshops, and supervised and interviewed teachers.
         highlights:
           - Taught Upper-Intermediate and Advanced English (B2 to C2) to teenagers and adults, following Oxford's syllabus.
           - Led IELTS workshops, level assessments, and teacher interviews.
@@ -334,6 +323,8 @@ cv:
         position: Android Developer (Internship)
         start_date: 2016-06
         end_date: 2016-09
+        tags: resume
+        resume_summary: Built an Android app that lets assembly line workers check parts stock and order parts from their station.
         highlights:
           - Built an Android app with SQLite that lets assembly line workers check parts stock in real time and order parts without leaving their station.
       - company: ParsOnline
@@ -360,7 +351,6 @@ cv:
         summary: A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
       - name: "[Java Framework for Genetic Algorithms](https://sinaabdipoor.github.io/projects/4_ga_framework/)"
         date: 2019
-        tags: resume
         summary: A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my master's research.
       - name: "[Tic-Tac-Toe Game](https://sinaabdipoor.github.io/projects/6_tictactoe/)"
         date: 2018
@@ -373,6 +363,7 @@ cv:
         summary: Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
       - name: "[Auto Parts Finder](https://sinaabdipoor.github.io/projects/9_auto_parts/)"
         date: 2016
+        tags: resume
         summary: An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.
 
     Skills:
@@ -499,6 +490,10 @@ cv:
         summary: Universiti Kebangsaan Malaysia, [salwani@ukm.edu.my](mailto:salwani@ukm.edu.my)
       - name: Professor Graham Kendall
         summary: University of Nottingham, [graham.kendall@nottingham.ac.uk](mailto:graham.kendall@nottingham.ac.uk)
+
+resume:
+  headline: AI Engineer specializing in Optimization, Operations Research, and Machine Learning
+  summary: AI Engineer with a Ph.D. in Computer Science and 5 years of experience as an Operations Research consultant. I build optimization and machine learning models for real scheduling, allocation, and forecasting problems, and I explain the results clearly to management.
 
 design:
   theme: classic

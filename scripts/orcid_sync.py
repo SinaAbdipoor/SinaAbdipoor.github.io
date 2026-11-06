@@ -76,7 +76,7 @@ def main():
     if added:
         lines.append("New papers from ORCID, added to `papers.bib`:\n")
         lines += [f"- {w['title']} (https://doi.org/{w['doi']})" for w in added]
-        lines.append("\nBefore merging, check each entry and add `abbr`, and `selected = {true}` if it should be on the resume.")
+        lines.append("\nBefore merging, check each entry and add `abbr`, `selected = {true}` if it should be on the home page, and `resume = {true}` if it should be on the resume.")
     if by_hand:
         lines.append("\nNew works on ORCID without a DOI, to add by hand if wanted:\n")
         lines += [f"- {w['title']}" for w in by_hand]
