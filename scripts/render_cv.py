@@ -1,9 +1,10 @@
 """Render the full CV and the resume PDFs from _data/cv.yaml and _bibliography/papers.bib.
 
 The resume is industry focused: it uses the headline, summary, social networks,
-and footer from the top-level `resume` block, then shows RESUME_SECTIONS in that order, keeping only
-entries tagged `resume`, with `resume_summary` and `resume_highlights` in place
-of `summary` and `highlights` (dropped when an entry has no `resume_highlights`).
+and templates from the top-level `resume` block, then shows RESUME_SECTIONS in
+that order, keeping only entries tagged `resume`. In those, any `resume_` field
+replaces the field of the same name, and highlights are dropped unless the entry
+has `resume_highlights`.
 
 Usage: python scripts/render_cv.py OUTPUT_DIR [extra rendercv args]
 """
@@ -78,9 +79,8 @@ def cv_entry(entry):
 
 def resume_entry(entry):
     entry = {key: value for key, value in entry.items() if key != "highlights"}
-    for field in ("summary", "highlights"):
-        if f"resume_{field}" in entry:
-            entry[field] = entry.pop(f"resume_{field}")
+    for key in [k for k in entry if k.startswith("resume_")]:
+        entry[key.removeprefix("resume_")] = entry.pop(key)
     return entry
 
 
@@ -102,12 +102,14 @@ def resume_sections(sections, summary):
     return kept
 
 
-def render(data, path, extra_args):
+def render(data, path, extra_args, png=False):
     with path.open("w") as f:
         YAML().dump(data, f)
+    # The website shows the resume as PNG pages, since phones can't show PDFs inline.
+    png_args = ["--png-path", str(path.with_suffix(".png"))] if png else ["-nopng"]
     subprocess.run(
         ["rendercv", "render", str(path), "--pdf-path", str(path.with_suffix(".pdf")),
-         "--typst-path", str(path.with_suffix(".typ")), "-nomd", "-nohtml", "-nopng", *extra_args],
+         "--typst-path", str(path.with_suffix(".typ")), "-nomd", "-nohtml", *png_args, *extra_args],
         check=True,
     )
 
@@ -127,9 +129,9 @@ def main():
     cv["cv"]["headline"] = resume["headline"]
     cv["cv"]["social_networks"] = [s for s in cv["cv"]["social_networks"] if s["network"] in resume["networks"]]
     cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
-    cv["design"]["templates"]["footer"] = resume["footer"]
+    cv["design"]["templates"].update(resume["templates"])
     cv["settings"] = {"pdf_title": "NAME - Resume"}
-    render(cv, out / "resume.yaml", extra_args)
+    render(cv, out / "resume.yaml", extra_args, png=True)
 
 
 if __name__ == "__main__":

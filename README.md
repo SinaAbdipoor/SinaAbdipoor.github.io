@@ -10,7 +10,7 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 - `_includes/news.liquid`: al-folio's news list, showing month and year only.
 - `scripts/render_cv.py`: renders the full CV and the resume PDFs.
 - `scripts/requirements.txt`: pinned Python dependencies for the script.
-- `.github/workflows/cv-pdfs.yml`: builds both PDFs when the CV or papers change, and publishes only the resume to `assets/pdf/`. The full CV is shared on request.
+- `.github/workflows/cv-pdfs.yml`: builds both PDFs when the CV or papers change, and publishes only the resume, as a PDF in `assets/pdf/` and as page images in `assets/img/resume/` for the website. The full CV is shared on request.
 - `assets/css/main.scss`: theme colors and a few size tweaks on top of al-folio.
 - `scripts/orcid_sync.py` and `.github/workflows/orcid-sync.yml`: every Monday, open a pull request with any new paper from my public ORCID record.
 
