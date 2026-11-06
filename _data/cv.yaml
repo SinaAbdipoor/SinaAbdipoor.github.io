@@ -45,6 +45,7 @@ cv:
         tags: resume
         summary: "Thesis: Optimality and Generality of Metaheuristics in University Course Timetabling"
         highlights:
+          - "CGPA: 4.0/4.0"
           - Proposed a hybrid metaheuristic for University Course Timetabling with Student Sectioning (UCTSSP), tested on the International Timetabling Competition 2019 benchmark.
           - "Supervisor: Associate Professor Dr. Razali Yaakob. Committee: Professor Dr. Salwani Abdullah, Dr. Khairul Azhar Kasmiran, Dr. Hazlina Hamdan"
           - "Collaborators: Associate Professor Dr. Say Leng Goh, Professor Graham Kendall"
@@ -68,6 +69,10 @@ cv:
           - "Final year project: Designing and Launching a Restaurant Management System for a Local Cafe"
           - "Supervisor: Associate Professor Dr. Morteza Mohammadi Zanjireh"
           - "Courses: Artificial Intelligence, Data Mining, Algorithm Design, Database Design, Object-Oriented Programming, Data Structures"
+      - institution: Allameh Tabatabaei Complex of Cultural and Educational
+        area: High School Diploma, Mathematics
+        start_date: 2008
+        end_date: 2012
 
     Academic Positions:
       - company: Sunway University
@@ -80,8 +85,9 @@ cv:
           - Head of ScholORs, an optimization research group that sometimes works with other experts in the field, such as the optimization research group at Lancaster University.
           - Researching metaheuristics and hybrid optimization for real-world timetabling, with 9 papers in 2026.
           - Collaborating regularly with experts from all over the world, such as researchers at Hefei University, China, with joint papers at GECCO 2026 and PATAT 2026.
-          - Member of the program committee of the Master in Artificial Intelligence, contributing to curriculum development and the design of new courses.
-          - Subject Lead for Algorithms for Optimization, and teaching postgraduate and undergraduate courses in machine learning, software engineering, and data science capstone projects.
+          - Member of the program committee of the Master in Artificial Intelligence, contributing to curriculum development and the design of new courses, such as Swarm Intelligence and Evolutionary Computation (MAI5084).
+          - Subject Lead for Algorithms for Optimization, and teaching postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
+          - Applying AI governance in teaching, by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
           - Supervising 2 Master's students and more than 20 undergraduate final year projects.
       - company: Universiti Putra Malaysia
         position: Graduate Researcher & Tutor
@@ -128,11 +134,28 @@ cv:
       - name: Silver Medal, National Universities Swimming Championship
         summary: Imam Khomeini International University
         date: 2013
+      - name: Silver Medal, High School Football League Championship
+        summary: Allameh Tabatabaei Complex of Cultural and Educational
+        date: 2011
+      - name: Gold Medal, Allameh Tabatabaei Complex Futsal Championship
+        summary: Allameh Tabatabaei Complex of Cultural and Educational
+        date: 2010
+      - name: Bronze Medal, Allameh Tabatabaei Complex Futsal Championship
+        summary: Allameh Tabatabaei Complex of Cultural and Educational
+        date: 2009
 
     Talks:
+      - name: Applied Operations Research in Driving Sustainability
+        summary: Invited talk, Baoshan University
+        location: China
+        date: 2026-08
       - name: "[Applied Operations Research in Driving Sustainability](https://thomasweise.github.io/posts/2026-08-24-abdipoor/)"
         summary: Guest talk, Hefei University
         location: China
+        date: 2026-08
+      - name: "[Applied Operations Research in Developing Sustainable Cities](https://luma.com/1zb0whw8)"
+        summary: Organizer and speaker, Sunway Tech Club, Sunway University
+        location: Malaysia
         date: 2026-08
       - name: AI in Higher Education and AI Governance
         summary: Invited interview, University of Lincoln
@@ -190,6 +213,9 @@ cv:
       - name: Algorithms for Optimization (BAI3184)
         summary: Subject Lead, Bachelor in Artificial Intelligence, Sunway University
         date: 2026-09
+      - name: Project Management (BIS3106)
+        summary: Lecturer, Undergraduate, Sunway University
+        date: 2026-04
       - name: Capstone Project 1 and 2 (MRP5015, MRP5025)
         summary: Lecturer, Master in Data Science (ODL), Sunway University
         date: 2026-03
@@ -250,10 +276,11 @@ cv:
 
     Service and Leadership:
       - company: Sunway University
-        position: Student Engagement & Experience Committee Member, Mobility Programme in AI and Automation
-        date: 2026-09
+        position: Member, Student Engagement & Experience Committee
+        start_date: 2026
+        end_date: present
         highlights:
-          - Hosted 15 students from Galgotias University (India), Óbuda University (Hungary), and Sunway University for a one-week programme of CDIO, AI, and Automation workshops.
+          - Co-organized the Mobility Programme in AI and Automation (Sep 2026), hosting 15 students from Galgotias University (India), Óbuda University (Hungary), and Sunway University for a one-week programme of CDIO, AI, and Automation workshops.
           - Received a Certificate of Appreciation from the Faculty of Engineering and Technology.
       - company: Putra Graduate Association, Universiti Putra Malaysia
         position: Chief Exco of International Relations Affairs & Alumni
@@ -320,7 +347,7 @@ cv:
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
-        summary: Ranked 4th globally in one track of the European Space Agency's space logistics optimization challenge at GECCO 2026, using permutation encodings and simulated annealing. Our solutions were published as two GECCO 2026 papers.
+        summary: Ranked 3rd globally in the Luna Tomato Advertising challenge of the European Space Agency's space logistics optimization competition at GECCO 2026, using permutation encodings and simulated annealing. Our solutions were published as two GECCO 2026 papers.
       - name: "[UPM Thesis LaTeX Template](https://sinaabdipoor.github.io/projects/3_upm_latex/)"
         date: 2024
         summary: A LaTeX thesis template for Universiti Putra Malaysia, built from the official Microsoft Word template.
@@ -365,6 +392,9 @@ cv:
         tags: resume
 
     Certificates:
+      - name: How to Boost Your Productivity with AI Tools
+        summary: LinkedIn Learning
+        date: 2026-07
       - name: Supervisory Training Certificate (SURE)
         date: 2026
       - name: Full Course Curriculum Design Workshop and Certificates for MOHE and CQM
@@ -389,6 +419,26 @@ cv:
         date: 2016-07
 
     Workshops and Seminars:
+      - name: Teaching and Learning Innovation Challenge (T-LINC), Sunway University, as an observer
+        date: 2026
+      - name: "MonashRISE: Monash University Malaysia ECAN Research Colloquium, representing Sunway University"
+        date: 2026
+      - name: Academic Development Programme for New Academics
+        date: 2026
+      - name: Integrating AI into Teaching, Learning and Assessment
+        date: 2026
+      - name: Using AI to Design Teaching Slides Responsibly
+        date: 2026
+      - name: Effective SIM Writing
+        date: 2026
+      - name: Introduction to Open and Distance Learning
+        date: 2026
+      - name: "Embedding SC & VBE in Curriculum: Rethink. Redesign. Realign"
+        date: 2026
+      - name: Ioncudos Training
+        date: 2026
+      - name: "Mental Health Awareness and Stepping In Safely: Recognising and Responding to Suicide Risk"
+        date: 2026
       - name: "Classifying Problems by Computational Complexity: P vs NP and Beyond, by Professor Paul Goldberg"
         date: 2025
       - name: CORS Micro-event on Hybrid Quantum-Classical Computing for Internet of Everything Optimization, by Dr. Mahzabeen Emu
