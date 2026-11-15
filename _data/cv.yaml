@@ -343,6 +343,7 @@ cv:
     Projects:
       - name: Integrated Healthcare Timetabling Competition 2024 (IHTC 2024)
         date: 2026
+        tags: resume
         summary: An ongoing ScholORs project on the Integrated Healthcare Timetabling Problem from IHTC 2024, which combines surgical case planning, patient admission scheduling, and nurse-to-room assignment in one problem.
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
@@ -355,6 +356,7 @@ cv:
         date: 2022
         tags: resume
         summary: Took part in the International Timetabling Competition 2019, the latest benchmark for university course timetabling, with my own implementation of the benchmark. It became the core of my Ph.D. and led to several papers and conference talks.
+        resume_summary: My own implementation of the ITC 2019 benchmark, which became the core of my Ph.D.
       - name: "[Car Evaluation Dataset](https://sinaabdipoor.github.io/projects/5_car_evaluation/)"
         date: 2021
         summary: A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
@@ -373,9 +375,7 @@ cv:
         summary: Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
       - name: "[Auto Parts Finder](https://sinaabdipoor.github.io/projects/9_auto_parts/)"
         date: 2016
-        tags: resume
         summary: The Android app I built during my IKCO internship. It cut idle time on the assembly line.
-        resume_summary: An Android app used by assembly line workers at IKCO to check parts stock in real time and order parts, which cut idle time on the line.
 
     Skills:
       - label: Operations Research
@@ -508,8 +508,8 @@ cv:
         summary: University of Nottingham, [graham.kendall@nottingham.ac.uk](mailto:graham.kendall@nottingham.ac.uk)
 
 resume:
-  headline: AI Engineer specializing in Optimization, Operations Research, and Machine Learning
-  summary: Operations Research and AI engineer with a Ph.D. in Computer Science and more than 5 years of experience building optimization and machine learning solutions for scheduling, timetabling, and resource management. I turn complex operational problems into models that save time and money and enable data-driven decisions.
+  headline: Operations Research and AI Engineer specializing in Optimization and Machine Learning
+  summary: Operations Research and AI engineer with a Ph.D. in Computer Science and more than 5 years of experience building optimization and machine learning models for scheduling, timetabling, and resource management. I believe time is the most valuable resource, and I build models that save it and turn complex operations into clear, data-driven decisions.
   networks: [LinkedIn, GitHub, Google Scholar]
   templates:
     footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
