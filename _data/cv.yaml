@@ -300,6 +300,12 @@ cv:
         end_date: present
 
     Peer Review:
+      - name: "[Intelligent Systems with Applications](https://www.sciencedirect.com/journal/intelligent-systems-with-applications), Elsevier"
+        start_date: 2023
+        end_date: present
+      - name: "[IEEE Access](https://ieeeaccess.ieee.org/)"
+        start_date: 2024
+        end_date: present
       - name: "[Expert Systems with Applications](https://www.sciencedirect.com/journal/expert-systems-with-applications), Elsevier"
         start_date: 2025
         end_date: present
