@@ -1,41 +1,65 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
-subtitle: <span style="font-size:1.5rem">思纳</span> · Ph.D. in Computer Science<br>AI Engineer, Researcher, and Teacher · Lecturer at <a href="https://sunwayuniversity.edu.my/">Sunway University</a>, Malaysia
 
-profile:
-  align: right
+hero:
+  eyebrow: Lecturer · Sunway University · Malaysia
+  chinese_name: 思纳
+  role: <b>AI Engineer</b>, Researcher, and Teacher
+  degree: Ph.D. in Computer Science
+  lede: I use Operations Research, optimization, and machine learning to solve real-world problems. Most of my work is on scheduling and timetabling, with methods that stay robust across many problems.
   image: illustration.jpg
-  image_circular: false # crops the image to make it circular
+  tag: leads <b>ScholORs</b> · optimization group
+
+stats:
+  - value: 16
+    label: Publications
+  - value: 2016
+    label: Teaching since
+  - value: 3
+    suffix: rd
+    label: ESA SpOC 4 challenge
+  - value: 5
+    label: Journals reviewed for
+
+research:
+  - size: wide
+    label: Main focus
+    title: Scheduling and timetabling
+    text: University course timetabling with student sectioning, built on real competition instances like ITC 2019.
+    viz: gantt
+  - size: narrow
+    label: Methods
+    title: Metaheuristics and hybrids
+    text: Search algorithms that combine the strengths of several methods.
+    viz: convergence
+  - size: narrow
+    label: Question
+    title: Optimality versus generality
+    text: I care less about the last bit on one benchmark and more about methods that stay robust across many real problems.
+    chips: [robustness, benchmarking]
+  - size: narrow
+    label: Also
+    title: Machine learning
+    text: Forecasting, recommendation, and learning inside optimization.
+    chips: [GNN, time series]
+  - size: narrow
+    label: Teaching
+    title: Students
+    text: I have taught since 2016, first English and later computer science and AI, and I welcome Ph.D. and M.Sc. students.
+    link: /students/
+    link_text: Prospective students
+
+contact:
+  title: Let's solve something hard together.
+  text: Email is the best way to reach me. To meet in person or online, book a time.
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
 
 announcements:
   enabled: true
-  limit: 5
-
-latest_posts:
-  enabled: false
+  limit: 4
 ---
 
-Hi, I'm Sina! I'm an AI engineer, researcher, and teacher, and I work as a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia.
-
-I use Operations Research, optimization, and machine learning to solve real-world problems. Most of my work is on scheduling and timetabling, where I build metaheuristics and hybrid algorithms. I also lead ScholORs, an optimization research group at Sunway. I care less about squeezing the last bit out of one benchmark and more about methods that stay robust across many real problems. I'm always open to new ideas and collaborations, so feel free to [reach out](/contact/).
-
-I have taught since 2016, first English and later computer science and AI, to students from all over the world. I love sharing what I know, learning what I don't, and helping students build a brighter future. If you'd like to do a Ph.D. or M.Sc. with me, have a look at [prospective students](/students/).
-
-I share my news on [LinkedIn](https://www.linkedin.com/in/sina-abdipoor/recent-activity/all/), and you can find a short summary in my [resume](/resume/).
-
-Thanks for stopping by, and have a great day!
-
-<h2 class="mt-5">biography</h2>
-
-<div style="display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; margin-top: 1rem; margin-bottom: 2.5rem;">
-  <img src="/assets/img/headshot.jpg" alt="Sina Abdipoor" class="rounded z-depth-1" style="width: 130px; height: auto;">
-  <div style="flex: 1 1 280px;">
-    <p id="bio-text">Dr. Sina Abdipoor (思纳) is a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where he leads ScholORs, an optimization research group. He works on Operations Research, metaheuristics, and machine learning for real-world optimization, with a focus on scheduling and timetabling. His research questions the field's focus on optimality and proposes ways to assess how well algorithms generalize across problems. He regularly collaborates with experts from all over the world, and he reviews for journals such as Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems. He holds a Ph.D. in Computer Science from Universiti Putra Malaysia and has taught computer science, AI, and English since 2016. Alongside his academic work, he has worked as a software engineer and as an independent Operations Research consultant.</p>
-    <button type="button" class="btn btn-sm z-depth-0" style="border: 1px solid var(--global-theme-color); color: var(--global-theme-color);" onclick="navigator.clipboard.writeText(document.getElementById('bio-text').innerText).then(() => { this.innerText = 'Copied'; })">Copy bio</button>
-  </div>
-</div>
+Dr. Sina Abdipoor (思纳) is a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where he leads ScholORs, an optimization research group. He works on Operations Research, metaheuristics, and machine learning for real-world optimization, with a focus on scheduling and timetabling. His research questions the field's focus on optimality and proposes ways to assess how well algorithms generalize across problems. He regularly collaborates with experts from all over the world, and he reviews for journals such as Expert Systems with Applications, Applied Soft Computing, and IEEE Transactions on Intelligent Transportation Systems. He holds a Ph.D. in Computer Science from Universiti Putra Malaysia and has taught computer science, AI, and English since 2016. Alongside his academic work, he has worked as a software engineer and as an independent Operations Research consultant.

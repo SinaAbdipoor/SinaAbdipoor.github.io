@@ -1,0 +1,114 @@
+---
+layout: default
+---
+{%- comment -%} Overrides al_folio_core about layout: the home page. Its text lives in _pages/about.md. {%- endcomment -%}
+{% assign h = page.hero %}
+<section class="hero full-bleed" aria-label="Introduction">
+  <canvas id="field" aria-hidden="true"></canvas>
+  <div class="hero-inner">
+    <div>
+      <div class="eyebrow">{{ h.eyebrow }}</div>
+      <h1>{{ site.first_name }} {{ site.last_name }}<span class="zh">{{ h.chinese_name }}</span></h1>
+      <p class="role">{{ h.role }}</p>
+      <p class="phd">{{ h.degree }}</p>
+      <p class="lede">{{ h.lede }}</p>
+      <div class="ctas">
+        <a class="btn-x primary" href="{{ '/contact/' | relative_url }}">Get in touch <i class="fa-solid fa-arrow-right"></i></a>
+        <a class="btn-x" href="{{ '/resume/' | relative_url }}"><i class="fa-regular fa-file-lines"></i> Resume</a>
+      </div>
+      <div class="social-row">{% social_links %}</div>
+    </div>
+    <div class="portrait">
+      <img src="{{ '/assets/img/' | append: h.image | relative_url }}" alt="Illustration of {{ site.first_name }} at a blackboard full of optimization notes">
+      <div class="tag">{{ h.tag }}</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  {% for s in page.stats %}
+    <div class="stat">
+      <div class="n">{{ s.value }}{% if s.suffix %}<small>{{ s.suffix }}</small>{% endif %}</div>
+      <div class="l">{{ s.label }}</div>
+    </div>
+  {% endfor %}
+</div>
+
+<section class="block" id="research">
+  <div class="head">
+    <div><div class="kicker">Research</div><h2>What I work on</h2></div>
+  </div>
+  <div class="bento">
+    {% for t in page.research %}
+      <article class="tile {{ t.size }}">
+        <span class="lbl">{{ t.label }}</span>
+        <h3>{{ t.title }}</h3>
+        <p>{{ t.text }}</p>
+        {% if t.viz %}<canvas data-viz="{{ t.viz }}" aria-hidden="true"></canvas>{% endif %}
+        {% if t.link %}<a class="more tile-link" href="{{ t.link | relative_url }}">{{ t.link_text }} <span aria-hidden="true">→</span></a>{% endif %}
+        {% if t.chips %}
+          <div class="chips">{% for c in t.chips %}<span class="chip">{{ c }}</span>{% endfor %}</div>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+{% if page.announcements and page.announcements.enabled %}
+  <section class="block" id="news">
+    <div class="head">
+      <div><div class="kicker">News</div><h2>Lately</h2></div>
+      <a class="more" href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">→</span></a>
+    </div>
+    {% include news.liquid limit=true %}
+  </section>
+{% endif %}
+
+{% if page.selected_papers %}
+  <section class="block" id="papers">
+    <div class="head">
+      <div><div class="kicker">Publications</div><h2>Selected papers</h2></div>
+      <a class="more" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a>
+    </div>
+    {% include selected_papers.liquid %}
+  </section>
+{% endif %}
+
+<section class="block" id="projects">
+  <div class="head">
+    <div><div class="kicker">Projects</div><h2>Things I've built</h2></div>
+    <a class="more" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="proj-grid">
+    {% assign featured = site.projects | where: "category", "research" | sort: "importance" %}
+    {% for project in featured limit: 4 %}
+      {% include projects.liquid %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="block" id="bio">
+  <div class="head">
+    <div><div class="kicker">Biography</div><h2>Short bio</h2></div>
+  </div>
+  <div class="bio">
+    <img src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
+    <div>
+      <div id="bio-text">{{ content }}</div>
+      <button type="button" class="btn-x small" data-copy-from="bio-text">Copy bio</button>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div>
+    <div class="kicker">Open to collaborations</div>
+    <h2>{{ page.contact.title }}</h2>
+    <p>{{ page.contact.text }}</p>
+  </div>
+  <div class="mail">
+    <code>{{ site.data.socials.email }}</code>
+    <button type="button" class="btn-x primary" data-copy="{{ site.data.socials.email }}">Copy email</button>
+    <a class="btn-x" href="{{ '/contact/' | relative_url }}">Book a time</a>
+  </div>
+</section>

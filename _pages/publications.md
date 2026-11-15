@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /publications/
-title: publications
+title: Publications
 description: All my papers, newest first. Type in the box to filter.
 nav: true
 nav_order: 1

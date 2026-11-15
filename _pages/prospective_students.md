@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /students/
-title: students
+title: Students
 description: Open Ph.D. and M.Sc. positions for prospective students, and how to apply.
 nav: true
 nav_order: 4

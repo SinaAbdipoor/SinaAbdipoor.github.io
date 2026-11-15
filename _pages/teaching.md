@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /teaching/
-title: teaching
+title: Teaching
 description: Courses I teach and have taught, and the students I supervise.
 nav: true
 nav_order: 3

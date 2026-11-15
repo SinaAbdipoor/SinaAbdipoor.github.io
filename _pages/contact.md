@@ -1,7 +1,7 @@
 ---
 layout: page
 permalink: /contact/
-title: contact
+title: Contact
 description: How to reach me, where to find me, and how to book a meeting.
 nav: true
 nav_order: 6
