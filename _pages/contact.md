@@ -4,7 +4,6 @@ permalink: /contact/
 title: Contact & Appointments
 nav_title: Contact
 description: How to reach me, where to find me, and how to book a meeting.
-pattern: week
 nav: true
 nav_order: 7
 ---
@@ -19,9 +18,7 @@ The best way to reach me is by [email](mailto:sinaa@sunway.edu.my). If you're a 
   <div style="flex: 1 1 220px;">
     AE-7-20, Academic Offices<br>
     Level 7, East Wing<br>
-    Sunway University<br>
-    47500 Bandar Sunway<br>
-    Selangor Darul Ehsan, Malaysia
+    Sunway University
   </div>
   <div style="flex: 2 1 320px;">
     <iframe src="https://maps.google.com/maps?q=Sunway%20University%2C%20Bandar%20Sunway%2C%20Selangor&z=16&output=embed" width="100%" height="260" style="border: 0;" class="rounded z-depth-1" loading="lazy" title="Map of Sunway University"></iframe>

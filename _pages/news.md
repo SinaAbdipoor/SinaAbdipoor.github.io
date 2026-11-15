@@ -6,7 +6,6 @@ nav_title: News
 description: Talks, awards, and moments worth sharing.
 nav: true
 nav_order: 5
-pattern: timeline
 ---
 
 {% assign cv = site.data.cv.cv.sections %}

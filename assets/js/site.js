@@ -199,33 +199,6 @@
   drawPatterns();
   addEventListener("resize", drawPatterns);
 
-  // The home page contours drift very slowly, so the minimum moves like a search in progress.
-  const live = document.querySelector("canvas[data-animate]");
-  if (live && !reduceMotion) {
-    let visible = true;
-    new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(live);
-    let last = 0;
-    const loop = (t) => {
-      if (visible && !document.hidden && t - last > 80) {
-        drawPattern(live, t);
-        last = t;
-      }
-      requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
-
-    // Gentle tilt on the portrait.
-    const hero = live.parentElement;
-    const img = hero.querySelector(".portrait img");
-    hero.addEventListener("pointermove", (e) => {
-      const r = hero.getBoundingClientRect();
-      const a = (e.clientX - r.left) / r.width - 0.5;
-      const b = (e.clientY - r.top) / r.height - 0.5;
-      img.style.transform = `perspective(900px) rotateY(${a * 6}deg) rotateX(${-b * 6}deg)`;
-    });
-    hero.addEventListener("pointerleave", () => (img.style.transform = ""));
-  }
-
   /* ---------- Spotlight that follows the cursor on tiles ---------- */
   document.querySelectorAll(".tile").forEach((t) =>
     t.addEventListener("pointermove", (e) => {

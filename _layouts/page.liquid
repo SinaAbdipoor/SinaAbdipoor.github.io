@@ -1,12 +1,9 @@
 ---
 layout: default
 ---
-{%- comment -%} Overrides al_folio_core page layout: adds a banner with a subtle drawn pattern (`pattern` in front matter, drawn by assets/js/site.js). {%- endcomment -%}
+{%- comment -%} Overrides al_folio_core page layout: a plain title header. {%- endcomment -%}
 <div class="post">
-  <header class="post-header banner full-bleed">
-    {%- assign pattern = page.pattern -%}
-    {%- if page.collection == 'news' -%}{%- assign pattern = 'timeline' -%}{%- elsif page.collection == 'projects' -%}{%- assign pattern = 'pareto' -%}{%- endif -%}
-    <canvas data-pattern="{{ pattern | default: 'dots' }}" aria-hidden="true"></canvas>
+  <header class="post-header banner">
     <div class="banner-inner">
       <h1 class="post-title">{{ page.title }}</h1>
       {% if page.description %}<p class="post-description">{{ page.description }}</p>{% endif %}

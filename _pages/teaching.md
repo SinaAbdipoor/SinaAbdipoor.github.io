@@ -5,7 +5,6 @@ permalink: /teaching/
 description: Courses I teach and have taught, and the students I supervise.
 nav: true
 nav_order: 3
-pattern: timetable
 
 # Course code links that are not in the CV. Course materials for current students are on eLearn and xLearn.
 code_links:

@@ -3,7 +3,6 @@ layout: page
 permalink: /students/fyp/
 title: Sunway Final Year Projects
 description: For Sunway undergraduates who want me as their final year project supervisor. Please read this before you reach out.
-pattern: graph
 ---
 
 ## What I supervise

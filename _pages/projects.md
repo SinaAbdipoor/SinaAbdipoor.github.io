@@ -6,7 +6,6 @@ description: Research and engineering projects.
 nav: true
 nav_order: 2
 display_categories: [research, earlier]
-pattern: pareto
 ---
 
 You'll find the code for many of these on my [GitHub](https://github.com/SinaAbdipoor).

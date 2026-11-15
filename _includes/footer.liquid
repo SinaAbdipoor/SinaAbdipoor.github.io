@@ -1,8 +1,22 @@
-{%- comment -%} Overrides al_folio_core footer: one simple line, and loads the site script. {%- endcomment -%}
+{%- comment -%} Overrides al_folio_core footer: name, place, and all profile links (from _data/socials.yml). Loads the site script. {%- endcomment -%}
+{%- assign s = site.data.socials -%}
 <footer class="sticky-bottom" role="contentinfo">
   <div class="container footer-inner">
-    <span>&copy; {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.last_name }}</span>
-    <span>Sunway University</span>
+    <div class="footer-id">
+      <b>{{ site.first_name }} {{ site.last_name }}</b>
+      <span>Sunway University</span>
+    </div>
+    <nav class="footer-links" aria-label="Profiles">
+      <a href="mailto:{{ s.email }}">Email</a>
+      <a href="https://www.linkedin.com/in/{{ s.linkedin_username }}">LinkedIn</a>
+      <a href="https://github.com/{{ s.github_username }}">GitHub</a>
+      <a href="https://scholar.google.com/citations?user={{ s.scholar_userid }}">Google Scholar</a>
+      <a href="https://www.researchgate.net/profile/{{ s.research_gate_profile }}">ResearchGate</a>
+      <a href="https://orcid.org/{{ s.orcid_id }}">ORCID</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId={{ s.scopus_id }}">Scopus</a>
+      <a href="{{ s.work_url }}">Sunway profile</a>
+    </nav>
+    <span class="footer-copy">&copy; {{ site.time | date: '%Y' }}</span>
   </div>
 </footer>
 <script defer src="{{ '/assets/js/site.js' | relative_url | bust_file_cache }}"></script>

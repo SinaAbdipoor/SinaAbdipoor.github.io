@@ -5,7 +5,6 @@ permalink: /research/
 description: Optimization for real-world problems, with methods that work well beyond a single benchmark.
 nav: true
 nav_order: 1
-pattern: contours
 
 areas:
   - title: Scheduling and timetabling

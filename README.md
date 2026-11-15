@@ -8,9 +8,9 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 - `_bibliography/papers.bib`: all publications. Papers with `selected = {true}` go on the Research page, and those with `resume = {true}` go into the resume.
 - `_news/`: news items, each with its own page, listed as photo cards on `/news/`. Photos go in `assets/img/news/`.
 - `_pages/`: the site's pages. Teaching, talks, awards, peer review, and the home page numbers and biography read their facts from `_data/cv.yaml`, so update the CV and the site follows.
-- `_layouts/`: our versions of al-folio's home page (`about.liquid`) and page layout (`page.liquid`, which adds a banner with a drawn pattern set by `pattern`).
+- `_layouts/`: our versions of al-folio's home page (`about.liquid`) and page layout (`page.liquid`, a plain title header).
 - `_includes/`: our versions of al-folio's header, footer, news cards (`image` in a news item's front matter sets its photo) and project cards (`label` and `cover` in a project's front matter), plus small helpers for CV dates, CV text, and profile icons.
-- `assets/js/site.js`: the drawn background patterns, thumbnails for research areas and projects, and copy buttons.
+- `assets/js/site.js`: the drawn patterns on home page cards, thumbnails for research areas and projects, and copy buttons.
 - `scripts/render_cv.py`: renders the full CV and the resume PDFs.
 - `scripts/requirements.txt`: pinned Python dependencies for the script.
 - `.github/workflows/cv-pdfs.yml`: builds both PDFs when the CV or papers change and saves them in `assets/pdf/`. Only the resume is on the website. The full CV stays in the repo and is left out of the site in `_config.yml`.

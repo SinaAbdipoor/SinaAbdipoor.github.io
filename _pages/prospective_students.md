@@ -6,7 +6,6 @@ nav_title: Students
 description: Open Ph.D. and M.Sc. positions, and how to apply.
 nav: true
 nav_order: 4
-pattern: graph
 dropdown: true
 children:
   - title: Prospective Students

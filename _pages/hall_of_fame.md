@@ -3,7 +3,6 @@ layout: page
 permalink: /students/hall-of-fame/
 title: Hall of Fame
 description: Students I'm proud of and recommend without hesitation.
-pattern: graph
 
 # Each student: name, photo (in assets/img/students/, optional), program, years, work, why I recommend them, and links.
 # Text in [square brackets] is a placeholder and shows as such on the page.
@@ -14,8 +13,8 @@ students:
     work: Co-authored five papers with me on university timetabling and space logistics, as first author at PATAT 2026 and GECCO 2026, and was part of our team that ranked 3rd globally in a challenge of ESA's SpOC 4.
     why: "[Placeholder: why I recommend Mingxuan, in 2 or 3 sentences]"
     links:
-      - name: "[Placeholder: LinkedIn or website]"
-        url: "#"
+      - name: Website
+        url: https://mingxuan-li-official.github.io/
 
 ---
 
