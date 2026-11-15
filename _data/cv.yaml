@@ -25,8 +25,8 @@ cv:
   sections:
     Summary:
       - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I lead ScholORs, an optimization research group. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
-      - I believe time is our most valuable resource, and optimization is how we save it. This idea guides both my research and my life. I work on metaheuristics and hybrid algorithms for combinatorial and stochastic problems such as university timetabling. A central question in my work is generality, that is, how well an algorithm performs across problems rather than on a single benchmark. My work appears in journals such as IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and I regularly take part in GECCO and PATAT.
-      - I have taught since 2016 and help design the Master in Artificial Intelligence curriculum at Sunway. From 2020 to 2025, I also worked as an independent Operations Research consultant, building optimization and prediction models that saved organizations time and money.
+      - I believe time is our most valuable resource, and optimization is how we save it. This is both my research principle and my personal belief. I design metaheuristics and hybrid algorithms for hard scheduling problems such as university timetabling, and I care most about generality, meaning methods that work well across many problems, not just on one benchmark. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and I regularly present at GECCO and PATAT.
+      - I have taught since 2016, and I now help shape the Master in Artificial Intelligence at Sunway. From 2020 to 2025, I also worked as an independent Operations Research consultant, building models that saved organizations time and money.
 
     Research Interests:
       - label: Research
@@ -52,7 +52,7 @@ cv:
           - "Collaborators: Associate Professor Say Leng Goh, Professor Graham Kendall"
       - institution: K. N. Toosi University of Technology
         degree: M.Sc.
-        area: Computer Engineering, Artificial Intelligence and Robotics
+        area: Artificial Intelligence
         start_date: 2016
         end_date: 2019
         tags: resume
@@ -62,7 +62,7 @@ cv:
           - "Courses: Machine Learning, Reinforcement Learning, Evolutionary Computing, Pattern Recognition, Probabilistic Graphical Models, Artificial Neural Networks, Big Data"
       - institution: Imam Khomeini International University
         degree: B.Sc.
-        area: Computer Engineering, Software Engineering
+        area: Software Engineering
         start_date: 2012
         end_date: 2016
         highlights:
@@ -88,7 +88,6 @@ cv:
           - Lead ScholORs, an optimization research group that sometimes works with other experts in the field, such as the optimization research group at Lancaster University.
           - Research metaheuristics and hybrid optimization for real-world timetabling, with 9 papers in 2026.
           - Collaborate regularly with experts from all over the world, such as researchers at Hefei University, China, with joint papers at GECCO 2026 and PATAT 2026.
-          - Serve on the program committee of the Master in Artificial Intelligence, helping develop its curriculum and design new courses, such as Swarm Intelligence and Evolutionary Computation (MAI5084).
           - Serve as Subject Lead for Algorithms for Optimization, and teach postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
           - Apply AI governance in teaching by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
@@ -261,7 +260,7 @@ cv:
         summary: Lecturer, B.Sc. Computer Science, Sunway University
         date: 2026-04
       - name: Capstone Project 1 and 2 (MRP5015, MRP5025)
-        summary: Lecturer, Master in Data Science (ODL), Sunway University
+        summary: Subject Lead, Master in Data Science (ODL), Sunway University
         date: 2026-03
       - name: Applied Machine Learning (MAI5043)
         summary: Lecturer, Master in Artificial Intelligence, Sunway University
@@ -313,6 +312,12 @@ cv:
 
     Service and Leadership:
       - company: Sunway University
+        position: Member, Academic Program Committee, Master in Artificial Intelligence
+        start_date: 2026
+        end_date: present
+        highlights:
+          - Help develop the curriculum and design new courses, such as Swarm Intelligence and Evolutionary Computation (MAI5084).
+      - company: Sunway University
         position: Member, Student Engagement & Experience Committee
         start_date: 2026
         end_date: present
@@ -336,6 +341,9 @@ cv:
         end_date: present
 
     Projects:
+      - name: Integrated Healthcare Timetabling Competition 2024 (IHTC 2024)
+        date: 2026
+        summary: An ongoing ScholORs project on the IHTC 2024 benchmark, which combines patient admission, nurse-to-room assignment, and operating theater scheduling in one problem.
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
