@@ -7,11 +7,13 @@ on:
       - "_data/cv.yaml"
       - "_bibliography/papers.bib"
       - "scripts/**"
+      - ".github/workflows/cv-pdfs.yml"
   pull_request:
     paths:
       - "_data/cv.yaml"
       - "_bibliography/papers.bib"
       - "scripts/**"
+      - ".github/workflows/cv-pdfs.yml"
   workflow_dispatch:
 permissions:
   contents: write
@@ -24,22 +26,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      # The full CV is built to check it, but only the resume is published.
+      # Both PDFs are kept in the repo. The full CV is left out of the website in _config.yml.
       - name: Build the PDFs
         run: |
           pip install -r scripts/requirements.txt
           python scripts/render_cv.py build
           cp build/resume.pdf assets/pdf/Sina_Abdipoor_Resume.pdf
-      - name: Commit the resume and redeploy the site
+          cp build/cv.pdf assets/pdf/Sina_Abdipoor_CV.pdf
+      - name: Commit the PDFs and redeploy the site
         if: github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          git add assets/pdf/Sina_Abdipoor_Resume.pdf
+          git add assets/pdf/Sina_Abdipoor_Resume.pdf assets/pdf/Sina_Abdipoor_CV.pdf
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update resume PDF"
+          git commit -m "Update CV and resume PDFs"
           git push
           # Pushes made with the workflow token don't trigger other workflows.
           gh workflow run deploy.yml --ref main

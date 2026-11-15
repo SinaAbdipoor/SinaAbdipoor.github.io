@@ -212,6 +212,7 @@ kramdown:
 # Includes & excludes
 include: ["_pages"]
 exclude:
+  - assets/pdf/Sina_Abdipoor_CV.pdf
   - AGENTS.md
   - al-folio-upgrade-report.md
   - bin/
