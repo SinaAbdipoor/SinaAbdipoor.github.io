@@ -343,7 +343,7 @@ cv:
     Projects:
       - name: Integrated Healthcare Timetabling Competition 2024 (IHTC 2024)
         date: 2026
-        summary: An ongoing ScholORs project on the IHTC 2024 benchmark, which combines patient admission, nurse-to-room assignment, and operating theater scheduling in one problem.
+        summary: An ongoing ScholORs project on the Integrated Healthcare Timetabling Problem from IHTC 2024, which combines surgical case planning, patient admission scheduling, and nurse-to-room assignment in one problem.
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
