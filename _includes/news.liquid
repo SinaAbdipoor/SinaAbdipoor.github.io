@@ -1,12 +1,7 @@
 {%- comment -%} Overrides al_folio_core news list: photo cards. Set `image` in a news item's front matter for its card photo. {%- endcomment -%}
-{% assign news = site.news | reverse %}
-{% if include.limit and page.announcements.limit %}
-  {% assign news_limit = page.announcements.limit %}
-{% else %}
-  {% assign news_limit = news.size %}
-{% endif %}
 <div class="news-grid">
-  {% for item in news limit: news_limit %}
+  {% assign news = site.news | reverse %}
+  {% for item in news %}
     <a class="news-card" href="{{ item.url | relative_url }}">
       {% if item.image %}
         <div class="ph"><img src="{{ item.image | relative_url }}" alt="" loading="lazy"></div>

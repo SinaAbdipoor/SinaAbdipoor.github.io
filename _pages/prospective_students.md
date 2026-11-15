@@ -1,27 +1,43 @@
 ---
 layout: page
 permalink: /students/
-title: Students
-description: Open Ph.D. and M.Sc. positions for prospective students, and how to apply.
+title: Prospective Students
+nav_title: Students
+description: Open Ph.D. and M.Sc. positions, and how to apply.
 nav: true
 nav_order: 4
+pattern: graph
+dropdown: true
+children:
+  - title: Prospective Students
+    permalink: /students/
+  - title: Sunway Final Year Projects
+    permalink: /students/fyp/
+  - title: Hall of Fame
+    permalink: /students/hall-of-fame/
 ---
+
+Are you a Sunway undergraduate looking for a final year project supervisor? See [Sunway final year projects](/students/fyp/) instead.
 
 ## Available positions
 
 I am recruiting postgraduate (Ph.D. and M.Sc.) students in the following fields. Full scholarships and funding are available for top students with high qualifications.
 
-- Artificial Intelligence, Operations Research
-- Optimization, Scheduling, Timetabling
-- Evolutionary Computing, Metaheuristics
+<div class="idea-grid">
+  <div class="tile"><span class="lbl">Field</span><h3>Artificial Intelligence and Operations Research</h3></div>
+  <div class="tile"><span class="lbl">Field</span><h3>Optimization, Scheduling, and Timetabling</h3></div>
+  <div class="tile"><span class="lbl">Field</span><h3>Evolutionary Computing and Metaheuristics</h3></div>
+</div>
 
 ## Requirements
 
-- A strong educational background from top universities in your country
-- Familiarity with operations research, demonstrated by a thesis or publications
-- Proficiency in programming, preferably in Java and Python
-- A solid foundation in mathematics related to optimization
-- An upper-intermediate or advanced level of English, with a minimum score of IELTS 6.0 or equivalent
+<ul class="checks">
+  <li>A strong educational background from top universities in your country</li>
+  <li>Familiarity with operations research, demonstrated by a thesis or publications</li>
+  <li>Proficiency in programming, preferably in Java and Python</li>
+  <li>A solid foundation in mathematics related to optimization</li>
+  <li>An upper-intermediate or advanced level of English, with a minimum score of IELTS 6.0 or equivalent</li>
+</ul>
 
 ## How to apply
 

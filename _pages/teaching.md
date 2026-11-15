@@ -1,33 +1,62 @@
 ---
 layout: page
-permalink: /teaching/
 title: Teaching
+permalink: /teaching/
 description: Courses I teach and have taught, and the students I supervise.
 nav: true
 nav_order: 3
+pattern: timetable
+
+# Course code links that are not in the CV. Course materials for current students are on eLearn and xLearn.
+code_links:
+  SEG2202: https://github.com/SinaAbdipoor/2603-seg2202
+  SSK5603: https://github.com/SinaAbdipoor/MachineLearning_CS229
+  SSK3101: https://github.com/SinaAbdipoor/SSK3101_Sem1_2020-2021
 ---
 
-I have taught since 2016, first English and later computer science and AI. Course materials for my current students are on eLearn and xLearn.
+{% assign cv = site.data.cv.cv.sections %}
 
-## Sunway University
+<p class="lead-text">I have taught since {% include teaching_since.liquid %}, from algorithm design and English to optimization and machine learning. Course materials for my current students are on eLearn and xLearn.</p>
 
-- **Algorithms for Optimization (BAI3184)**<br>Subject Lead, Bachelor in Artificial Intelligence, Sep 2026
-- **Applied Machine Learning (MAI5043)**<br>Master in Artificial Intelligence, Feb 2026
-- **Capstone Project 1 and 2 (MRP5015, MRP5025)**<br>Master in Data Science (ODL), Mar 2026
-- **Software Engineering (SEG2202)**<br>B.Sc. Computer Science, Feb 2026, [course code on GitHub](https://github.com/SinaAbdipoor/2603-seg2202)
+<section class="section">
+  <h2>Courses</h2>
+  <div class="course-grid">
+    {% for c in cv.Teaching %}
+      {% assign code = c.name | split: '(' | last | remove: ')' %}
+      {% assign title = c.name | split: ' (' | first %}
+      {% assign parts = c.summary | split: ', ' %}
+      <article class="course">
+        <div class="course-top">
+          <span class="code">{% if c.name contains '(' %}{{ code }}{% endif %}</span>
+          <time>{% include cv_date.liquid date=c.date %}</time>
+        </div>
+        <h3>{{ title }}</h3>
+        <p class="role">{{ parts[0] }}</p>
+        <p class="muted">{{ parts | shift | join: ', ' }}</p>
+        {% assign first_code = code | split: ',' | first %}
+        {% if page.code_links[first_code] %}<a class="more" href="{{ page.code_links[first_code] }}"><i class="fa-brands fa-github"></i> Course code</a>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
 
-## Earlier
-
-- **Machine Learning (SSK5603)**<br>Tutor, Universiti Putra Malaysia, 2020, [course code on GitHub](https://github.com/SinaAbdipoor/MachineLearning_CS229)
-- **Computer Programming 2 (SSK3101)**<br>Tutor, Universiti Putra Malaysia, 2020, [course code on GitHub](https://github.com/SinaAbdipoor/SSK3101_Sem1_2020-2021)
-- **Evolutionary Computing**<br>Teaching Assistant, K. N. Toosi University of Technology, 2018
-- **Algorithm Design**<br>Teaching Assistant, Imam Khomeini International University, 2014
-
-## Supervision
-
-- **Whong Ye Wen**<br>Master in Data Science, Sunway University, Main Supervisor, 2026 to present
-- **Tan Yi Wei**<br>Master in Artificial Intelligence, Sunway University, Main Supervisor, 2026 to present
-- **Mingxuan Li**<br>B.Sc., Queen Mary University of London, Main Supervisor, 2025 to present
-- **More than 20 undergraduate final year projects**<br>Sunway University, 2026 to present
-
-Interested in working with me? See [prospective students](/students/).
+<section class="section">
+  <div class="section-head">
+    <h2>Supervision</h2>
+    <a class="more" href="{{ '/students/hall-of-fame/' | relative_url }}">Hall of Fame <span aria-hidden="true">→</span></a>
+  </div>
+  <div class="course-grid">
+    {% for s in cv.Supervision %}
+      {% assign parts = s.summary | split: ', ' %}
+      <article class="course">
+        <div class="course-top">
+          <span class="code">{{ parts | last }}</span>
+          <time>{{ s.start_date }} to {{ s.end_date }}</time>
+        </div>
+        <h3>{{ s.name }}</h3>
+        {% if parts.size > 1 %}<p class="muted">{{ parts | pop | join: ', ' }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+  <p class="muted">Want to work with me? See <a href="{{ '/students/' | relative_url }}">prospective students</a> or, for Sunway undergraduates, <a href="{{ '/students/fyp/' | relative_url }}">final year projects</a>.</p>
+</section>

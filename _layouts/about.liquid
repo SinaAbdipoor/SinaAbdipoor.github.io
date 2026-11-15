@@ -1,114 +1,75 @@
 ---
 layout: default
 ---
-{%- comment -%} Overrides al_folio_core about layout: the home page. Its text lives in _pages/about.md. {%- endcomment -%}
+{%- comment -%} Overrides al_folio_core about layout: the home page. The autobiography is in _pages/about.md, and facts come from _data/cv.yaml. {%- endcomment -%}
 {% assign h = page.hero %}
+{% assign cv = site.data.cv.cv.sections %}
 <section class="hero full-bleed" aria-label="Introduction">
-  <canvas id="field" aria-hidden="true"></canvas>
+  <canvas data-pattern="contours" data-animate="true" aria-hidden="true"></canvas>
   <div class="hero-inner">
     <div>
       <div class="eyebrow">{{ h.eyebrow }}</div>
       <h1>{{ site.first_name }} {{ site.last_name }}<span class="zh">{{ h.chinese_name }}</span></h1>
       <p class="role">{{ h.role }}</p>
-      <p class="phd">{{ h.degree }}</p>
+      <p class="phd">{{ cv.Education[0].degree }} in {{ cv.Education[0].area }}</p>
       <p class="lede">{{ h.lede }}</p>
       <div class="ctas">
         <a class="btn-x primary" href="{{ '/contact/' | relative_url }}">Get in touch <i class="fa-solid fa-arrow-right"></i></a>
         <a class="btn-x" href="{{ '/resume/' | relative_url }}"><i class="fa-regular fa-file-lines"></i> Resume</a>
       </div>
-      <div class="social-row">{% social_links %}</div>
+      {% include social_row.liquid %}
     </div>
     <div class="portrait">
       <img src="{{ '/assets/img/' | append: h.image | relative_url }}" alt="Illustration of {{ site.first_name }} at a blackboard full of optimization notes">
-      <div class="tag">{{ h.tag }}</div>
     </div>
   </div>
 </section>
 
+{%- comment -%} Numbers, all from the CV and papers.bib {%- endcomment -%}
+{% assign citations = cv['Research Impact'][0] | split: ' citations' | first %}
 <div class="stats">
-  {% for s in page.stats %}
-    <div class="stat">
-      <div class="n">{{ s.value }}{% if s.suffix %}<small>{{ s.suffix }}</small>{% endif %}</div>
-      <div class="l">{{ s.label }}</div>
-    </div>
-  {% endfor %}
+  <div class="stat"><div class="n">{% bibliography_count %}</div><div class="l">Publications</div></div>
+  <div class="stat"><div class="n">{{ citations }}</div><div class="l">Citations</div></div>
+  <div class="stat"><div class="n">{% include teaching_since.liquid %}</div><div class="l">Teaching since</div></div>
+  <div class="stat"><div class="n">{{ cv['Peer Review'].size }}</div><div class="l">Journals reviewed for</div></div>
 </div>
 
-<section class="block" id="research">
-  <div class="head">
-    <div><div class="kicker">Research</div><h2>What I work on</h2></div>
-  </div>
-  <div class="bento">
-    {% for t in page.research %}
-      <article class="tile {{ t.size }}">
-        <span class="lbl">{{ t.label }}</span>
-        <h3>{{ t.title }}</h3>
-        <p>{{ t.text }}</p>
-        {% if t.viz %}<canvas data-viz="{{ t.viz }}" aria-hidden="true"></canvas>{% endif %}
-        {% if t.link %}<a class="more tile-link" href="{{ t.link | relative_url }}">{{ t.link_text }} <span aria-hidden="true">→</span></a>{% endif %}
-        {% if t.chips %}
-          <div class="chips">{% for c in t.chips %}<span class="chip">{{ c }}</span>{% endfor %}</div>
-        {% endif %}
-      </article>
-    {% endfor %}
-  </div>
-</section>
-
-{% if page.announcements and page.announcements.enabled %}
-  <section class="block" id="news">
-    <div class="head">
-      <div><div class="kicker">News</div><h2>Lately</h2></div>
-      <a class="more" href="{{ '/news/' | relative_url }}">All news <span aria-hidden="true">→</span></a>
-    </div>
-    {% include news.liquid limit=true %}
-  </section>
-{% endif %}
-
-{% if page.selected_papers %}
-  <section class="block" id="papers">
-    <div class="head">
-      <div><div class="kicker">Publications</div><h2>Selected papers</h2></div>
-      <a class="more" href="{{ '/publications/' | relative_url }}">All publications <span aria-hidden="true">→</span></a>
-    </div>
-    {% include selected_papers.liquid %}
-  </section>
-{% endif %}
-
-<section class="block" id="projects">
-  <div class="head">
-    <div><div class="kicker">Projects</div><h2>Things I've built</h2></div>
-    <a class="more" href="{{ '/projects/' | relative_url }}">All projects <span aria-hidden="true">→</span></a>
-  </div>
-  <div class="proj-grid">
-    {% assign featured = site.projects | where: "category", "research" | sort: "importance" %}
-    {% for project in featured limit: 4 %}
-      {% include projects.liquid %}
-    {% endfor %}
-  </div>
+<section class="block about-me">
+  <div class="head"><h2>About me</h2></div>
+  <div class="prose">{{ content }}</div>
 </section>
 
 <section class="block" id="bio">
-  <div class="head">
-    <div><div class="kicker">Biography</div><h2>Short bio</h2></div>
-  </div>
+  <div class="head"><h2>Biography</h2></div>
   <div class="bio">
     <img src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
     <div>
-      <div id="bio-text">{{ content }}</div>
+      {%- capture journals -%}
+        {%- for r in cv['Peer Review'] -%}
+          {%- assign name = r.name | markdownify | strip_html | strip | split: ', Elsevier' | first -%}
+          {%- if forloop.last and forloop.length > 1 %}and {% endif -%}{{ name }}{%- unless forloop.last -%}{% if forloop.length > 2 %}, {% else %} {% endif %}{%- endunless -%}
+        {%- endfor -%}
+      {%- endcapture -%}
+      {%- assign phd = cv.Education[0] -%}
+      {%- assign msc = cv.Education[1] -%}
+      {%- assign bsc = cv.Education[2] -%}
+      <p id="bio-text">Dr. Sina Abdipoor (思纳) is a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, where he leads ScholORs, an optimization research group. His research focuses on optimization and Operations Research, especially metaheuristics and hybrid algorithms for real-world scheduling and timetabling problems, and on how well these methods generalize across problems. His work has been published in journals such as IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and presented at international conferences including GECCO and PATAT. He is a reviewer for {{ journals }}. He has taught since {% include teaching_since.liquid %}, with courses in optimization, machine learning, software engineering, and English, and he serves on the Academic Program Committee of the Master in Artificial Intelligence at Sunway University. He holds a {{ phd.degree }} in {{ phd.area }} from {{ phd.institution }}, an {{ msc.degree }} in {{ msc.area }} from {{ msc.institution }}, and a {{ bsc.degree }} in {{ bsc.area }} from {{ bsc.institution }}. He has also worked as a software engineer and as an independent Operations Research consultant, and he is a member of the Canadian Operational Research Society (CORS).</p>
       <button type="button" class="btn-x small" data-copy-from="bio-text">Copy bio</button>
     </div>
   </div>
 </section>
 
-<section class="cta" id="contact">
-  <div>
-    <div class="kicker">Open to collaborations</div>
-    <h2>{{ page.contact.title }}</h2>
-    <p>{{ page.contact.text }}</p>
-  </div>
-  <div class="mail">
-    <code>{{ site.data.socials.email }}</code>
-    <button type="button" class="btn-x primary" data-copy="{{ site.data.socials.email }}">Copy email</button>
-    <a class="btn-x" href="{{ '/contact/' | relative_url }}">Book a time</a>
+<section class="block" id="explore">
+  <div class="head"><h2>Explore</h2></div>
+  <div class="explore">
+    {% for e in page.explore %}
+      <a class="explore-card" href="{{ e.url | relative_url }}">
+        <canvas data-pattern="{{ e.pattern }}" aria-hidden="true"></canvas>
+        <div class="body">
+          <h3>{{ e.title }} <span aria-hidden="true">→</span></h3>
+          <p>{{ e.text }}</p>
+        </div>
+      </a>
+    {% endfor %}
   </div>
 </section>

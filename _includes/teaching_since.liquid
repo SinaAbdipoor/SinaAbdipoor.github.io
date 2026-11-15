@@ -1,0 +1,7 @@
+{%- comment -%} The earliest year in the CV's Teaching section. {%- endcomment -%}
+{%- assign years = '' | split: '' -%}
+{%- for t in site.data.cv.cv.sections.Teaching -%}
+  {%- assign y = t.date | append: '' | slice: 0, 4 -%}
+  {%- assign years = years | push: y -%}
+{%- endfor -%}
+{{- years | sort | first -}}

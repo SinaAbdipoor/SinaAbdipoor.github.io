@@ -1,4 +1,4 @@
-// Small interactions for the site: the hero background, drawn thumbnails, and copy buttons.
+// Small interactions for the site: background patterns, drawn thumbnails, and copy buttons.
 (() => {
   const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const ACCENT = "#5aa2ff";
@@ -16,72 +16,214 @@
     return [ctx, w, h];
   }
 
-  /* ---------- Hero: a quiet dot landscape whose low point drifts and leans toward the cursor ---------- */
-  const field = document.getElementById("field");
-  if (field) {
-    const hero = field.parentElement;
-    let ctx, W, H;
-    let low = { x: 0.62, y: 0.5 };
-    let pointer = null;
+  /* ---------- Background patterns (data-pattern), each tied to its page's theme ---------- */
+  const rng = (s) => () => (s = (s * 9301 + 49297) % 233280) / 233280;
+  const line = (k, pts) => {
+    k.beginPath();
+    pts.forEach(([x, y], i) => (i ? k.lineTo(x, y) : k.moveTo(x, y)));
+    k.stroke();
+  };
 
-    // Depth of the landscape at (x, y): 1 at the low point, fading to 0.
-    const depth = (x, y) => {
-      const dx = x - low.x;
-      const dy = ((y - low.y) * H) / W;
-      return Math.exp(-(dx * dx + dy * dy) / 0.03) + 0.06 * Math.sin(x * 18) * Math.cos(y * 14);
-    };
-
-    const draw = (t) => {
-      const drift = { x: 0.62 + 0.12 * Math.sin(t / 7000), y: 0.5 + 0.18 * Math.cos(t / 9000) };
-      const aim = pointer || drift;
-      low.x += (aim.x - low.x) * 0.02;
-      low.y += (aim.y - low.y) * 0.02;
-      ctx.clearRect(0, 0, W, H);
-      const g = 26;
-      for (let y = g / 2; y < H; y += g) {
-        for (let x = g / 2; x < W; x += g) {
-          const s = Math.max(0, Math.min(1, depth(x / W, y / H)));
-          ctx.fillStyle = `rgba(90,162,255,${0.08 + s * 0.5})`;
-          ctx.beginPath();
-          ctx.arc(x, y, 0.8 + s * 2.2, 0, 7);
-          ctx.fill();
+  const patterns = {
+    // Contour lines of an objective function, with its minimum marked: optimization.
+    contours(k, w, h, t = 0) {
+      const cx = 0.68 + 0.06 * Math.sin(t / 9000);
+      const cy = 0.5 + 0.12 * Math.cos(t / 11000);
+      const f = (x, y) => {
+        const a = (x / w - cx) * (w / h);
+        const b = y / h - cy;
+        const c = (x / w - 0.3) * (w / h);
+        const d = y / h - 0.8;
+        return Math.exp(-(a * a + b * b) * 3) + 0.6 * Math.exp(-(c * c + d * d) * 6) + 0.05 * Math.sin(x / 60) * Math.cos(y / 50);
+      };
+      const step = 10;
+      const cols = Math.ceil(w / step) + 1;
+      const rows = Math.ceil(h / step) + 1;
+      const v = new Float32Array(cols * rows);
+      for (let j = 0; j < rows; j++) for (let i = 0; i < cols; i++) v[j * cols + i] = f(i * step, j * step);
+      k.lineWidth = 1;
+      for (let L = 0.1; L < 1.05; L += 0.09) {
+        k.strokeStyle = `rgba(90,162,255,${0.12 + L * 0.3})`;
+        k.beginPath();
+        for (let j = 0; j < rows - 1; j++) {
+          for (let i = 0; i < cols - 1; i++) {
+            const a = v[j * cols + i], b = v[j * cols + i + 1], c = v[(j + 1) * cols + i + 1], d = v[(j + 1) * cols + i];
+            const x = i * step, y = j * step;
+            const pts = [];
+            const edge = (p, q, x1, y1, x2, y2) => {
+              if ((p < L) !== (q < L)) {
+                const r = (L - p) / (q - p);
+                pts.push([x1 + (x2 - x1) * r, y1 + (y2 - y1) * r]);
+              }
+            };
+            edge(a, b, x, y, x + step, y);
+            edge(b, c, x + step, y, x + step, y + step);
+            edge(d, c, x, y + step, x + step, y + step);
+            edge(a, d, x, y, x, y + step);
+            if (pts.length >= 2) {
+              k.moveTo(pts[0][0], pts[0][1]);
+              k.lineTo(pts[1][0], pts[1][1]);
+              if (pts.length === 4) {
+                k.moveTo(pts[2][0], pts[2][1]);
+                k.lineTo(pts[3][0], pts[3][1]);
+              }
+            }
+          }
+        }
+        k.stroke();
+      }
+      const mx = cx * w, my = cy * h;
+      k.strokeStyle = GOLD;
+      k.lineWidth = 1.2;
+      k.beginPath();
+      k.arc(mx, my, 5, 0, 7);
+      k.moveTo(mx - 12, my); k.lineTo(mx - 7, my);
+      k.moveTo(mx + 7, my); k.lineTo(mx + 12, my);
+      k.moveTo(mx, my - 12); k.lineTo(mx, my - 7);
+      k.moveTo(mx, my + 7); k.lineTo(mx, my + 12);
+      k.stroke();
+    },
+    // A weekly timetable: days by time slots, some slots booked: teaching.
+    timetable(k, w, h) {
+      const r = rng(5);
+      const cell = 26, gap = 4;
+      for (let y = 10; y < h; y += cell + gap) {
+        for (let x = w * 0.35; x < w; x += cell * 2 + gap) {
+          const on = r();
+          k.fillStyle = on > 0.72 ? "rgba(90,162,255,.35)" : on > 0.66 ? "rgba(245,185,74,.35)" : "rgba(90,162,255,.06)";
+          k.beginPath();
+          k.roundRect(x, y, cell * 2, cell, 4);
+          k.fill();
         }
       }
-    };
-
-    const resize = () => {
-      [ctx, W, H] = setup(field);
-      draw(0);
-    };
-    resize();
-    addEventListener("resize", resize);
-
-    if (!reduceMotion) {
-      hero.addEventListener("pointermove", (e) => {
-        const r = field.getBoundingClientRect();
-        pointer = { x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height };
+    },
+    // A week calendar with a few meetings: contact and appointments.
+    week(k, w, h) {
+      const r = rng(9);
+      const x0 = w * 0.4, colW = (w - x0) / 7;
+      k.strokeStyle = "rgba(90,162,255,.12)";
+      k.lineWidth = 1;
+      for (let i = 0; i <= 7; i++) line(k, [[x0 + i * colW, 0], [x0 + i * colW, h]]);
+      for (let y = 0; y < h; y += 22) line(k, [[x0, y], [w, y]]);
+      for (let i = 0; i < 7; i++) {
+        if (r() < 0.35) continue;
+        const y = Math.floor(r() * (h / 22 - 3)) * 22;
+        k.fillStyle = r() > 0.8 ? "rgba(245,185,74,.35)" : "rgba(90,162,255,.3)";
+        k.beginPath();
+        k.roundRect(x0 + i * colW + 4, y + 2, colW - 8, 22 * (1 + Math.floor(r() * 3)) - 4, 4);
+        k.fill();
+      }
+    },
+    // A network of people, one node in the middle: students and mentoring.
+    graph(k, w, h) {
+      const r = rng(13);
+      const nodes = Array.from({ length: 34 }, () => [w * (0.35 + r() * 0.65), h * r()]);
+      k.strokeStyle = "rgba(90,162,255,.14)";
+      k.lineWidth = 1;
+      nodes.forEach((a, i) => {
+        nodes.slice(i + 1).forEach((b) => {
+          if (Math.hypot(a[0] - b[0], a[1] - b[1]) < 130) line(k, [a, b]);
+        });
       });
-      hero.addEventListener("pointerleave", () => (pointer = null));
+      nodes.forEach(([x, y], i) => {
+        k.fillStyle = i === 0 ? GOLD : "rgba(90,162,255,.5)";
+        k.beginPath();
+        k.arc(x, y, i === 0 ? 4 : 2.5, 0, 7);
+        k.fill();
+      });
+    },
+    // A time axis with ticks and moments on it: news and awards.
+    timeline(k, w, h) {
+      const r = rng(21);
+      const y = h * 0.62;
+      k.strokeStyle = "rgba(90,162,255,.25)";
+      k.lineWidth = 1;
+      line(k, [[w * 0.3, y], [w, y]]);
+      for (let x = w * 0.3; x < w; x += 14) line(k, [[x, y], [x, y + ((x / 14) % 5 < 1 ? 10 : 4)]]);
+      for (let i = 0; i < 9; i++) {
+        const x = w * (0.35 + r() * 0.62);
+        const top = y - 20 - r() * h * 0.45;
+        k.strokeStyle = "rgba(90,162,255,.2)";
+        line(k, [[x, y], [x, top]]);
+        k.fillStyle = i % 4 === 0 ? GOLD : "rgba(90,162,255,.55)";
+        k.beginPath();
+        k.arc(x, top, 3, 0, 7);
+        k.fill();
+      }
+    },
+    // Candidate solutions and their Pareto front: projects and trade-offs.
+    pareto(k, w, h) {
+      const r = rng(17);
+      for (let i = 0; i < 90; i++) {
+        const x = w * (0.4 + r() * 0.58);
+        const y = h * (0.1 + r() * 0.85);
+        k.fillStyle = "rgba(90,162,255,.28)";
+        k.beginPath();
+        k.arc(x, y, 2, 0, 7);
+        k.fill();
+      }
+      k.strokeStyle = "rgba(245,185,74,.55)";
+      k.lineWidth = 1.5;
+      const pts = [];
+      for (let i = 0; i <= 10; i++) {
+        const t = i / 10;
+        pts.push([w * (0.42 + t * 0.56), h * (0.12 + 0.8 * Math.pow(1 - t, 3))]);
+      }
+      line(k, pts);
+      k.fillStyle = GOLD;
+      pts.forEach(([x, y]) => {
+        k.beginPath();
+        k.arc(x, y, 2.5, 0, 7);
+        k.fill();
+      });
+    },
+    dots(k, w, h) {
+      for (let y = 13; y < h; y += 26) {
+        for (let x = w * 0.4; x < w; x += 26) {
+          k.fillStyle = "rgba(90,162,255,.12)";
+          k.beginPath();
+          k.arc(x, y, 1.2, 0, 7);
+          k.fill();
+        }
+      }
+    },
+  };
 
-      // Only animate while the hero is on screen.
-      let visible = true;
-      new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);
-      const loop = (t) => {
-        if (visible && !document.hidden) draw(t);
-        requestAnimationFrame(loop);
-      };
+  const drawPattern = (c, t) => {
+    const fn = patterns[c.dataset.pattern];
+    if (!fn) return;
+    const [k, w, h] = setup(c);
+    fn(k, w, h, t);
+  };
+  const drawPatterns = () => document.querySelectorAll("canvas[data-pattern]").forEach((c) => drawPattern(c, 0));
+  drawPatterns();
+  addEventListener("resize", drawPatterns);
+
+  // The home page contours drift very slowly, so the minimum moves like a search in progress.
+  const live = document.querySelector("canvas[data-animate]");
+  if (live && !reduceMotion) {
+    let visible = true;
+    new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(live);
+    let last = 0;
+    const loop = (t) => {
+      if (visible && !document.hidden && t - last > 80) {
+        drawPattern(live, t);
+        last = t;
+      }
       requestAnimationFrame(loop);
+    };
+    requestAnimationFrame(loop);
 
-      // Gentle tilt on the portrait.
-      const img = hero.querySelector(".portrait img");
-      hero.addEventListener("pointermove", (e) => {
-        const r = hero.getBoundingClientRect();
-        const a = (e.clientX - r.left) / r.width - 0.5;
-        const b = (e.clientY - r.top) / r.height - 0.5;
-        img.style.transform = `perspective(900px) rotateY(${a * 6}deg) rotateX(${-b * 6}deg)`;
-      });
-      hero.addEventListener("pointerleave", () => (img.style.transform = ""));
-    }
+    // Gentle tilt on the portrait.
+    const hero = live.parentElement;
+    const img = hero.querySelector(".portrait img");
+    hero.addEventListener("pointermove", (e) => {
+      const r = hero.getBoundingClientRect();
+      const a = (e.clientX - r.left) / r.width - 0.5;
+      const b = (e.clientY - r.top) / r.height - 0.5;
+      img.style.transform = `perspective(900px) rotateY(${a * 6}deg) rotateX(${-b * 6}deg)`;
+    });
+    hero.addEventListener("pointerleave", () => (img.style.transform = ""));
   }
 
   /* ---------- Spotlight that follows the cursor on tiles ---------- */
@@ -139,6 +281,33 @@
         }
         k.stroke();
       });
+    },
+    scatter(k, w, h) {
+      seed = 5;
+      for (let i = 0; i < 60; i++) {
+        const x = 10 + rand() * (w - 20);
+        const spread = rand();
+        const y = h / 2 + (spread - 0.5) * h * 0.8 * (1 - x / w);
+        k.fillStyle = spread > 0.45 && spread < 0.55 ? GOLD : "rgba(90,162,255,.6)";
+        k.beginPath();
+        k.arc(x, y, 2.5, 0, 7);
+        k.fill();
+      }
+    },
+    health(k, w, h) {
+      const s = 14;
+      for (let x = 18; x < w - 14; x += s) {
+        for (let y = 18; y < h - 14; y += s) {
+          k.fillStyle = (x * 11 + y * 7) % 6 < 2 ? "rgba(90,162,255,.6)" : "rgba(90,162,255,.1)";
+          k.fillRect(x, y, s - 3, s - 3);
+        }
+      }
+      const cx = w / 2, cy = h / 2;
+      k.fillStyle = "#0b1422";
+      k.fillRect(cx - 26, cy - 26, 52, 52);
+      k.fillStyle = GOLD;
+      k.fillRect(cx - 6, cy - 20, 12, 40);
+      k.fillRect(cx - 20, cy - 6, 40, 12);
     },
     orbit(k, w, h) {
       for (let i = 1; i <= 4; i++) {

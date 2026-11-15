@@ -1,0 +1,12 @@
+{%- comment -%} Round profile icons, from _data/socials.yml. {%- endcomment -%}
+{%- assign s = site.data.socials -%}
+<div class="social-row">
+  <a href="mailto:{{ s.email }}" title="Email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+  <a href="https://www.linkedin.com/in/{{ s.linkedin_username }}" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+  <a href="https://github.com/{{ s.github_username }}" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+  <a href="https://scholar.google.com/citations?user={{ s.scholar_userid }}" title="Google Scholar" aria-label="Google Scholar"><i class="ai ai-google-scholar"></i></a>
+  <a href="https://www.researchgate.net/profile/{{ s.research_gate_profile }}" title="ResearchGate" aria-label="ResearchGate"><i class="ai ai-researchgate"></i></a>
+  <a href="https://orcid.org/{{ s.orcid_id }}" title="ORCID" aria-label="ORCID"><i class="ai ai-orcid"></i></a>
+  <a href="https://www.scopus.com/authid/detail.uri?authorId={{ s.scopus_id }}" title="Scopus" aria-label="Scopus"><i class="ai ai-scopus"></i></a>
+  <a href="{{ s.work_url }}" title="Sunway University profile" aria-label="Sunway University profile"><i class="fa-solid fa-building-columns"></i></a>
+</div>

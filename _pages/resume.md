@@ -3,7 +3,7 @@ layout: page
 permalink: /resume/
 title: Resume
 nav: true
-nav_order: 5
+nav_order: 6
 description: My two-page resume. My full CV is available on request.
 ---
 

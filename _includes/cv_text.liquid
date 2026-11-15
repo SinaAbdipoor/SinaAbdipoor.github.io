@@ -1,0 +1,2 @@
+{%- comment -%} Renders a CV string (which may hold Markdown links) as inline HTML. {%- endcomment -%}
+{{- include.text | markdownify | remove: '<p>' | remove: '</p>' | strip -}}

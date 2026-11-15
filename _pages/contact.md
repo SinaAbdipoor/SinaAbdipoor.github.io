@@ -1,10 +1,12 @@
 ---
 layout: page
 permalink: /contact/
-title: Contact
+title: Contact & Appointments
+nav_title: Contact
 description: How to reach me, where to find me, and how to book a meeting.
+pattern: week
 nav: true
-nav_order: 6
+nav_order: 7
 ---
 
 ## Email
@@ -22,7 +24,7 @@ The best way to reach me is by [email](mailto:sinaa@sunway.edu.my). If you're a 
     Selangor Darul Ehsan, Malaysia
   </div>
   <div style="flex: 2 1 320px;">
-    <iframe src="https://maps.google.com/maps?q=Sunway%20University&z=16&output=embed" width="100%" height="260" style="border: 0;" class="rounded z-depth-1" loading="lazy" title="Map of Sunway University"></iframe>
+    <iframe src="https://maps.google.com/maps?q=Sunway%20University%2C%20Bandar%20Sunway%2C%20Selangor&z=16&output=embed" width="100%" height="260" style="border: 0;" class="rounded z-depth-1" loading="lazy" title="Map of Sunway University"></iframe>
   </div>
 </div>
 
@@ -44,4 +46,6 @@ A few things to keep in mind:
 
 ## Calendar
 
-<iframe src="https://outlook.office365.com/owa/calendar/776cdb1789e842c8aa4e6009fdf1fe90@sunway.edu.my/3f44b93d7a3d4b1284a81476cff3fc817879251089709436817/calendar.html" width="100%" height="600" style="border: 0;" class="rounded z-depth-1" loading="lazy" title="My work calendar"></iframe>
+The calendar opens in month view. Switch to **Week** at the top to see my free times.
+
+<div class="calendar-frame"><iframe src="https://outlook.office365.com/owa/calendar/776cdb1789e842c8aa4e6009fdf1fe90@sunway.edu.my/3f44b93d7a3d4b1284a81476cff3fc817879251089709436817/calendar.html" height="720" loading="lazy" title="My work calendar"></iframe></div>
