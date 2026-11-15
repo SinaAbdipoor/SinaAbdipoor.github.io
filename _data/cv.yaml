@@ -25,8 +25,8 @@ cv:
   sections:
     Summary:
       - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I lead ScholORs, an optimization research group. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
-      - I believe time is our most valuable resource, and optimization is how we save it. This is both my research principle and my personal belief. I design metaheuristics and hybrid algorithms for hard scheduling problems such as university timetabling, and I care most about generality, meaning methods that work well across many problems, not just on one benchmark. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and I regularly present at GECCO and PATAT.
-      - I have taught since 2016, and I now help shape the Master in Artificial Intelligence at Sunway. From 2020 to 2025, I also worked as an independent Operations Research consultant, building models that saved organizations time and money.
+      - I believe time is our most valuable resource, and optimization is how we save it. This is both my research principle and my personal belief. I design metaheuristics and hybrid algorithms for hard scheduling problems such as university timetabling, and I care most about generality, meaning methods that work well across many problems, not just on one benchmark. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and I have presented at GECCO and PATAT.
+      - I have taught since 2014, and I now help shape the Master in Artificial Intelligence at Sunway. From 2020 to 2025, I also worked as an independent Operations Research consultant, building models that saved organizations time and money.
 
     Research Interests:
       - label: Research
@@ -81,12 +81,12 @@ cv:
         end_date: present
         tags: resume
         resume_highlights:
-          - Lead ScholORs, an optimization research group working on real-world scheduling and timetabling, with 9 papers in 2026.
+          - Lead ScholORs, an optimization research group working on real-world scheduling and timetabling, and published 9 papers in 2026 with ScholORs, students, and colleagues.
           - Teach optimization, applied machine learning, and software engineering, and help design the Master in Artificial Intelligence curriculum.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
         highlights:
           - Lead ScholORs, an optimization research group that sometimes works with other experts in the field, such as the optimization research group at Lancaster University.
-          - Research metaheuristics and hybrid optimization for real-world timetabling, with 9 papers in 2026.
+          - Research metaheuristics and hybrid optimization for real-world timetabling, and published 9 papers in 2026 with ScholORs, students, and colleagues.
           - Collaborate regularly with experts from all over the world, such as researchers at Hefei University, China, with joint papers at GECCO 2026 and PATAT 2026.
           - Serve as Subject Lead for Algorithms for Optimization, and teach postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
           - Apply AI governance in teaching by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
@@ -142,8 +142,6 @@ cv:
         position: Android Developer (Internship)
         start_date: 2016-06
         end_date: 2016-09
-        tags: resume
-        resume_summary: Built an Android app that lets assembly line workers check parts stock and order parts from their station.
         highlights:
           - Built an Android app with SQLite that lets assembly line workers check parts stock in real time and order parts without leaving their station.
       - company: ParsOnline
@@ -153,8 +151,10 @@ cv:
         highlights:
           - Installed and configured network equipment.
 
-    Publications:
-      - See the [full list of publications](https://sinaabdipoor.github.io/publications/).
+    Research Impact:
+      - 151 citations and an h-index of 5 on Google Scholar (Nov 2026).
+
+    Publications: []
 
     Awards:
       - name: Best Paper Award
@@ -512,7 +512,7 @@ resume:
   summary: Operations Research and AI engineer with a Ph.D. in Computer Science and more than 5 years of experience building optimization and machine learning models for scheduling, timetabling, and resource management. I believe time is the most valuable resource, and I build models that save it and turn complex operations into clear, data-driven decisions.
   networks: [LinkedIn, GitHub, Google Scholar]
   templates:
-    footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
+    footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV and references available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
     publication_entry:
       main_column: "**TITLE**\n*JOURNAL*\nSUMMARY"
 

@@ -26,9 +26,9 @@ ROOT = Path(__file__).resolve().parent.parent
 ME = "Sina Abdipoor"
 RESUME_SECTIONS = [
     "Experience",
+    "Education",
     "Skills",
     "Projects",
-    "Education",
     "Publications",
     "Awards",
     "Talks",
