@@ -1,10 +1,11 @@
 """Render the full CV and the resume PDFs from _data/cv.yaml and _bibliography/papers.bib.
 
 The resume is industry focused: it uses the headline, summary, social networks,
-and templates from the top-level `resume` block, then shows RESUME_SECTIONS in
-that order, keeping only entries tagged `resume`. In those, any `resume_` field
-replaces the field of the same name, and highlights are dropped unless the entry
-has `resume_highlights`.
+design overrides, and resume-only sections from the top-level `resume` block, then shows
+RESUME_SECTIONS in that order, keeping only entries tagged `resume`. In those, any
+`resume_` field replaces the field of the same name, and highlights are dropped
+unless the entry has `resume_highlights`. Papers go in the order of their
+`resume = {N}` field in papers.bib.
 
 Usage: python scripts/render_cv.py OUTPUT_DIR [extra rendercv args]
 """
@@ -25,6 +26,7 @@ from ruamel.yaml import YAML
 ROOT = Path(__file__).resolve().parent.parent
 ME = "Sina Abdipoor"
 RESUME_SECTIONS = [
+    "Highlights",
     "Experience",
     "Education",
     "Skills",
@@ -52,8 +54,9 @@ def publication(entry):
         item["url"] = fields["url"]
     if "note" in fields:
         item["summary"] = fields["note"]
-    if fields.get("resume") == "true":
+    if "resume" in fields:
         item["tags"] = "resume"
+        item["resume_rank"] = int(fields["resume"])
     return item
 
 
@@ -78,13 +81,13 @@ def cv_entry(entry):
 
 
 def resume_entry(entry):
-    entry = {key: value for key, value in entry.items() if key != "highlights"}
+    entry = {key: value for key, value in entry.items() if key not in ("highlights", "resume_rank")}
     for key in [k for k in entry if k.startswith("resume_")]:
         entry[key.removeprefix("resume_")] = entry.pop(key)
     return entry
 
 
-def resume_sections(sections, summary):
+def resume_sections(sections, resume):
     # The CV splits work into academic and professional sections. The resume merges them.
     sections = dict(sections)
     sections["Experience"] = sorted(
@@ -92,8 +95,12 @@ def resume_sections(sections, summary):
         key=lambda e: str(e["start_date"]),
         reverse=True,
     )
-    kept = {"Summary": [summary]}
+    sections["Publications"] = sorted(sections["Publications"], key=lambda e: e.get("resume_rank", 0))
+    kept = {"Summary": [resume["summary"]]}
     for name in RESUME_SECTIONS:
+        if name in resume["sections"]:
+            kept[name] = resume["sections"][name]
+            continue
         kept["Selected Publications" if name == "Publications" else name] = [
             resume_entry(e)
             for e in sections[name]
@@ -126,8 +133,9 @@ def main():
 
     cv["cv"]["headline"] = resume["headline"]
     cv["cv"]["social_networks"] = [s for s in cv["cv"]["social_networks"] if s["network"] in resume["networks"]]
-    cv["cv"]["sections"] = resume_sections(sections, resume["summary"])
-    cv["design"]["templates"].update(resume["templates"])
+    cv["cv"]["sections"] = resume_sections(sections, resume)
+    for key, overrides in resume["design"].items():
+        cv["design"][key].update(overrides)
     cv["settings"] = {"pdf_title": "NAME - Resume"}
     render(cv, out / "resume.yaml", extra_args)
 

@@ -211,7 +211,6 @@ cv:
         summary: Organizer and speaker, Sunway Tech Club, Sunway University
         location: Malaysia
         date: 2026-08
-        tags: resume
       - name: AI in Higher Education and AI Governance
         summary: Invited interview, University of Lincoln
         location: Online
@@ -349,10 +348,12 @@ cv:
       - name: Integrated Healthcare Timetabling Competition 2024 (IHTC 2024)
         date: 2026
         tags: resume
+        resume_summary: An ongoing ScholORs project on hospital scheduling, combining surgeries, admissions, and nurse assignment.
         summary: An ongoing ScholORs project on the Integrated Healthcare Timetabling Problem from IHTC 2024, which combines surgical case planning, patient admission scheduling, and nurse-to-room assignment in one problem.
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
+        resume_summary: Ranked 3rd globally in the Luna Tomato challenge with simulated annealing, published at GECCO 2026.
         summary: Ranked 3rd globally in the Luna Tomato Advertising challenge of the European Space Agency's space logistics optimization competition at GECCO 2026, using permutation encodings and simulated annealing. The approaches were published in two GECCO 2026 papers.
       - name: "[UPM Thesis LaTeX Template](https://sinaabdipoor.github.io/projects/3_upm_latex/)"
         date: 2024
@@ -368,6 +369,7 @@ cv:
       - name: "[Java Framework for Genetic Algorithms](https://sinaabdipoor.github.io/projects/4_ga_framework/)"
         date: 2019
         tags: resume
+        resume_summary: A Java framework to build, apply, and compare evolutionary algorithms on different problems.
         summary: A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my Master's research.
       - name: "[Tic-Tac-Toe Game](https://sinaabdipoor.github.io/projects/6_tictactoe/)"
         date: 2018
@@ -401,6 +403,7 @@ cv:
         details: Scientific Writing, LaTeX, Public Speaking, Curriculum Design
       - label: Languages
         details: English (Bilingual, IELTS 8), Mandarin (Intermediate), Malay (Basic)
+        resume_details: English (Bilingual, IELTS 8), Mandarin (Intermediate, Peking University certificate), Malay (Basic)
         tags: resume
 
     Certificates:
@@ -415,7 +418,6 @@ cv:
       - name: Chinese (Mandarin) Certificate
         summary: Peking University
         date: 2021-05
-        tags: resume
       - name: Google Data Analytics Certificate
         summary: Google
         date: 2021-04
@@ -514,12 +516,24 @@ cv:
 
 resume:
   headline: Operations Research and AI Engineer specializing in Optimization and Machine Learning
-  summary: Operations Research and AI engineer with a Ph.D. in Computer Science and more than 5 years of experience building optimization and machine learning models for scheduling, timetabling, and resource management. I believe time is the most valuable resource, and I build models that save it and turn complex operations into clear, data-driven decisions.
+  summary: I believe time is the most valuable resource. I build optimization and machine learning models that save it, turning complex scheduling and resource problems into fast, clear, data-driven decisions.
   networks: [LinkedIn, GitHub, Google Scholar]
-  templates:
-    footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV and references available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
-    publication_entry:
-      main_column: "**TITLE**\n*JOURNAL*\nSUMMARY"
+  # Resume-only sections. Update the numbers when the CV changes.
+  sections:
+    Highlights:
+      - bullet: "**5 years of Operations Research consulting**, building scheduling, timetabling, and resource management models for organizations"
+      - bullet: "**3rd globally** in the European Space Agency's Space Optimisation Competition (SpOC 4, Luna Tomato challenge, GECCO 2026)"
+      - bullet: "**16 publications and 151 citations**, with 2 Best Paper Awards (CSPA 2024, ICACTE 2026)"
+      - bullet: "**Ph.D. in Computer Science with a 4.0/4.0 CGPA**, on optimization for real-world university timetabling"
+      - bullet: "**12 years of teaching and mentoring**, now leading ScholORs, an optimization research group"
+  # Overrides for the design below.
+  design:
+    sections:
+      space_between_regular_entries: 0.6em
+    templates:
+      footer: "*NAME, page PAGE_NUMBER of TOTAL_PAGES. Full CV and references available on request. More at [sinaabdipoor.github.io](https://sinaabdipoor.github.io).*"
+      publication_entry:
+        main_column: "**TITLE**\n*JOURNAL*\nSUMMARY"
 
 design:
   theme: classic
