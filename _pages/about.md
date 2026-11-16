@@ -14,14 +14,12 @@ hero:
 
 <!-- Autobiography: informal, in my own words. The biography is in _layouts/about.liquid, built from the CV. -->
 
-Hi, I'm Sina! I'm an AI engineer, a researcher, and a teacher, and I work as a Lecturer at Sunway University.
+Welcome, I'm Sina!
 
-As an AI engineer, I specialize in Operations Research. I research, build, and apply optimization and machine learning methods to solve real-world problems.
+Everything I do starts with one simple idea. Time is the one thing we can never get back, so it's worth using well. That's what optimization is about, and it's what I've built my work around. I design algorithms that help people make better decisions, from building university timetables and planning hospital schedules to finding routes through space.
 
-My research is about metaheuristics and hybrid algorithms for hard scheduling and timetabling problems. I'm most curious about methods that work well across many problems, not just one benchmark. I'm always open to new ideas and collaborations, so feel free to reach out if you want to chat.
+I'm a Lecturer at Sunway University, where I teach optimization and machine learning and do research with students and colleagues from around the world. What I love most about teaching is the moment a hard problem finally clicks for a student.
 
-I've been teaching since {% include teaching_since.liquid %}, with students from all over the world. I love sharing what I know, learning what I don't, and helping students build a brighter future for themselves.
+Not sure where to start? If you're a student, the [Students](/students/) page explains how we can work together. If you'd like to chat, you can [book a time](/contact/#book) with me. Or just look around and explore my [research](/research/), [projects](/projects/), [teaching](/teaching/), and [news](/news/).
 
-If you're a student looking for a supervisor, start with the [Students](/students/) page. If you'd like to meet, you can [book a time](/contact/#book) with me. Everyone else, feel free to look around. My [research](/research/), [projects](/projects/), [teaching](/teaching/), and [news and awards](/news/) are all one click away.
-
-Thanks for stopping by, and have a great day!
+Thanks for visiting, and have a great day!
