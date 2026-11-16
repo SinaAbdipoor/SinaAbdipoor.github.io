@@ -42,7 +42,7 @@ code_links:
 <section class="section">
   <div class="section-head">
     <h2>Supervision</h2>
-    <a class="more" href="{{ '/students/hall-of-fame/' | relative_url }}">Hall of Fame <span aria-hidden="true">→</span></a>
+    <a class="more" href="{{ '/students/' | relative_url }}#hall-of-fame">Hall of Fame <span aria-hidden="true">→</span></a>
   </div>
   <div class="course-grid">
     {% for s in cv.Supervision %}
@@ -57,5 +57,5 @@ code_links:
       </article>
     {% endfor %}
   </div>
-  <p class="muted">Want to work with me? See <a href="{{ '/students/' | relative_url }}">prospective students</a> or, for Sunway undergraduates, <a href="{{ '/students/fyp/' | relative_url }}">final year projects</a>.</p>
+  <p class="muted">Want to work with me? See <a href="{{ '/students/' | relative_url }}#postgraduate">Ph.D. and M.Sc. positions</a> or, for Sunway undergraduates, <a href="{{ '/students/' | relative_url }}#fyp">final year projects</a>.</p>
 </section>

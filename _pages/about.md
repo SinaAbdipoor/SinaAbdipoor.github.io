@@ -10,40 +10,18 @@ hero:
   lede: I believe time is our most valuable resource, and optimization is how we save it. I use Operations Research, optimization, and machine learning to solve real-world problems.
   image: illustration.jpg
 
-# Cards that link to the rest of the site.
-explore:
-  - title: Research
-    text: What I work on, my best papers, and where to find the rest.
-    url: /research/
-    pattern: contours
-  - title: Projects
-    text: Competitions, open source tools, and things I've built.
-    url: /projects/
-    pattern: pareto
-  - title: Teaching
-    text: Courses I teach and the students I supervise.
-    url: /teaching/
-    pattern: timetable
-  - title: Students
-    text: Ph.D., M.Sc., and Sunway final year projects with me.
-    url: /students/
-    pattern: graph
-  - title: News & Awards
-    text: Talks, awards, and moments worth sharing.
-    url: /news/
-    pattern: timeline
-  - title: Contact
-    text: Email me or book a time to meet.
-    url: /contact/
-    pattern: week
 ---
 
 <!-- Autobiography: informal, in my own words. The biography is in _layouts/about.liquid, built from the CV. -->
 
-Hi, I'm Sina! I'm an AI engineer, researcher, and teacher, and I work as a Lecturer at Sunway University.
+Hi, I'm Sina! I'm an AI engineer, a researcher, and a teacher, and I work as a Lecturer at Sunway University.
 
-I believe time is our most valuable resource, and optimization is how we save it. That's why I work in Operations Research. Most of my days go into scheduling and timetabling problems, where I design metaheuristics and hybrid algorithms. I care less about squeezing the last bit out of one benchmark and more about methods that work well across many real problems.
+As an AI engineer, I specialize in Operations Research. I research, build, and apply optimization and machine learning methods to solve real-world problems.
 
-I have taught since {% include teaching_since.liquid %}, from algorithm design and English to optimization and machine learning, and I love helping students build a brighter future. I'm always open to new ideas and collaborations, so feel free to [reach out](/contact/).
+My research is about metaheuristics and hybrid algorithms for hard scheduling and timetabling problems. I'm most curious about methods that work well across many problems, not just one benchmark. I'm always open to new ideas and collaborations, so feel free to reach out if you want to chat.
+
+I've been teaching since {% include teaching_since.liquid %}, with students from all over the world. I love sharing what I know, learning what I don't, and helping students build a brighter future for themselves.
+
+If you're a student looking for a supervisor, start with the [Students](/students/) page. If you'd like to meet, you can [book a time](/contact/#book) with me. Everyone else, feel free to look around. My [research](/research/), [projects](/projects/), [teaching](/teaching/), and [news and awards](/news/) are all one click away.
 
 Thanks for stopping by, and have a great day!

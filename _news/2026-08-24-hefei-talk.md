@@ -6,7 +6,7 @@ date: 2026-08-24
 image: /assets/img/news/hefei-talk.jpg
 ---
 
-Prof. Thomas Weise invited me to Hefei University to give a talk, Applied Operations Research in Driving Sustainability. I talked about real-world optimization and sustainability, and how we put both into practice at Sunway University. My student Mingxuan Li joined us too. Read more on [Prof. Weise's blog](https://thomasweise.github.io/posts/2026-08-24-abdipoor/).
+Professor Thomas Weise invited me to Hefei University to give a guest talk, Applied Operations Research in Driving Sustainability. I showed how optimization can solve real-world sustainability problems and how we put this into practice at Sunway University. My student Mingxuan Li joined the visit too. You can read more on [Professor Weise's blog](https://thomasweise.github.io/posts/2026-08-24-abdipoor/).
 
 <div class="gallery">
   {% include figure.liquid path="assets/img/news/hefei-talk.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}

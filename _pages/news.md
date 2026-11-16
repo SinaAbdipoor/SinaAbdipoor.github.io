@@ -2,7 +2,7 @@
 layout: page
 permalink: /news/
 title: News & Awards
-nav_title: News
+nav_title: News & Awards
 description: Talks, awards, and moments worth sharing.
 nav: true
 nav_order: 5

@@ -6,18 +6,31 @@ description: Optimization for real-world problems, with methods that work well b
 nav: true
 nav_order: 1
 
+# The research map: real problems, the methods I use on them, and the goals they serve.
+problems:
+  - { icon: fa-solid fa-calendar-week, name: University timetabling }
+  - { icon: fa-solid fa-hospital, name: Healthcare scheduling }
+  - { icon: fa-solid fa-satellite, name: Space mission planning }
+  - { icon: fa-solid fa-server, name: Cloud job scheduling }
+  - { icon: fa-solid fa-chart-line, name: Forecasting }
+methods:
+  - { icon: fa-solid fa-route, name: Metaheuristics and local search }
+  - { icon: fa-solid fa-code-merge, name: Hybrid algorithms }
+  - { icon: fa-solid fa-dove, name: Evolutionary and swarm methods }
+  - { icon: fa-solid fa-brain, name: Machine learning }
+
 areas:
   - title: Scheduling and timetabling
-    text: University course timetabling with student sectioning, built on real competition instances like ITC 2019, and now healthcare timetabling from IHTC 2024.
+    text: Real competition problems, from university timetables (ITC 2019) to hospitals (IHTC 2024).
     viz: gantt
-  - title: Metaheuristics and hybrid algorithms
-    text: Search methods such as simulated annealing, local search, and genetic algorithms, combined so each covers the others' weak spots.
+  - title: Metaheuristics and hybrids
+    text: Search methods combined so each one covers the others' weak spots.
     viz: convergence
   - title: Optimality versus generality
-    text: Most methods are tuned to win on one benchmark. I study how well they hold up across many problems, and how to measure that fairly.
+    text: Methods that hold up across many problems, not just one benchmark.
     viz: scatter
   - title: Machine learning
-    text: Forecasting, recommendation, and learning that helps optimization, usually with students and colleagues.
+    text: Forecasting, recommendation, and learning that makes optimization smarter.
     viz: wave
 ---
 
@@ -26,19 +39,56 @@ areas:
 
 <section class="section">
   <h2>What I work on</h2>
+  <p class="lead-text">I take hard, real-world problems, design search methods to solve them, and ask one question throughout: does the method still work well on the next problem?</p>
+  <div class="rmap">
+    <div class="rmap-col">
+      <span class="lbl">Problems</span>
+      {% for n in page.problems %}<div class="rmap-node"><i class="{{ n.icon }}"></i>{{ n.name }}</div>{% endfor %}
+    </div>
+    <div class="rmap-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="rmap-col">
+      <span class="lbl">Methods</span>
+      {% for n in page.methods %}<div class="rmap-node"><i class="{{ n.icon }}"></i>{{ n.name }}</div>{% endfor %}
+      <div class="rmap-core"><i class="fa-solid fa-scale-balanced"></i>Optimality versus generality</div>
+    </div>
+    <div class="rmap-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+    <div class="rmap-col">
+      <span class="lbl">Impact</span>
+      {% assign sdgs = cv['Research Profile'] | where: 'label', 'SDGs' | first %}
+      {% assign sdg_list = sdgs.details | split: '), ' %}
+      {% for g in sdg_list %}
+        {% assign num = g | split: ' (' | first | remove: 'SDG ' %}
+        <div class="rmap-node sdg sdg-{{ num }}"><b>{{ num }}</b>{{ g | split: ' (' | last | remove: ')' }}</div>
+      {% endfor %}
+    </div>
+  </div>
   <div class="area-grid">
     {% for a in page.areas %}
       <article class="tile">
+        <canvas data-viz="{{ a.viz }}" aria-hidden="true"></canvas>
         <h3>{{ a.title }}</h3>
         <p>{{ a.text }}</p>
-        <canvas data-viz="{{ a.viz }}" aria-hidden="true"></canvas>
       </article>
     {% endfor %}
   </div>
-  <div class="chips">
-    {% assign interests = cv['Research Profile'][0].details | split: ', ' %}
-    {% for i in interests %}<span class="chip">{{ i }}</span>{% endfor %}
-  </div>
+</section>
+
+{% assign cors = cv['Professional Memberships'] | where_exp: 'm', "m.name contains 'Canadian Operational Research'" | first %}
+{% assign cors_talks = cv['Conference Presentations'] | where_exp: 'c', "c.name contains 'Canadian Operational Research'" %}
+{% assign cors_events = cv['Workshops and Seminars'] | where_exp: 'w', "w.name contains 'CORS'" %}
+<section class="section">
+  <a class="feature" href="https://www.cors.ca/">
+    <div class="feature-badge" aria-hidden="true"><i class="fa-solid fa-earth-americas"></i></div>
+    <div class="feature-body">
+      <span class="lbl">Proud member since {% include cv_date.liquid date=cors.start_date %}</span>
+      <h2>Canadian Operational Research Society</h2>
+      <p>Canada's national society for Operations Research. I have presented my work at its annual conference every year since {{ cors_talks | map: 'date' | sort | first }}, and I take part in its seminars and special interest groups.</p>
+      <div class="feature-stats">
+        <div><b>{{ cors_talks.size }}</b><span>CORS annual conference talks</span></div>
+        <div><b>{{ cors_events.size }}</b><span>CORS seminars and events</span></div>
+      </div>
+    </div>
+  </a>
 </section>
 
 <section class="section">
@@ -68,10 +118,6 @@ areas:
       </ul>
     </div>
     <div class="tile">
-      <span class="lbl">Member of</span>
-      <ul class="plain">
-        {% for m in cv['Professional Memberships'] %}<li><a href="https://www.cors.ca/">{{ m.name }}</a></li>{% endfor %}
-      </ul>
       <span class="lbl">Conferences</span>
       <p class="muted">{{ cv['Conference Presentations'].size }} presentations, at venues such as GECCO, PATAT, and CORS.</p>
     </div>

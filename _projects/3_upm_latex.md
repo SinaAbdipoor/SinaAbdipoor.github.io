@@ -8,6 +8,6 @@ label: Open source
 cover: doc
 ---
 
-A LaTeX thesis template for Universiti Putra Malaysia, built from the official Microsoft Word template.
+A LaTeX thesis template for Universiti Putra Malaysia, based on the official Microsoft Word template.
 
 [Visit the project](https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template)

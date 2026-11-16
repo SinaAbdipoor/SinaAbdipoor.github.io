@@ -8,4 +8,4 @@ label: Probabilistic models
 cover: noise
 ---
 
-Reduces image noise with a message passing technique. Final project for a Probabilistic Graphical Models course.
+Removes noise from photos using message passing on a probabilistic graphical model. This was my final project for a Probabilistic Graphical Models course.

@@ -6,7 +6,7 @@ date: 2026-08-23
 image: /assets/img/news/icacte-talk.jpg
 ---
 
-Our paper won the Best Paper Award at the 19th International Conference on Advanced Computer Theory and Engineering (ICACTE). Thanks to my coauthors, Loke Zi Xuan, Dr. Say Leng Goh, Dr. Jourdan D'orville, Dr. Christian Chan, and Dr. Luo Hao.
+I presented our work at the 19th International Conference on Advanced Computer Theory and Engineering (ICACTE) in Hangzhou, and our paper received the Best Paper Award. It was a real team effort, and I'm grateful to my coauthors, Loke Zi Xuan, Assoc. Prof. Dr. Say Leng Goh, Dr. Jourdan D'orville, Dr. Christian Chan, and Dr. Luo Hao.
 
 <div class="gallery">
   {% include figure.liquid path="assets/img/news/icacte-talk.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}

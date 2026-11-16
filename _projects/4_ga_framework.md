@@ -8,4 +8,4 @@ label: Master's research
 cover: dna
 ---
 
-A Java framework to implement evolutionary algorithms, apply them to different problems, and compare their performance. Built during my master's research.
+A Java framework for building evolutionary algorithms, applying them to different problems, and comparing their performance. I built it during my master's research.

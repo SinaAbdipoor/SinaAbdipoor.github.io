@@ -8,4 +8,4 @@ label: Machine learning
 cover: bars
 ---
 
-A study of feature engineering and of how different classification methods perform on the Car Evaluation dataset.
+A study of feature engineering and how different classification methods perform on the Car Evaluation dataset.

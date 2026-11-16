@@ -8,4 +8,4 @@ label: Neural networks
 cover: wave
 ---
 
-Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
+Forecasts weather and traffic density with a neural network trained on historical data. I built it for an Artificial Neural Networks course.

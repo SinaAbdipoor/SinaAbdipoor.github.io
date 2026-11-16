@@ -8,6 +8,6 @@ label: Reinforcement learning
 cover: xo
 ---
 
-A game with an AI opponent that uses Q-Learning and has several difficulty levels. Built for a Reinforcement Learning course.
+A tic-tac-toe game with an AI opponent that learns with Q-Learning and offers several difficulty levels. I built it for a Reinforcement Learning course.
 
 [Visit the project](https://github.com/SinaAbdipoor/TicTacToe)

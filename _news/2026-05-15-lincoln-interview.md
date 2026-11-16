@@ -5,4 +5,4 @@ description: University of Lincoln, May 2026
 date: 2026-05-15
 ---
 
-Dr. Afsaneh Bagheri from the University of Lincoln invited me to an interview on AI in higher education and AI governance. The questions weren't shared in advance, so the answers were honest and unprepared. We talked about how AI is used and misused in teaching, and how I keep students' critical thinking active, for example with an exercise where students try to find mistakes in AI answers.
+Dr. Afsaneh Bagheri from the University of Lincoln invited me to an interview about AI in higher education and AI governance. We talked about how AI is used, and sometimes misused, in teaching, and how I keep my students thinking critically. One example I shared is an exercise where students hunt for mistakes in answers written by AI. The questions weren't shared beforehand, so it was an open and unscripted conversation.
