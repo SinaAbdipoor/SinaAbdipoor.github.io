@@ -7,7 +7,7 @@ first_name: Sina
 middle_name:
 last_name: Abdipoor
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  AI Engineer, Researcher, and Teacher specializing in Operations Research, Optimization, and Machine Learning.
+  AI Engineer, Researcher, and Educator specializing in Operations Research, Optimization, and Machine Learning.
 footer_text:
 keywords: operations research, optimization, metaheuristics, timetabling, machine learning # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)

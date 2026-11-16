@@ -4,10 +4,10 @@
 # Highlights are left out unless the entry has `resume_highlights`.
 # The `resume` block at the end gives the resume its own headline, summary, social networks, and templates.
 # The Publications section is filled from papers.bib when the PDFs are built.
-# Section names are in Title Case so the website's CV page recognizes them.
+# Section names are in Title Case. The website reads some of them by name.
 cv:
   name: Sina Abdipoor (思纳), Ph.D.
-  headline: AI Engineer, Researcher, and Teacher specializing in Operations Research, Optimization, and Machine Learning
+  headline: AI Engineer, Researcher, and Educator specializing in Operations Research, Optimization, and Machine Learning
   location: Kuala Lumpur, Malaysia
   email: sinaa@sunway.edu.my
   website: https://sinaabdipoor.github.io
