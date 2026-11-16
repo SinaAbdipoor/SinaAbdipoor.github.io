@@ -36,7 +36,7 @@ areas:
     {% endfor %}
   </div>
   <div class="chips">
-    {% assign interests = cv['Research Interests'][0].details | split: ', ' %}
+    {% assign interests = cv['Research Profile'][0].details | split: ', ' %}
     {% for i in interests %}<span class="chip">{{ i }}</span>{% endfor %}
   </div>
 </section>
@@ -47,8 +47,9 @@ areas:
     <a class="more" href="https://scholar.google.com/citations?user={{ s.scholar_userid }}">All papers on Google Scholar <span aria-hidden="true">→</span></a>
   </div>
   {% include selected_papers.liquid %}
+  {% assign impact = cv['Research Profile'] | where: 'label', 'Impact' | first %}
   <div class="link-cards">
-    <a class="link-card" href="https://scholar.google.com/citations?user={{ s.scholar_userid }}"><i class="ai ai-google-scholar"></i><span><b>Google Scholar</b>{{ cv['Research Impact'][0] | split: ' (' | first }}</span></a>
+    <a class="link-card" href="https://scholar.google.com/citations?user={{ s.scholar_userid }}"><i class="ai ai-google-scholar"></i><span><b>Google Scholar</b>{{ impact.details | split: ' (' | first }}</span></a>
     <a class="link-card" href="https://www.researchgate.net/profile/{{ s.research_gate_profile }}"><i class="ai ai-researchgate"></i><span><b>ResearchGate</b>Full texts and projects</span></a>
     <a class="link-card" href="https://orcid.org/{{ s.orcid_id }}"><i class="ai ai-orcid"></i><span><b>ORCID</b>Verified works and reviews</span></a>
   </div>

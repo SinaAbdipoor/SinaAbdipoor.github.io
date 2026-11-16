@@ -25,7 +25,8 @@ layout: default
 </section>
 
 {%- comment -%} Numbers, all from the CV and papers.bib {%- endcomment -%}
-{% assign citations = cv['Research Impact'][0] | split: ' citations' | first %}
+{% assign impact = cv['Research Profile'] | where: 'label', 'Impact' | first %}
+{% assign citations = impact.details | split: ' citations' | first %}
 <div class="stats">
   <div class="stat"><div class="n">{% bibliography_count %}</div><div class="l">Publications</div></div>
   <div class="stat"><div class="n">{{ citations }}</div><div class="l">Citations</div></div>

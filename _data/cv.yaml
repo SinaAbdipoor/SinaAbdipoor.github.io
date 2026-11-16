@@ -24,17 +24,19 @@ cv:
       username: 0000-0001-8411-5451
   sections:
     Summary:
-      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I lead ScholORs, an optimization research group. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia.
-      - I believe time is our most valuable resource, and optimization is how we save it. This is both my research principle and my personal belief. I design metaheuristics and hybrid algorithms for hard scheduling problems such as university timetabling, and I care most about generality, meaning methods that work well across many problems, not just on one benchmark. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and I have presented at GECCO and PATAT.
-      - I have taught since 2014, and I now help shape the Master in Artificial Intelligence at Sunway. From 2020 to 2025, I also worked as an independent Operations Research consultant, building models that saved organizations time and money.
+      - Time is our most valuable resource, and optimization is how we save it. This principle guides my research on metaheuristics and hybrid algorithms for computationally hard scheduling problems, with a focus on university course timetabling. At its core is the balance between optimality and generality, that is, designing methods that perform robustly across diverse problem instances rather than excelling on a single benchmark.
+      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I lead ScholORs, an optimization research group, and contribute to the Master in Artificial Intelligence curriculum. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and has been presented at GECCO and PATAT.
+      - I have taught since 2014, and from 2020 to 2025 I worked as an independent Operations Research consultant, applying optimization to real-world scheduling and resource allocation problems.
 
-    Research Interests:
+    Research Profile:
       - label: Research
         details: Optimization, Operations Research, Artificial Intelligence, Game Theory, Multi-Agent Systems
       - label: Teaching
         details: Optimization, Search Algorithms, Evolutionary Computing, Applied Machine Learning, Software Engineering, Programming, Game Theory, Multi-Agent Systems, Artificial Intelligence in Sustainability
       - label: SDGs
         details: SDG 9 (Industry, Innovation, and Infrastructure), SDG 11 (Sustainable Cities and Communities), SDG 12 (Responsible Consumption and Production)
+      - label: Impact
+        details: 151 citations and an h-index of 5 on Google Scholar (Nov 2026)
 
     Education:
       - institution: Universiti Putra Malaysia
@@ -48,8 +50,8 @@ cv:
         highlights:
           - "CGPA: 4.0/4.0"
           - Proposed a hybrid metaheuristic for University Course Timetabling with Student Sectioning (UCTSSP), tested on the International Timetabling Competition 2019 benchmark.
-          - "Supervisor: Associate Professor Razali Yaakob. Committee: Professor Salwani Abdullah, Dr. Khairul Azhar Kasmiran, Dr. Hazlina Hamdan"
-          - "Collaborators: Associate Professor Say Leng Goh, Professor Graham Kendall"
+          - "Supervisor: Assoc. Prof. Dr. Razali Yaakob. Committee: Professor Salwani Abdullah, Dr. Khairul Azhar Kasmiran, Dr. Hazlina Hamdan"
+          - "Collaborators: Assoc. Prof. Dr. Say Leng Goh, Professor Graham Kendall"
       - institution: K. N. Toosi University of Technology
         degree: M.Sc.
         area: Artificial Intelligence
@@ -58,7 +60,7 @@ cv:
         tags: resume
         summary: "Thesis: Analyzing Parameter Tuning of Evolutionary Algorithms in Optimization Problems"
         highlights:
-          - "Supervisor: Associate Professor Amin Nikanjam"
+          - "Supervisor: Assoc. Prof. Dr. Amin Nikanjam"
           - "Courses: Machine Learning, Reinforcement Learning, Evolutionary Computing, Pattern Recognition, Probabilistic Graphical Models, Artificial Neural Networks, Big Data"
       - institution: Imam Khomeini International University
         degree: B.Sc.
@@ -67,7 +69,7 @@ cv:
         end_date: 2016
         highlights:
           - "Final year project: Designing and Launching a Restaurant Management System for a Local Cafe"
-          - "Supervisor: Associate Professor Morteza Mohammadi Zanjireh"
+          - "Supervisor: Assoc. Prof. Dr. Morteza Mohammadi Zanjireh"
           - "Courses: Artificial Intelligence, Data Mining, Algorithm Design, Database Design, Object-Oriented Programming, Data Structures"
       - institution: Allameh Tabatabaei Complex of Cultural and Educational
         area: High School Diploma, Mathematics
@@ -85,9 +87,9 @@ cv:
           - Teach optimization, applied machine learning, and software engineering, and help design the Master in Artificial Intelligence curriculum.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
         highlights:
-          - Lead ScholORs, an optimization research group that sometimes works with other experts in the field, such as the optimization research group at Lancaster University.
-          - Research metaheuristics and hybrid optimization for real-world timetabling, and published 9 papers in 2026 with ScholORs, students, and colleagues.
-          - Collaborate regularly with experts from all over the world, such as researchers at Hefei University, China, with joint papers at GECCO 2026 and PATAT 2026.
+          - Lead ScholORs, an optimization research group that collaborates with researchers such as the optimization group at Lancaster University.
+          - Conduct research on metaheuristics and hybrid optimization for real-world timetabling, publishing 9 papers in 2026 with ScholORs, students, and colleagues.
+          - Collaborate internationally, including with researchers at Hefei University, China, resulting in joint papers at GECCO 2026 and PATAT 2026.
           - Serve as Subject Lead for Algorithms for Optimization, and teach postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
           - Apply AI governance in teaching by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
@@ -101,7 +103,7 @@ cv:
           - Turned the results into papers in IEEE Access and Intelligent Systems with Applications, and presented them at international conferences.
           - Taught Computer Programming 2 and Machine Learning to undergraduate and postgraduate students.
         highlights:
-          - Researched hybrid metaheuristics for university course timetabling for my Ph.D., published in IEEE Access and Intelligent Systems with Applications.
+          - Developed hybrid metaheuristics for university course timetabling as doctoral research, published in IEEE Access and Intelligent Systems with Applications.
           - Taught Computer Programming 2 (SSK3101) and Machine Learning (SSK5603) at undergraduate and postgraduate levels.
 
     Professional Experience:
@@ -137,7 +139,7 @@ cv:
         highlights:
           - Taught Upper-Intermediate and Advanced English (B2 to C2) to teenagers and adults, following Oxford's syllabus.
           - Led IELTS workshops, level assessments, and teacher interviews.
-          - Observed classes to keep teaching standards high.
+          - Conducted class observations to maintain teaching quality.
       - company: IKCO
         position: Android Developer (Internship)
         start_date: 2016-06
@@ -150,9 +152,6 @@ cv:
         end_date: 2015-03
         highlights:
           - Installed and configured network equipment.
-
-    Research Impact:
-      - 151 citations and an h-index of 5 on Google Scholar (Nov 2026).
 
     Publications: []
 
@@ -354,14 +353,14 @@ cv:
       - name: "[ESA Space Optimisation Competition (SpOC 4)](https://sinaabdipoor.github.io/projects/1_spoc/)"
         date: 2026
         tags: resume
-        summary: Ranked 3rd globally in the Luna Tomato Advertising challenge of the European Space Agency's space logistics optimization competition at GECCO 2026, using permutation encodings and simulated annealing. Our solutions were published as two GECCO 2026 papers.
+        summary: Ranked 3rd globally in the Luna Tomato Advertising challenge of the European Space Agency's space logistics optimization competition at GECCO 2026, using permutation encodings and simulated annealing. The approaches were published in two GECCO 2026 papers.
       - name: "[UPM Thesis LaTeX Template](https://sinaabdipoor.github.io/projects/3_upm_latex/)"
         date: 2024
         summary: A LaTeX thesis template for Universiti Putra Malaysia, built from the official Microsoft Word template.
       - name: "[International Timetabling Competition 2019](https://sinaabdipoor.github.io/projects/2_itc2019/)"
         date: 2022
         tags: resume
-        summary: Took part in the International Timetabling Competition 2019, the latest benchmark for university course timetabling, with my own implementation of the benchmark. It became the core of my Ph.D. and led to several papers and conference talks.
+        summary: Post-competition participation in the International Timetabling Competition 2019, the most recent benchmark for university course timetabling, based on an independent implementation of the benchmark. This work formed the core of my Ph.D. and led to several papers and conference presentations.
         resume_summary: My own implementation of the ITC 2019 benchmark, which became the core of my Ph.D.
       - name: "[Car Evaluation Dataset](https://sinaabdipoor.github.io/projects/5_car_evaluation/)"
         date: 2021
@@ -381,7 +380,7 @@ cv:
         summary: Forecasts weather and traffic density with a neural network trained on historical data. Built for an Artificial Neural Networks course.
       - name: "[Auto Parts Finder](https://sinaabdipoor.github.io/projects/9_auto_parts/)"
         date: 2016
-        summary: The Android app I built during my IKCO internship. It cut idle time on the assembly line.
+        summary: An Android app developed during the IKCO internship that reduced idle time on the assembly line.
 
     Skills:
       - label: Operations Research
@@ -399,7 +398,7 @@ cv:
         resume_details: Python, Java, SQL, Git, Power BI, Tableau, Excel
         tags: resume
       - label: Research and Teaching
-        details: Scientific Writing, LaTeX, Public Speaking, Teaching
+        details: Scientific Writing, LaTeX, Public Speaking, Curriculum Design
       - label: Languages
         details: English (Bilingual, IELTS 8), Mandarin (Intermediate), Malay (Basic)
         tags: resume
@@ -506,7 +505,7 @@ cv:
         summary: Sunway University, [anwarm@sunway.edu.my](mailto:anwarm@sunway.edu.my)
       - name: Professor Thomas Weise
         summary: Hefei University, [tweise@hfuu.edu.cn](mailto:tweise@hfuu.edu.cn)
-      - name: Associate Professor Razali Yaakob
+      - name: Assoc. Prof. Dr. Razali Yaakob
         summary: Universiti Putra Malaysia, [razaliy@upm.edu.my](mailto:razaliy@upm.edu.my)
       - name: Professor Salwani Abdullah
         summary: Universiti Kebangsaan Malaysia, [salwani@ukm.edu.my](mailto:salwani@ukm.edu.my)
@@ -538,7 +537,7 @@ design:
     publication_entry:
       main_column: "**TITLE**\nSUMMARY\nAUTHORS\n*JOURNAL*\nURL"
     education_entry:
-      main_column: "**INSTITUTION**\nAREA\nSUMMARY\nHIGHLIGHTS"
+      main_column: "**INSTITUTION**, *AREA*\nSUMMARY\nHIGHLIGHTS"
 
 locale:
   language: english
