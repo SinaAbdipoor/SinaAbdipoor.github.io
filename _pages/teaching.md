@@ -109,7 +109,7 @@ code_links:
     </article>
     <article class="tile">
       <h3><i class="fa-solid fa-circle-info"></i> Good to know</h3>
-      <p>Your feedback is public and shows right away under your GitHub name. Please be honest and respectful, and keep personal details like grades or student IDs out of it. Off-topic or disrespectful posts will be removed.</p>
+      <p>Please be fully honest. The good and the bad both help me grow. Your feedback is public and shows right away under your GitHub name, so just keep personal details like grades or student IDs out of it.</p>
     </article>
   </div>
   <div class="feedback-box">{% include giscus.liquid %}</div>
