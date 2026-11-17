@@ -1,0 +1,21 @@
+{% comment %} Our version of al-folio's giscus include: the plain giscus embed, since the site is dark only. {% endcomment %}
+{% assign g = site.giscus %}
+<div id="giscus_thread">
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="{{ g.repo }}"
+    data-repo-id="{{ g.repo_id }}"
+    data-category="{{ g.category }}"
+    data-category-id="{{ g.category_id }}"
+    data-mapping="{{ g.mapping }}"
+    data-strict="{{ g.strict }}"
+    data-reactions-enabled="{{ g.reactions_enabled }}"
+    data-emit-metadata="{{ g.emit_metadata }}"
+    data-input-position="{{ g.input_position }}"
+    data-theme="{{ g.theme }}"
+    data-lang="{{ g.lang }}"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async
+  ></script>
+</div>

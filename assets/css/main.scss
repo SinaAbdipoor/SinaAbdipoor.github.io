@@ -1286,10 +1286,21 @@ ul.plain {
     }
   }
 
-  p {
+  p,
+  ol,
+  ul {
     margin: 0;
     color: var(--ink-2);
   }
+
+  ol,
+  ul {
+    padding-left: 1.2em;
+  }
+}
+
+.feedback-box {
+  margin-top: 24px;
 }
 
 .fame-grid {

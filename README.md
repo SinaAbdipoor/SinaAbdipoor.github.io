@@ -9,7 +9,7 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 - `_news/`: news items, each with its own page, listed as photo cards on `/news/`. Photos go in `assets/img/news/`.
 - `_pages/`: the site's pages. Teaching, talks, awards, peer review, and the home page numbers and biography read their facts from `_data/cv.yaml`, so update the CV and the site follows.
 - `_layouts/`: our versions of al-folio's home page (`about.liquid`) and page layout (`page.liquid`, a plain title header).
-- `_includes/`: our versions of al-folio's header, footer, news cards (`image` in a news item's front matter sets its photo) and project cards (`label` and `cover` in a project's front matter), plus small helpers for CV dates, CV text, and profile icons.
+- `_includes/`: our versions of al-folio's header, footer, news cards (`image` in a news item's front matter sets its photo) and project cards (`label` and `cover` in a project's front matter), plus small helpers for CV dates, CV text, and profile icons, and the giscus embed for student feedback on the Teaching page (settings under `giscus` in `_config.yml`).
 - `assets/js/site.js`: drawn thumbnails for research areas and projects, the tile spotlight, and copy buttons.
 - `scripts/render_cv.py`: renders the full CV and the resume PDFs.
 - `scripts/requirements.txt`: pinned Python dependencies for the script.

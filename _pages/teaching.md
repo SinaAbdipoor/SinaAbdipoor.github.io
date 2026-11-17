@@ -85,3 +85,32 @@ code_links:
   </div>
   <p class="muted">Want to work with me? See <a href="{{ '/students/' | relative_url }}#postgraduate">Ph.D. and M.Sc. positions</a> or, for Sunway undergraduates, <a href="{{ '/students/' | relative_url }}#fyp">final year projects</a>.</p>
 </section>
+
+<section class="section" id="feedback">
+  <h2>Student feedback</h2>
+  <p class="lead-text">Were you in one of my classes? I'd love to hear from you. Your words help me teach better, and they help future students know what to expect.</p>
+  <div class="philosophy">
+    <article class="tile">
+      <h3><i class="fa-solid fa-list-ol"></i> How to post</h3>
+      <ol>
+        <li>Sign in with GitHub below. It's free and takes a minute.</li>
+        <li>Start with your course and semester, like "BAI3184, Sep 2026".</li>
+        <li>Write a few honest sentences and press Comment.</li>
+      </ol>
+    </article>
+    <article class="tile">
+      <h3><i class="fa-solid fa-pen-to-square"></i> What to write</h3>
+      <ul>
+        <li>What was a typical class like?</li>
+        <li>What did you learn, and what helped you most?</li>
+        <li>What could be better?</li>
+        <li>Would you recommend the course to a friend?</li>
+      </ul>
+    </article>
+    <article class="tile">
+      <h3><i class="fa-solid fa-circle-info"></i> Good to know</h3>
+      <p>Your feedback is public and shows right away under your GitHub name. Please be honest and respectful, and keep personal details like grades or student IDs out of it. Off-topic or disrespectful posts will be removed.</p>
+    </article>
+  </div>
+  <div class="feedback-box">{% include giscus.liquid %}</div>
+</section>
