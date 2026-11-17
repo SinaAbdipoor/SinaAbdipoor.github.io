@@ -1235,6 +1235,12 @@ ul.plain {
 }
 
 /* Hall of Fame */
+.bio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* Teaching philosophy */
 .split {
   display: flex;
