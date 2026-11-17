@@ -21,6 +21,22 @@ layout: default
     <div class="portrait">
       <img src="{{ '/assets/img/' | append: h.image | relative_url }}" alt="Illustration of {{ site.first_name }} at a blackboard full of optimization notes">
     </div>
+    <nav class="paths" aria-labelledby="paths-title">
+      <h2 id="paths-title">Where would you like to go?</h2>
+      <p class="sub">Pick what fits you best. Everything else is in the menu at the top.</p>
+      <div class="path-grid">
+        {% for g in page.paths %}
+          <div class="path{% if forloop.first %} first{% endif %}">
+            <div class="ic"><i class="fa-solid {{ g.icon }}" aria-hidden="true"></i></div>
+            <h3>{{ g.title }}</h3>
+            <p>{{ g.text }}</p>
+            <ul>
+              {% for l in g.links %}<li><a href="{{ l.url | relative_url }}">{{ l.name }}</a></li>{% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    </nav>
   </div>
 </section>
 

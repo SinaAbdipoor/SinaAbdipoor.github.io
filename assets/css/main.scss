@@ -416,6 +416,104 @@ body.fixed-top-nav {
     .portrait {
       justify-self: start;
       max-width: 300px;
+      order: 1; /* after the cards on phones, so students see them first */
+    }
+  }
+}
+
+/* Home: "Where would you like to go?" cards, inside the hero grid */
+.paths {
+  grid-column: 1 / -1;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0 0 6px;
+  }
+
+  .sub {
+    color: var(--muted);
+    margin: 0 0 20px;
+  }
+}
+
+.path-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+
+  @media (max-width: 960px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.path {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+
+  &.first {
+    border-color: var(--accent);
+  }
+
+  .ic {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-size: 18px;
+  }
+
+  h3 {
+    font-size: 1.05rem;
+    margin: 4px 0 0;
+  }
+
+  p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 4px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border-radius: 9px;
+    background: var(--surface-2);
+    color: var(--ink-2);
+    font-size: 0.9rem;
+
+    &::after {
+      content: "→";
+      color: var(--accent);
+    }
+
+    &:hover {
+      color: var(--ink);
+      background: var(--line-2);
+      text-decoration: none;
     }
   }
 }
