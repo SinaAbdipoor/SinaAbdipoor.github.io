@@ -1181,6 +1181,27 @@ ul.plain {
   display: grid;
   grid-template-columns: 90px 1fr;
   gap: 20px;
+  align-items: start;
+
+  &.has-photo {
+    grid-template-columns: 90px 1fr 104px;
+  }
+
+  .award-photo,
+  .award-photo img {
+    display: block;
+    width: 104px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 640px) {
+    &.has-photo {
+      grid-template-columns: 1fr;
+    }
+  }
+
   padding: 16px 20px;
   background: var(--surface);
   border: 1px solid var(--line);
