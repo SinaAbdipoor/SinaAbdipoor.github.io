@@ -32,7 +32,7 @@ areas:
   - title: Machine learning
     text: Forecasting, recommendation, and learning that makes optimization smarter.
     viz: wave
-  - title: "Next: game theory and multi-agent systems"
+  - title: Game theory and multi-agent systems
     text: Problems where many players have their own goals, like students and lecturers sharing one timetable.
     viz: nodes
 ---
