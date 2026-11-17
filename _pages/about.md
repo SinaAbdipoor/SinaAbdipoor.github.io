@@ -51,6 +51,4 @@ Everything I do starts with one simple idea. Time is the one thing we can never 
 
 I'm a Lecturer at Sunway University, where I teach optimization and machine learning and do research with students and colleagues from around the world. What I love most about teaching is the moment a hard problem finally clicks for a student.
 
-Not sure where to start? If you're a student, the [Students](/students/) page explains how we can work together. If you'd like to chat, you can [book a time](/contact/#book) with me. Or just look around and explore my [research](/research/), [projects](/projects/), [teaching](/teaching/), and [news](/news/).
-
 Thanks for visiting, and have a great day!
