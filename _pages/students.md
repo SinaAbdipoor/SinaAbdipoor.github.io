@@ -6,14 +6,16 @@ description: Sunway final year projects, Ph.D. and M.Sc. positions, and the stud
 nav: true
 nav_order: 4
 
-# Each student: name, photo (in assets/img/students/, optional), program, years, work, why I recommend them, and links.
+# Each student: name, Chinese name (optional), photo (in assets/img/students/, optional), program, years, work, why I recommend them, and links.
 # Text in [square brackets] is a placeholder and shows as such on the page.
 students:
   - name: Mingxuan Li
+    chinese_name: 李明轩
+    photo: /assets/img/students/mingxuan-li.jpg
     program: B.Sc., Queen Mary University of London
     years: 2025 to present
     work: Co-authored five papers with me on university timetabling and space logistics, as first author at PATAT 2026 and GECCO 2026, and was part of our team that ranked 3rd globally in a challenge of ESA's SpOC 4.
-    why: "[Placeholder: why I recommend Mingxuan, in 2 or 3 sentences]"
+    why: Mingxuan is very talented and very bright. With continued effort, he can go really far. He's a genuinely nice young man, honest and transparent, even when his progress isn't going well, and he's great to work with. He has my full recommendation and support, especially now that he's aiming for a Ph.D. position.
     links:
       - name: Website
         url: https://mingxuan-li-official.github.io/
@@ -101,9 +103,9 @@ These students did outstanding work with me, and being listed here is my persona
 <div class="fame-grid">
   {% for s in page.students %}
   <article class="fame">
-    {% if s.photo %}<img src="{{ s.photo | relative_url }}" alt="{{ s.name }}">{% else %}<div class="avatar" aria-hidden="true">{{ s.name | slice: 0 }}<span class="placeholder">[Photo]</span></div>{% endif %}
+    {% if s.photo %}<img src="{{ s.photo | relative_url }}" alt="{{ s.name }}" loading="lazy">{% else %}<div class="avatar" aria-hidden="true">{{ s.name | slice: 0 }}<span class="placeholder">[Photo]</span></div>{% endif %}
     <div class="body">
-      <h3>{{ s.name }}</h3>
+      <h3>{{ s.name }}{% if s.chinese_name %} <span class="zh">{{ s.chinese_name }}</span>{% endif %}</h3>
       <p class="role">{{ s.program }} · {{ s.years }}</p>
       <p>{{ s.work }}</p>
       <p class="why{% if s.why contains '[Placeholder' %} placeholder{% endif %}">{{ s.why }}</p>
