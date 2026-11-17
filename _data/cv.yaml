@@ -30,7 +30,7 @@ cv:
 
     Research Profile:
       - label: Research
-        details: Optimization, Operations Research, Artificial Intelligence, Game Theory, Multi-Agent Systems
+        details: Operations Research, Optimization, Metaheuristics, Game Theory, Multi-Agent Systems
       - label: Teaching
         details: Optimization, Search Algorithms, Evolutionary Computing, Applied Machine Learning, Software Engineering, Programming, Game Theory, Multi-Agent Systems, Artificial Intelligence in Sustainability
       - label: SDGs

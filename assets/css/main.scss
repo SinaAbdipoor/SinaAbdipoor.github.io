@@ -1160,6 +1160,11 @@ ul.plain {
   }
 }
 
+// An odd last research area spans the full row
+.area-grid > :last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .idea-grid {
   grid-template-columns: repeat(3, 1fr);
   margin: 20px 0 8px;

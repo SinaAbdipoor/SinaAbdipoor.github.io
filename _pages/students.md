@@ -62,9 +62,9 @@ You don't need a full proposal or method. That's where I come in, and I'll help 
 I'm looking for Ph.D. and M.Sc. students in the fields below. Full scholarships and funding are available for top students with strong qualifications.
 
 <div class="idea-grid">
-  <div class="tile"><span class="lbl">Field</span><h3>Artificial Intelligence and Operations Research</h3></div>
-  <div class="tile"><span class="lbl">Field</span><h3>Optimization, Scheduling, and Timetabling</h3></div>
-  <div class="tile"><span class="lbl">Field</span><h3>Evolutionary Computing and Metaheuristics</h3></div>
+  <div class="tile"><span class="lbl">Field</span><h3>Operations Research and Optimization</h3></div>
+  <div class="tile"><span class="lbl">Field</span><h3>Scheduling, Timetabling, and Metaheuristics</h3></div>
+  <div class="tile"><span class="lbl">Field</span><h3>Game Theory and Multi-Agent Systems</h3></div>
 </div>
 
 ### What I look for
