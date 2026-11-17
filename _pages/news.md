@@ -7,7 +7,7 @@ description: Talks, awards, and moments worth sharing.
 nav: true
 nav_order: 5
 
-# Award photos, keyed by "date name" as in the CV. A link opens a news page instead of zooming.
+# Award photos and videos, keyed by "date name" as in the CV. A link opens a news page instead of zooming. A video adds a Watch button.
 award_photos:
   "2026-08 Best Paper Award": { photo: /assets/img/news/icacte-talk.jpg, link: /news/icacte-best-paper/ }
   "2024-03 Best Paper Award": { photo: /assets/img/awards/cspa-best-paper.jpg }
@@ -39,11 +39,11 @@ award_photos:
     {% for a in cv.Awards %}
     {% assign key = a.date | append: ' ' | append: a.name %}
     {% assign shot = page.award_photos[key] %}
-    <div class="list-card{% if shot %} has-photo{% endif %}">
+    <div class="list-card{% if shot.photo %} has-photo{% endif %}">
       <time>{% include cv_date.liquid date=a.date %}</time>
-      <div><h3><i class="fa-solid fa-trophy"></i> {{ a.name }}</h3><p class="muted">{{ a.summary }}</p></div>
+      <div><h3><i class="fa-solid fa-trophy"></i> {{ a.name }}</h3><p class="muted">{{ a.summary }}</p>{% if shot.video %}<a class="chip" href="{{ shot.video }}"><i class="fa-solid fa-play"></i> Watch</a>{% endif %}</div>
       {% if shot.link %}<a class="award-photo" href="{{ shot.link | relative_url }}"><img src="{{ shot.photo | relative_url }}" alt="{{ a.name }}" loading="lazy"></a>
-      {% elsif shot %}<img class="award-photo" src="{{ shot.photo | relative_url }}" alt="{{ a.name }}" loading="lazy" data-zoomable>{% endif %}
+      {% elsif shot.photo %}<img class="award-photo" src="{{ shot.photo | relative_url }}" alt="{{ a.name }}" loading="lazy" data-zoomable>{% endif %}
     </div>
     {% endfor %}
   </div>
