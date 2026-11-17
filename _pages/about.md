@@ -47,8 +47,8 @@ paths:
 
 Welcome, I'm Sina!
 
-Everything I do starts with one simple idea. Time is the one thing we can never get back, so it's worth using well. That's what optimization is about, and it's what I've built my work around. I design algorithms that help people make better decisions, from building university timetables and planning hospital schedules to finding routes through space.
+You've probably noticed I'm a bit obsessed with time. That's what makes optimization so exciting for me. With the right algorithm, people get hours or even days of their lives back. I design those algorithms for real problems, from university timetables and hospital schedules to routes through space.
 
-I'm a Lecturer at Sunway University, where I teach optimization and machine learning and do research with students and colleagues from around the world. What I love most about teaching is the moment a hard problem finally clicks for a student.
+My days are split between research and teaching. I work with students and colleagues from around the world, and what I love most is the moment a hard problem finally clicks for a student, often on a whiteboard with nothing but a marker.
 
 Thanks for visiting, and have a great day!
