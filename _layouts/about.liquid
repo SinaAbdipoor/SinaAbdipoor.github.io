@@ -60,16 +60,7 @@ layout: default
   <div class="bio">
     <img src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
     <div>
-      {%- capture journals -%}
-        {%- assign recent = cv['Peer Review'] | reverse | slice: 0, 3 -%}
-        {%- for r in recent -%}
-          {%- assign name = r.name | markdownify | strip_html | strip | split: ', Elsevier' | first -%}
-          {%- if forloop.last and forloop.length > 1 %}and {% endif -%}{{ name }}{%- unless forloop.last -%}{% if forloop.length > 2 %}, {% else %} {% endif %}{%- endunless -%}
-        {%- endfor -%}
-      {%- endcapture -%}
-      {%- assign phd = cv.Education[0] -%}
-      {%- assign msc = cv.Education[1] -%}
-      <p id="bio-text">Dr. Sina Abdipoor is a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, where he leads ScholORs, an optimization research group. His research in Operations Research focuses on metaheuristics and hybrid algorithms for real-world scheduling and timetabling, and on methods that perform well across many problems rather than a single benchmark. His work appears in journals such as IEEE Access and Intelligent Systems with Applications, and he has presented at international conferences including GECCO and PATAT. He reviews for {{ journals }}. He holds a {{ phd.degree }} in {{ phd.area }} from {{ phd.institution }} and an {{ msc.degree }} in {{ msc.area }}, and he has taught since {% include teaching_since.liquid %}. Beyond academia, he has worked as a software engineer and as an independent Operations Research consultant. He often speaks about how Operations Research can solve real-world problems, save time, and improve efficiency. He is an active member of the Canadian Operational Research Society and is passionate about advancing AI and its practical applications.</p>
+      <p id="bio-text">Dr. Sina Abdipoor is a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, where he leads ScholORs, an optimization research group. His research in Operations Research focuses on metaheuristics and hybrid algorithms for real-world scheduling and timetabling, with an emphasis on highly generalizable methods. His work has appeared in IEEE Access and Intelligent Systems with Applications and has been presented at international conferences including GECCO and PATAT. A member of the Canadian Operational Research Society, he reviews for Applied Soft Computing, IEEE Transactions on Intelligent Transportation Systems, and Expert Systems with Applications. Holding a Ph.D. in Computer Science from Universiti Putra Malaysia, an M.Sc. in Artificial Intelligence, and a B.Sc. in Software Engineering, he has also worked as a software engineer and an independent Operations Research consultant. He applies optimization techniques and AI to practical problems, focusing on saving time and supporting UN SDGs 9, 11, and 12.</p>
       <div class="bio-actions">
         <button type="button" class="btn-x small" data-copy-from="bio-text">Copy bio</button>
         <a class="btn-x small" href="{{ '/assets/img/headshot.jpg' | relative_url }}" download="Sina_Abdipoor.jpg">Download photo</a>
