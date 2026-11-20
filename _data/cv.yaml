@@ -25,7 +25,7 @@ cv:
   sections:
     Summary:
       - Time is our most valuable resource, and optimization is how we save it. This principle guides my research on metaheuristics and hybrid algorithms for computationally hard scheduling problems, with a focus on university course timetabling. At its core is the balance between optimality and generality, that is, designing methods that perform robustly across diverse problem instances rather than excelling on a single benchmark.
-      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I lead ScholORs, an optimization research group, and contribute to the Master in Artificial Intelligence curriculum. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and has been presented at GECCO and PATAT.
+      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I contribute to the Master in Artificial Intelligence curriculum. I also founded and lead ScholORs, an independent optimization research group. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and has been presented at GECCO and PATAT.
       - I have taught since 2014, and from 2020 to 2025 I worked as an independent Operations Research consultant, applying optimization to real-world scheduling and resource allocation problems.
 
     Research Profile:
@@ -83,16 +83,22 @@ cv:
         end_date: present
         tags: resume
         resume_highlights:
-          - Lead ScholORs, an optimization research group working on real-world scheduling and timetabling, and published 9 papers in 2026 with ScholORs, students, and colleagues.
+          - Published 9 papers in 2026 on metaheuristics and real-world scheduling with students and colleagues.
           - Teach optimization, applied machine learning, and software engineering, and help design the Master in Artificial Intelligence curriculum.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
         highlights:
-          - Lead ScholORs, an optimization research group that collaborates with researchers such as the optimization group at Lancaster University.
-          - Conduct research on metaheuristics and hybrid optimization for real-world timetabling, publishing 9 papers in 2026 with ScholORs, students, and colleagues.
-          - Collaborate internationally, including with researchers at Hefei University, China, resulting in joint papers at GECCO 2026 and PATAT 2026.
+          - Conduct research on metaheuristics and hybrid optimization for real-world timetabling, publishing 9 papers in 2026 with students and colleagues.
           - Serve as Subject Lead for Algorithms for Optimization, and teach postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
           - Apply AI governance in teaching by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
+      - company: "[ScholORs](https://scholors.github.io/) (independent research group)"
+        position: Founder and Lead
+        start_date: 2025
+        end_date: present
+        highlights:
+          - Founded ScholORs during my Ph.D. to bring together researchers working on optimization for real-world scheduling and timetabling.
+          - Collaborate with researchers at Hefei University, China, resulting in joint papers at GECCO 2026 and PATAT 2026, and sometimes work with the optimization group at Lancaster University.
+          - Lead an ongoing project on the Integrated Healthcare Timetabling Competition 2024 (IHTC 2024).
       - company: Universiti Putra Malaysia
         position: Graduate Researcher & Tutor
         start_date: 2020-09
@@ -525,7 +531,7 @@ resume:
       - bullet: "**3rd globally in the Luna Tomato challenge** of the European Space Agency's Space Optimisation Competition (SpOC 4, GECCO 2026)"
       - bullet: "**16 publications and 151 citations**, with 2 Best Paper Awards (CSPA 2024, ICACTE 2026)"
       - bullet: "**Ph.D. in Computer Science with a 4.0/4.0 CGPA**, on optimization for real-world university timetabling"
-      - bullet: "**12 years of teaching and mentoring**, now leading ScholORs, an optimization research group"
+      - bullet: "**12 years of teaching and mentoring**, and founder of ScholORs, an independent optimization research group"
   # Overrides for the design below.
   design:
     sections:
