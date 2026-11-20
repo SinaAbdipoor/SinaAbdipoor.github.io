@@ -95,6 +95,9 @@ cv:
         position: Founder and Lead
         start_date: 2025
         end_date: present
+        tags: resume
+        resume_highlights:
+          - Lead an independent optimization research group with collaborators at Hefei University, China, publishing joint papers at GECCO 2026 and PATAT 2026.
         highlights:
           - Founded ScholORs during my Ph.D. to bring together researchers working on optimization for real-world scheduling and timetabling.
           - Collaborate with researchers at Hefei University, China, resulting in joint papers at GECCO 2026 and PATAT 2026, and sometimes work with the optimization group at Lancaster University.
@@ -531,7 +534,7 @@ resume:
       - bullet: "**3rd globally in the Luna Tomato challenge** of the European Space Agency's Space Optimisation Competition (SpOC 4, GECCO 2026)"
       - bullet: "**16 publications and 151 citations**, with 2 Best Paper Awards (CSPA 2024, ICACTE 2026)"
       - bullet: "**Ph.D. in Computer Science with a 4.0/4.0 CGPA**, on optimization for real-world university timetabling"
-      - bullet: "**12 years of teaching and mentoring**, and founder of ScholORs, an independent optimization research group"
+      - bullet: "**12 years of teaching and mentoring**, from undergraduate courses to Master's supervision"
   # Overrides for the design below.
   design:
     sections:
