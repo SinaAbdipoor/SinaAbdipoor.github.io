@@ -24,8 +24,8 @@ cv:
       username: 0000-0001-8411-5451
   sections:
     Summary:
-      - Time is our most valuable resource, and optimization is how we save it. This principle guides my research on metaheuristics and hybrid algorithms for computationally hard scheduling problems, with a focus on university course timetabling. At its core is the balance between optimality and generality, that is, designing methods that perform robustly across diverse problem instances rather than excelling on a single benchmark.
-      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I contribute to the Master in Artificial Intelligence curriculum. I also founded and lead ScholORs, an independent optimization research group. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and has been presented at GECCO and PATAT.
+      - Time is our most valuable resource, and optimization is how we save it. This principle guides my research on metaheuristics and hybrid algorithms for computationally hard scheduling problems, with a focus on university course timetabling. At its core is the balance between optimality and generality, that is, designing methods that perform robustly across diverse problem instances rather than excelling on a single benchmark. In 2025, I founded ScholORs, an independent research group that brings researchers together on these problems.
+      - I am a Lecturer in the Department of Data Science and Artificial Intelligence at Sunway University, Malaysia, where I contribute to the Master in Artificial Intelligence curriculum. I hold a Ph.D. in Computer Science from Universiti Putra Malaysia. My work appears in IEEE Access, Intelligent Systems with Applications, and Applied Computing and Informatics, and has been presented at GECCO and PATAT.
       - I have taught since 2014, and from 2020 to 2025 I worked as an independent Operations Research consultant, applying optimization to real-world scheduling and resource allocation problems.
 
     Research Profile:
