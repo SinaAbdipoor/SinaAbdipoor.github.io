@@ -4,10 +4,11 @@ layout: default
 {%- comment -%} Overrides al_folio_core about layout: the home page. The autobiography is in _pages/about.md, and facts come from _data/cv.yaml. {%- endcomment -%}
 {% assign h = page.hero %}
 {% assign cv = site.data.cv.cv.sections %}
+{% assign job = cv['Academic Positions'][0] %}
 <section class="hero full-bleed" aria-label="Introduction">
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">{{ h.eyebrow }}</div>
+      <div class="eyebrow">{{ job.position | split: ', ' | first }} · {{ job.company }}</div>
       <h1>{{ site.first_name }} {{ site.last_name }}<span class="zh">{{ h.chinese_name }}</span></h1>
       <p class="role">{{ h.role }}</p>
       <p class="phd">{{ cv.Education[0].degree }} in {{ cv.Education[0].area }}</p>
@@ -61,7 +62,6 @@ layout: default
     <img src="{{ '/assets/img/headshot.jpg' | relative_url }}" alt="{{ site.first_name }} {{ site.last_name }}">
     <div>
       {%- comment -%} Sina's own wording. Facts that change over time come from cv.yaml. {%- endcomment -%}
-      {%- assign job = cv['Academic Positions'][0] -%}
       {%- assign role = job.position | split: ', ' -%}
       {%- assign first = role[0] | slice: 0 | downcase -%}
       {%- capture journals -%}

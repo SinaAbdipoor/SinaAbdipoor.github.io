@@ -12,7 +12,7 @@ I took part in the European Space Agency's Space Optimisation Competition (SpOC 
 
 Our solutions were published as two GECCO 2026 papers.
 
-[Visit the project](https://www.esa.int/gsp/ACT/news/spoc-2026/)
+[See the competition](https://github.com/esa/SpOC4)
 
 ## Papers
 

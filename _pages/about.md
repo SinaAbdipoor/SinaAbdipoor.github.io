@@ -4,7 +4,6 @@ title: About
 permalink: /
 
 hero:
-  eyebrow: Lecturer · Sunway University
   chinese_name: 思纳
   role: <b>AI Engineer</b>, Researcher, and Educator
   lede: I believe time is our most valuable resource, and optimization is how we save it. I use Operations Research, optimization, and machine learning to solve real-world problems.

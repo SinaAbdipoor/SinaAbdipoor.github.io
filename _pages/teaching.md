@@ -23,8 +23,8 @@ code_links:
   <h2>Teaching philosophy</h2>
   <p class="lead-text">We live in an era where many of us simply follow whatever our all-knowing AI lords tell us. That makes the ability to think more valuable than ever, and protecting it is the heart of my teaching.</p>
   <div class="split" role="img" aria-label="In class and in assessment: 80% pen and paper, 20% AI">
-    <div class="split-pen" style="width: 80%"><b>80%</b> pen and paper, thinking together</div>
-    <div class="split-ai" style="width: 20%"><b>20%</b> AI and creativity</div>
+    <div class="split-pen" style="--w: 80%"><b>80%</b> pen and paper, thinking together</div>
+    <div class="split-ai" style="--w: 20%"><b>20%</b> AI and creativity</div>
   </div>
   <div class="philosophy">
     <article class="tile">

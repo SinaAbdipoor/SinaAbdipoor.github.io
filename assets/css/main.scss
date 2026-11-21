@@ -66,6 +66,7 @@ html[data-theme="dark"] {
 html {
   scroll-behavior: smooth;
   background: var(--bg);
+  overflow-x: clip; // the 100vw hero is wider than the page when the scrollbar takes space
 }
 
 body {
@@ -1167,6 +1168,10 @@ ul.plain {
 .idea-grid {
   grid-template-columns: repeat(3, 1fr);
   margin: 20px 0 8px;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .link-cards {
@@ -1353,6 +1358,7 @@ ul.plain {
   font-size: 14px;
 
   > div {
+    width: var(--w);
     padding: 14px 18px;
     min-width: 0;
   }
@@ -1370,6 +1376,23 @@ ul.plain {
   .split-ai {
     background: var(--accent-soft);
     color: var(--accent);
+  }
+
+  @media (max-width: 560px) {
+    flex-direction: column;
+
+    > div {
+      width: auto;
+    }
+
+    // a progress bar under each part shows its share
+    .split-pen {
+      background: linear-gradient(90deg, var(--ink-2) var(--w), var(--line) var(--w)) bottom / 100% 4px no-repeat, var(--surface);
+    }
+
+    .split-ai {
+      background: linear-gradient(90deg, var(--accent) var(--w), var(--line) var(--w)) bottom / 100% 4px no-repeat, var(--accent-soft);
+    }
   }
 }
 

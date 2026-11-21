@@ -5,7 +5,7 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 ## Files
 
 - `_data/cv.yaml`: all CV content, in [RenderCV](https://rendercv.com) format. Entries tagged `resume` also go into the resume (using `resume_summary` and `resume_highlights` when given), and the `resume` block at the end sets its headline, summary, and resume-only sections.
-- `_bibliography/papers.bib`: all publications. Papers with `selected = {true}` go on the Research page, and those with `resume = {N}` go into the resume, in that order.
+- `_bibliography/papers.bib`: all publications. Papers with `selected = {true}` go on the Research page, and those with `resume = {N}` go into the resume, in that order. A paper without a DOI links to its PDF with `pdf`.
 - `_news/`: news items, each with its own page, listed as photo cards on `/news/`. Photos go in `assets/img/news/`.
 - `_pages/`: the site's pages. Teaching, talks, awards, peer review, and the home page numbers and biography read their facts from `_data/cv.yaml`, so update the CV and the site follows.
 - `_layouts/`: our versions of al-folio's home page (`about.liquid`) and page layout (`page.liquid`, a plain title header).

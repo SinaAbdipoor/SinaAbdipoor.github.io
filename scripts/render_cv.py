@@ -50,8 +50,8 @@ def publication(entry):
     # RenderCV shows one link per entry, so prefer the DOI.
     if "doi" in fields:
         item["doi"] = fields["doi"]
-    elif "url" in fields:
-        item["url"] = fields["url"]
+    elif "pdf" in fields:
+        item["url"] = fields["pdf"]
     if "note" in fields:
         item["summary"] = fields["note"]
     if "resume" in fields:
