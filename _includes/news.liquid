@@ -1,7 +1,24 @@
-{%- comment -%} Overrides al_folio_core news list: photo cards. Set `image` in a news item's front matter for its card photo. {%- endcomment -%}
+{%- comment -%} Overrides al_folio_core news list: photo cards, and the newest item as a large featured card. Set `image` in a news item's front matter for its card photo. {%- endcomment -%}
+{% assign news = site.news | reverse %}
+{% assign top = news.first %}
+{% if top %}
+  <a class="news-card featured" href="{{ top.url | relative_url }}">
+    {% if top.image %}
+      <div class="ph"><img src="{{ top.image | relative_url }}" alt="" loading="lazy"></div>
+    {% else %}
+      <div class="ph type">{{ top.title }}</div>
+    {% endif %}
+    <div class="body">
+      <span class="tag">Latest</span>
+      <time datetime="{{ top.date | date_to_xmlschema }}">{{ top.date | date: '%b %Y' }}</time>
+      <h3>{{ top.title }}</h3>
+      <p>{{ top.excerpt | strip_html | strip | truncatewords: 40 }}</p>
+      <span class="read">Read more <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+{% endif %}
 <div class="news-grid">
-  {% assign news = site.news | reverse %}
-  {% for item in news %}
+  {% for item in news offset: 1 %}
     <a class="news-card" href="{{ item.url | relative_url }}">
       {% if item.image %}
         <div class="ph"><img src="{{ item.image | relative_url }}" alt="" loading="lazy"></div>

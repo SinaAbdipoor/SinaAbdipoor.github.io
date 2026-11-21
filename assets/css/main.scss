@@ -283,6 +283,19 @@ body.fixed-top-nav {
   }
 }
 
+// Large call to action buttons (Contact, Resume)
+.btn-x.big {
+  font-size: 17px;
+  padding: 15px 26px;
+}
+
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 8px 0 28px;
+}
+
 .more {
   font: 500 14px var(--sans);
   color: var(--muted);
@@ -519,6 +532,102 @@ body.fixed-top-nav {
   }
 }
 
+// Desktop: head and body are not boxes, so the card stays one flex column
+.path-head,
+.path-body {
+  display: contents;
+}
+
+/* Phones: site.js adds .folded, the heads become a 2x2 grid, and the open card's body shows below them */
+.path-grid.folded {
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  .path {
+    display: contents;
+  }
+
+  .path-head {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 14px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+
+    // chevron, turns up when open
+    &::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      right: 16px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--muted);
+      border-bottom: 2px solid var(--muted);
+      transform: rotate(45deg);
+      transition: transform 0.2s;
+    }
+  }
+
+  .first .path-head {
+    border-color: var(--accent);
+  }
+
+  .open .path-head {
+    background: var(--accent-soft);
+    border-color: var(--accent);
+
+    &::after {
+      top: 22px;
+      transform: rotate(225deg);
+      border-color: var(--accent);
+    }
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .path-toggle {
+    all: unset;
+    cursor: pointer;
+
+    // the whole tile is the button
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r);
+    }
+
+    &:focus-visible::before {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  }
+
+  .path-body {
+    display: none;
+    grid-row: 3;
+    grid-column: 1 / -1;
+    padding: 16px;
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: var(--r);
+  }
+
+  .open .path-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
 /* Round profile icons */
 .social-row {
   display: flex;
@@ -709,7 +818,7 @@ body.fixed-top-nav {
 /* ---------- News cards ---------- */
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 16px;
 
   @media (max-width: 520px) {
@@ -799,6 +908,72 @@ body.fixed-top-nav {
     font-weight: 600;
     line-height: 1.35;
     margin: 0;
+  }
+}
+
+/* The newest news item: photo left, text right */
+.news-card.featured {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  margin-bottom: 16px;
+
+  .ph {
+    aspect-ratio: auto;
+    min-height: 280px;
+  }
+
+  .body {
+    padding: 28px;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .tag {
+    align-self: flex-start;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font: 600 11px var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  p {
+    color: var(--ink-2);
+    margin: 0;
+  }
+
+  .read {
+    color: var(--accent);
+    font-weight: 500;
+  }
+
+  &:hover {
+    transform: none;
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+
+    .ph {
+      aspect-ratio: 16 / 10;
+      min-height: 0;
+    }
+
+    .body {
+      padding: 20px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
   }
 }
 
@@ -1070,6 +1245,10 @@ footer.sticky-bottom {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+
+  .pin::after {
+    animation: none !important;
+  }
 }
 
 /* Comfortable line length for text on inner pages */
@@ -1217,11 +1396,74 @@ ul.plain {
 
 .service {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr 1.6fr;
   gap: 16px;
 
-  @media (max-width: 760px) {
+  @media (max-width: 860px) {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Research: dotted world map with a pin per country, sized by count */
+.worldmap {
+  position: relative;
+  aspect-ratio: 180 / 70;
+  margin: 4px 0 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .pin {
+    position: absolute;
+    width: calc(8px + var(--n) * 1.5px);
+    height: calc(8px + var(--n) * 1.5px);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 3px rgba(245, 185, 74, 0.25), 0 0 14px rgba(245, 185, 74, 0.6);
+
+    // a soft pulse
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid var(--gold);
+      animation: pin-pulse 2.6s ease-out infinite;
+    }
+
+    @media (max-width: 560px) {
+      width: calc(6px + var(--n) * 1px);
+      height: calc(6px + var(--n) * 1px);
+    }
+  }
+}
+
+@keyframes pin-pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  to {
+    transform: scale(2.6);
+    opacity: 0;
+  }
+}
+
+.places {
+  .chips {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 14px;
+  }
+
+  .chip b {
+    color: var(--gold);
+    margin-left: 4px;
   }
 }
 
@@ -1257,8 +1499,10 @@ ul.plain {
     color: var(--faint);
   }
 
-  h3 {
+  h3,
+  h4 {
     font-size: 18px !important;
+    font-weight: 600;
     margin: 6px 0 0 !important;
   }
 
@@ -1275,6 +1519,83 @@ ul.plain {
     margin-top: auto;
     padding-top: 8px;
     font-size: 13px;
+  }
+}
+
+/* Teaching: course timeline, one stop per university */
+.timeline {
+  position: relative;
+  padding-left: 34px;
+  margin-top: 24px;
+
+  // the line
+  &::before {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(var(--accent), var(--line));
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .course {
+    padding: 18px;
+
+    @media (max-width: 560px) {
+      padding: 14px 16px;
+    }
+  }
+}
+
+.tl-group {
+  position: relative;
+  margin-bottom: 32px;
+
+  // the stop
+  &::before {
+    content: "";
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent);
+  }
+
+  &.now::before {
+    background: var(--gold);
+    border-color: var(--gold);
+    box-shadow: 0 0 0 5px rgba(245, 185, 74, 0.18);
+  }
+
+  .tl-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 4px 14px;
+    margin-bottom: 14px;
+  }
+
+  .tl-year {
+    font: 600 14px var(--mono);
+    color: var(--accent);
+  }
+
+  &.now .tl-year {
+    color: var(--gold);
+  }
+
+  h3 {
+    margin: 0 !important;
+    font-size: 1.2rem !important;
   }
 }
 
@@ -1749,6 +2070,173 @@ ul.checks {
   }
 
   @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Students: "How it works" steps, joined by a line */
+.steps {
+  list-style: none;
+  counter-reset: step;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 0;
+  margin: 20px 0 8px;
+  position: relative;
+
+  // the line behind the numbers
+  &::before {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 16%;
+    right: 16%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+  }
+
+  li {
+    counter-increment: step;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    padding: 0 8px;
+
+    // the number
+    &::before {
+      content: counter(step);
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      font: 700 18px var(--mono);
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    &:last-child::before {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    > i {
+      color: var(--muted);
+      font-size: 18px;
+    }
+  }
+
+  h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin: 2px 0 0;
+  }
+
+  p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 18px;
+
+    &::before {
+      top: 22px;
+      bottom: 22px;
+      left: 21px;
+      right: auto;
+      width: 2px;
+      height: auto;
+      background: linear-gradient(var(--accent), var(--gold));
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: 44px auto 1fr;
+      grid-template-rows: auto auto;
+      align-items: center;
+      text-align: left;
+      column-gap: 12px;
+      row-gap: 2px;
+      padding: 0;
+
+      &::before {
+        grid-row: 1 / 3;
+        margin: 0;
+      }
+
+      > i {
+        grid-row: 1;
+        grid-column: 2;
+      }
+
+      h4 {
+        grid-row: 1;
+        grid-column: 3;
+        margin: 0;
+      }
+
+      p {
+        grid-row: 2;
+        grid-column: 2 / 4;
+      }
+    }
+  }
+}
+
+/* Postgraduate applications: what to attach, grouped by when it's needed */
+.attach {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0 24px;
+
+  ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 0.95rem;
+  }
+
+  li + li {
+    margin-top: 6px;
+  }
+
+  p {
+    margin-top: 12px;
+    font-size: 0.88rem;
+  }
+
+  .lbl {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .need .lbl {
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  .later .lbl {
+    background: rgba(245, 185, 74, 0.14);
+    color: var(--gold);
+  }
+
+  .optional .lbl {
+    background: var(--surface-2);
+    color: var(--muted);
+  }
+
+  @media (max-width: 860px) {
     grid-template-columns: 1fr;
   }
 }

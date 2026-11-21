@@ -44,22 +44,37 @@ code_links:
 
 <section class="section">
   <h2>Courses</h2>
-  <div class="course-grid">
-    {% for c in cv.Teaching %}
-      {% assign code = c.name | split: '(' | last | remove: ')' %}
-      {% assign title = c.name | split: ' (' | first %}
-      {% assign parts = c.summary | split: ', ' %}
-      <article class="course">
-        <div class="course-top">
-          <span class="code">{% if c.name contains '(' %}{{ code }}{% endif %}</span>
-          <time>{% include cv_date.liquid date=c.date %}</time>
+  {%- comment -%} A timeline from the newest university to the first, grouped by the last part of each summary {%- endcomment -%}
+  {% assign unis = cv.Teaching | group_by_exp: 'c', "c.summary | split: ', ' | last" %}
+  <p class="muted">{{ cv.Teaching.size }} courses at {{ unis.size }} universities since {% include teaching_since.liquid %}.</p>
+  <div class="timeline">
+    {% for u in unis %}
+      {% assign newest = u.items.first.date | append: '' | slice: 0, 4 %}
+      {% assign oldest = u.items.last.date | append: '' | slice: 0, 4 %}
+      <div class="tl-group{% if forloop.first %} now{% endif %}">
+        <div class="tl-head">
+          <span class="tl-year">{% if newest == oldest %}{{ newest }}{% else %}{{ oldest }} to {{ newest }}{% endif %}</span>
+          <h3>{{ u.name }}</h3>
         </div>
-        <h3>{{ title }}</h3>
-        <p class="role">{{ parts[0] }}</p>
-        <p class="muted">{{ parts | shift | join: ', ' }}</p>
-        {% assign first_code = code | split: ',' | first %}
-        {% if page.code_links[first_code] %}<a class="more" href="{{ page.code_links[first_code] }}"><i class="fa-brands fa-github"></i> Course code</a>{% endif %}
-      </article>
+        <div class="course-grid">
+          {% for c in u.items %}
+            {% assign code = c.name | split: '(' | last | remove: ')' %}
+            {% assign title = c.name | split: ' (' | first %}
+            {% assign parts = c.summary | split: ', ' %}
+            {% assign program = parts | shift | pop | join: ', ' %}
+            <article class="course">
+              <div class="course-top">
+                <span class="code">{% if c.name contains '(' %}{{ code }}{% endif %}</span>
+                <time>{% include cv_date.liquid date=c.date %}</time>
+              </div>
+              <h4>{{ title }}</h4>
+              <p><span class="role">{{ parts[0] }}</span>{% if program != '' %}<span class="muted"> · {{ program }}</span>{% endif %}</p>
+              {% assign first_code = code | split: ',' | first %}
+              {% if page.code_links[first_code] %}<a class="more" href="{{ page.code_links[first_code] }}"><i class="fa-brands fa-github"></i> Course code</a>{% endif %}
+            </article>
+          {% endfor %}
+        </div>
+      </div>
     {% endfor %}
   </div>
 </section>

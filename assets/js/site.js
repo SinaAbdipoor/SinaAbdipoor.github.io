@@ -1,4 +1,4 @@
-// Small interactions for the site: tile spotlight, drawn thumbnails, and copy buttons.
+// Small interactions for the site: tile spotlight, drawn thumbnails, folding home cards, and copy buttons.
 (() => {
   const ACCENT = "#5aa2ff";
   const GOLD = "#f5b94a";
@@ -245,6 +245,41 @@
   };
   drawAll();
   addEventListener("resize", drawAll);
+
+  /* ---------- Home: on phones, fold the path cards into a 2x2 grid that opens on tap ---------- */
+  const grid = document.querySelector(".path-grid");
+  if (grid) {
+    const cards = [...grid.querySelectorAll(".path")];
+    const phone = matchMedia("(max-width: 560px)");
+    const fold = () => {
+      grid.classList.toggle("folded", phone.matches);
+      cards.forEach((card) => {
+        const h = card.querySelector("h3");
+        const title = h.textContent;
+        card.classList.remove("open");
+        if (phone.matches) {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "path-toggle";
+          b.textContent = title;
+          b.setAttribute("aria-expanded", "false");
+          b.setAttribute("aria-controls", card.querySelector(".path-body").id);
+          b.addEventListener("click", () => {
+            const open = !card.classList.contains("open");
+            cards.forEach((c) => {
+              c.classList.toggle("open", c === card && open);
+              c.querySelector(".path-toggle")?.setAttribute("aria-expanded", c === card && open);
+            });
+          });
+          h.replaceChildren(b);
+        } else {
+          h.replaceChildren(title);
+        }
+      });
+    };
+    fold();
+    phone.addEventListener("change", fold);
+  }
 
   /* ---------- Copy buttons ---------- */
   document.querySelectorAll("[data-copy], [data-copy-from]").forEach((btn) =>

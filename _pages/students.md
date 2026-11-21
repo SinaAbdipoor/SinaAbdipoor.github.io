@@ -53,9 +53,11 @@ You don't need a full proposal or method. That's where I come in, and I'll help 
 
 ### How it works
 
-1. Find your idea, even if it's rough.
-2. [Email me](mailto:sinaa@sunway.edu.my) a few lines about it, or [book a time](/contact/#book).
-3. We meet first, and then we both decide if we're a good fit.
+<ol class="steps">
+  <li><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><h4>Find your idea</h4><p>Even a rough one is fine.</p></li>
+  <li><i class="fa-solid fa-envelope" aria-hidden="true"></i><h4>Tell me about it</h4><p><a href="mailto:sinaa@sunway.edu.my">Email me</a> a few lines, or <a href="/contact/#book">book a time</a>.</p></li>
+  <li><i class="fa-solid fa-handshake" aria-hidden="true"></i><h4>Meet and decide</h4><p>We meet first, and then we both decide if we're a good fit.</p></li>
+</ol>
 
 ## Ph.D. and M.Sc. {#postgraduate}
 
@@ -85,13 +87,32 @@ Use this subject line: "Prospective [Ph.D. or M.Sc.] Student - Your Name". It sh
 
 Please attach:
 
-- Your CV
-- Your official transcript (the latest one if you're in your final year)
-- Your degree certificates (optional if you're in your final year)
-- A research proposal (not needed at first, but required for the final application)
-- 2 recommendation letters (not needed at first, but required for the final application)
-- Proof of English proficiency (optional if you're a native speaker or studied in English)
-- Abstracts of your thesis or publications (optional, but helpful)
+<div class="attach">
+  <div class="tile need">
+    <span class="lbl">Required now</span>
+    <ul>
+      <li>Your CV</li>
+      <li>Your official transcript (the latest one if you're in your final year)</li>
+      <li>Your degree certificates (skip if you're in your final year)</li>
+      <li>Proof of English proficiency (skip if you're a native speaker or studied in English)</li>
+    </ul>
+  </div>
+  <div class="tile later">
+    <span class="lbl">Later</span>
+    <ul>
+      <li>A research proposal</li>
+      <li>2 recommendation letters</li>
+    </ul>
+    <p>Not needed at first, but required for the final application.</p>
+  </div>
+  <div class="tile optional">
+    <span class="lbl">Optional</span>
+    <ul>
+      <li>Abstracts of your thesis or publications</li>
+    </ul>
+    <p>Not required, but helpful.</p>
+  </div>
+</div>
 
 I read every application, but because there are so many, I may only reply to shortlisted candidates to set up a meeting. If you're accepted, you'll then apply officially through the university portal before the deadline.
 

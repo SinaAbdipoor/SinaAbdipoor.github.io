@@ -33,7 +33,9 @@ Email is the best way to reach me. If you're at Sunway, Teams works too.
 
 ## Book a meeting {#book}
 
-You can [book a time with me here](https://outlook.office.com/bookwithme/user/776cdb1789e842c8aa4e6009fdf1fe90@sunway.edu.my/meetingtype/V6T55AaInUyInzSwXI6JsA2?anonymous&ismsaljsauthenabled&ep=mlink). In the "Notes" box, please include:
+<div class="cta-row"><a class="btn-x primary big" href="https://outlook.office.com/bookwithme/user/776cdb1789e842c8aa4e6009fdf1fe90@sunway.edu.my/meetingtype/V6T55AaInUyInzSwXI6JsA2?anonymous&ismsaljsauthenabled&ep=mlink"><i class="fa-solid fa-calendar-check"></i> Book now</a></div>
+
+When you book, please include in the "Notes" box:
 
 - whether the meeting is "Online" or "In Person"
 - the meeting topic and purpose

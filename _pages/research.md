@@ -19,6 +19,15 @@ methods:
   - { icon: fa-solid fa-dove, name: Evolutionary and swarm methods }
   - { icon: fa-solid fa-brain, name: Machine learning }
 
+# Map pins for "Conferences and talks, by country": [longitude, latitude]. A new country in the CV needs a line here.
+countries:
+  Malaysia: [101.6, 3.1]
+  China: [114, 31]
+  Canada: [-88, 49]
+  United Kingdom: [-1.5, 52.5]
+  Costa Rica: [-84, 10]
+  Japan: [139.7, 35.7]
+
 areas:
   - title: Scheduling and timetabling
     text: Real competition problems, from university timetables (ITC 2019) to hospitals (IHTC 2024).
@@ -120,9 +129,29 @@ areas:
         {% for r in cv['Peer Review'] %}<li>{% include cv_text.liquid text=r.name %}</li>{% endfor %}
       </ul>
     </div>
-    <div class="tile">
-      <span class="lbl">Conferences</span>
-      <p class="muted">{{ cv['Conference Presentations'].size }} presentations, at venues such as GECCO, PATAT, and CORS.</p>
+    {%- comment -%} Countries come from the end of each conference name and from each talk's location {%- endcomment -%}
+    {% assign places = '' | split: '' %}
+    {% for c in cv['Conference Presentations'] %}{% assign place = c.name | split: ', ' | last %}{% assign places = places | push: place %}{% endfor %}
+    {% assign talks = cv.Talks | where_exp: 't', "t.location and t.location != 'Online'" %}
+    {% for t in talks %}{% assign places = places | push: t.location %}{% endfor %}
+    {% assign countries = places | group_by_exp: 'p', 'p' | sort: 'size' | reverse %}
+    <div class="tile places">
+      <span class="lbl">Conferences and talks, by country</span>
+      <div class="worldmap">
+        <img src="{{ '/assets/img/world-dots.svg' | relative_url }}" alt="" aria-hidden="true">
+        {% for g in countries %}
+          {% assign ll = page.countries[g.name] %}
+          {% if ll %}
+            {% assign x = ll[0] | plus: 180 | divided_by: 3.6 %}
+            {% assign y = 84 | minus: ll[1] | divided_by: 1.4 %}
+            <span class="pin" style="left: {{ x | round: 2 }}%; top: {{ y | round: 2 }}%; --n: {{ g.size }}" title="{{ g.name }}: {{ g.size }}"></span>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <ul class="chips">
+        {% for g in countries %}<li class="chip">{{ g.name }} <b>{{ g.size }}</b></li>{% endfor %}
+      </ul>
+      <p class="muted">{{ cv['Conference Presentations'].size }} conference presentations and {{ cv.Talks.size }} talks, at venues such as GECCO, PATAT, and CORS.</p>
     </div>
   </div>
 </section>
