@@ -980,8 +980,13 @@ body.fixed-top-nav {
 /* News item pages: photo grid */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
+
+  // A single photo stays as wide as the text above it
+  > :only-child {
+    max-width: 630px;
+  }
 
   img {
     aspect-ratio: 4 / 3;
