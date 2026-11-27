@@ -83,11 +83,11 @@ cv:
         end_date: present
         tags: resume
         resume_highlights:
-          - Published 9 papers in 2026 with students and colleagues, on metaheuristics, scheduling, and machine learning.
+          - Published 10 papers in 2026 with students and colleagues, on metaheuristics, scheduling, and machine learning.
           - Teach optimization, applied machine learning, and software engineering, and help design the Master in Artificial Intelligence curriculum.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
         highlights:
-          - Conduct research on metaheuristics and hybrid optimization for real-world timetabling. Published 9 papers in 2026 with students and colleagues, on both optimization and machine learning.
+          - Conduct research on metaheuristics and hybrid optimization for real-world timetabling. Published 10 papers in 2026 with students and colleagues, on both optimization and machine learning.
           - Serve as Subject Lead for Algorithms for Optimization, and teach postgraduate and undergraduate courses in machine learning, software engineering, project management, and data science capstone projects.
           - Apply AI governance in teaching by redesigning assessments with clear levels of permitted AI use, from AI-free work to open AI exploration.
           - Supervise 2 Master's students and more than 20 undergraduate final year projects.
@@ -539,7 +539,7 @@ resume:
     Highlights:
       - bullet: "**5 years of Operations Research consulting**, building scheduling, timetabling, and resource management models for organizations"
       - bullet: "**3rd globally in the Luna Tomato Advertising challenge** of the European Space Agency's Space Optimisation Competition (SpOC 4, GECCO 2026)"
-      - bullet: "**16 publications and 157 citations**, with 2 Best Paper Awards (CSPA 2024, ICACTE 2026)"
+      - bullet: "**17 publications and 157 citations**, with 2 Best Paper Awards (CSPA 2024, ICACTE 2026)"
       - bullet: "**Ph.D. in Computer Science with a 4.0/4.0 CGPA**, on optimization for real-world university timetabling"
       - bullet: "**12 years of teaching and mentoring**, from undergraduate courses to Master's supervision"
   # Overrides for the design below.
