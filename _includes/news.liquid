@@ -6,7 +6,7 @@
     {% if top.image %}
       <div class="ph"><img src="{{ top.image | relative_url }}" alt="" loading="lazy"></div>
     {% else %}
-      <div class="ph type">{{ top.title }}</div>
+      <div class="ph type" aria-hidden="true">{{ top.title }}</div>
     {% endif %}
     <div class="body">
       <span class="tag">Latest</span>
@@ -23,7 +23,7 @@
       {% if item.image %}
         <div class="ph"><img src="{{ item.image | relative_url }}" alt="" loading="lazy"></div>
       {% else %}
-        <div class="ph type">{{ item.title }}</div>
+        <div class="ph type" aria-hidden="true">{{ item.title }}</div>
       {% endif %}
       <div class="body">
         <time datetime="{{ item.date | date_to_xmlschema }}">{{ item.date | date: '%b %Y' }}</time>

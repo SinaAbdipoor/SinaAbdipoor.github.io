@@ -11,5 +11,5 @@ As a member of the Student Engagement & Experience Committee, I helped organize 
 The Faculty of Engineering and Technology awarded me a Certificate of Appreciation for my role in the program.
 
 <div class="gallery">
-  {% include figure.liquid path="assets/img/news/mobility-certificate.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  {% include figure.liquid path="assets/img/news/mobility-certificate.jpg" alt="Certificate of Appreciation for organizing the Sunway University Mobility Programme in AI and Automation" class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>

@@ -11,6 +11,6 @@ As a member of the Student Engagement & Experience Committee and an Academic Suc
 For me, the first weeks of university are all about relationships. When students feel they belong and stay in the loop, everything else gets easier. It was great spending time with all the new students and getting to know them, and even better to see them connect with their own academic success coaches.
 
 <div class="gallery">
-  {% include figure.liquid path="assets/img/news/elevate-connect-group.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
-  {% include figure.liquid path="assets/img/news/elevate-connect-poster.jpg" class="img-fluid rounded z-depth-1" zoomable=true %}
+  {% include figure.liquid path="assets/img/news/elevate-connect-group.jpg" alt="Group photo of new students and staff at Elevate & Connect in a Sunway University lecture hall" class="img-fluid rounded z-depth-1" zoomable=true %}
+  {% include figure.liquid path="assets/img/news/elevate-connect-poster.jpg" alt="Elevate & Connect event poster, 26 Nov 2026, Sunway Square" class="img-fluid rounded z-depth-1" zoomable=true %}
 </div>
