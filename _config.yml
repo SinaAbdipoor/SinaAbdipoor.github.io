@@ -365,8 +365,8 @@ scholar:
 # Display different badges withs stats for your publications
 # Customize badge behavior in _layouts/bib.liquid
 enable_publication_badges:
-  altmetric: true # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
-  dimensions: true # Dimensions badge (Customization options: https://badge.dimensions.ai/)
+  altmetric: false # Altmetric badge (Customization options: https://badge-docs.altmetric.com/index.html)
+  dimensions: false # Dimensions badge (Customization options: https://badge.dimensions.ai/)
   google_scholar: true # Google Scholar badge (https://scholar.google.com/intl/en/scholar/citations.html)
   inspirehep: true # Inspire HEP badge (https://help.inspirehep.net/knowledge-base/citation-metrics/)
 
@@ -489,13 +489,13 @@ third_party_libraries:
     integrity:
       css: "sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c="
     url:
-      css: "https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{version}}/css/all.min.css"
+      css: "/assets/icons/fontawesome/css/all.min.css" # icons are served from the site, so they never wait on an outside CDN
     version: "7.2.0"
   academicons:
     integrity:
       css: "sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw="
     url:
-      css: "https://cdn.jsdelivr.net/npm/academicons@{{version}}/css/academicons.min.css"
+      css: "/assets/icons/academicons/css/academicons.min.css"
     version: "1.9.5"
   chartjs:
     integrity:
@@ -529,7 +529,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&display=swap"
+      fonts: "data:text/css," # empty on purpose: the site uses system fonts, and Google Fonts is blocked in mainland China
   highlightjs:
     integrity:
       css:
@@ -628,12 +628,6 @@ third_party_libraries:
       css: "https://cdn.jsdelivr.net/npm/pseudocode@{{version}}/build/pseudocode.min.css"
       js: "https://cdn.jsdelivr.net/npm/pseudocode@{{version}}/build/pseudocode.min.js"
     version: "2.4.1"
-  scholar-icons:
-    integrity:
-      css: "sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY="
-    url:
-      css: "https://cdn.jsdelivr.net/npm/scholar-icons@{{version}}/css/scholar-icons.css"
-    version: "1.0.3"
   vanilla-back-to-top:
     integrity:
       js: "sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg="
