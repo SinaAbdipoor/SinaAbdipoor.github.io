@@ -17,6 +17,7 @@ Personal website, CV, and resume of Sina Abdipoor, built with [al-folio](https:/
 - `.github/workflows/cv-pdfs.yml`: builds both PDFs when the CV or papers change and saves them in `assets/pdf/`. Only the resume is on the website. The full CV stays in the repo and is left out of the site in `_config.yml`.
 - `assets/css/main.scss`: the site's dark design, on top of al-folio's styles.
 - `assets/icons/`: Font Awesome and Academicons, served from the site instead of a CDN so the icons load quickly everywhere, including mainland China.
+- `assets/js/lib/`: medium-zoom (click to zoom on photos) and vanilla-back-to-top, also served from the site for the same reason. `_includes/plugins/al_img_tools_scripts.liquid` points the theme to the local medium-zoom.
 - `assets/img/headshot-download.jpg`: the full size photo behind the Download photo button. The smaller `headshot.jpg` is the one shown on the page.
 - `assets/qr/`: print-ready QR codes (PNG and SVG) for the website, booking a meeting, final year projects, student feedback, and my contact card.
 - `scripts/orcid_sync.py` and `.github/workflows/orcid-sync.yml`: every Monday, open a pull request with any new paper from my public ORCID record.

@@ -459,7 +459,7 @@ enable_google_verification: false # enables google site verification
 enable_bing_verification: false # enables bing site verification
 enable_cookie_consent: false # enables GDPR-compliant cookie consent dialog (https://github.com/orestbida/cookieconsent)
 enable_masonry: false # enables automatic project cards arrangement
-enable_math: true # enables math typesetting (uses MathJax)
+enable_math: false # no page uses math, and MathJax loads from jsDelivr, which is unreliable in mainland China
 enable_tooltips: false # enables automatic tooltip links generated for each section titles on pages and posts
 enable_darkmode: false # enables switching between light/dark modes
 enable_navbar_social: false # enables displaying social links in the navbar on the about page
@@ -529,7 +529,7 @@ third_party_libraries:
     version: "5.5.0"
   google_fonts:
     url:
-      fonts: "data:text/css," # empty on purpose: the site uses system fonts, and Google Fonts is blocked in mainland China
+      fonts: "/assets/css/no-web-fonts.css" # empty on purpose: the site uses system fonts, and Google Fonts is blocked in mainland China
   highlightjs:
     integrity:
       css:
@@ -632,7 +632,8 @@ third_party_libraries:
     integrity:
       js: "sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg="
     url:
-      js: "https://cdn.jsdelivr.net/npm/vanilla-back-to-top@{{version}}/dist/vanilla-back-to-top.min.js"
+      # Served from this site (same file and hash), since jsDelivr is unreliable in mainland China
+      js: "/assets/js/lib/vanilla-back-to-top/vanilla-back-to-top.min.js"
     version: "7.2.1"
   vanilla-cookieconsent:
     integrity:

@@ -1,0 +1,8 @@
+{% comment %}
+  Local override of the theme's wrapper for the al_img_tools tag. It renders the tag
+  as usual, then points medium-zoom (click to zoom on photos) to the copy in this site
+  (same version and hash) instead of jsDelivr, which is unreliable in mainland China.
+{% endcomment %}
+{% capture al_img_tools_scripts_html %}{% al_img_tools_scripts %}{% endcapture %}
+{% assign medium_zoom_local = '/assets/js/lib/medium-zoom/medium-zoom.min.js' | relative_url %}
+{{ al_img_tools_scripts_html | replace: 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js', medium_zoom_local }}

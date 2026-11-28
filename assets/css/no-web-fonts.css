@@ -1,0 +1,2 @@
+/* Empty on purpose. The theme always links a web font stylesheet, but this site uses system fonts,
+   and Google Fonts is blocked in mainland China. A same-site empty file keeps the page fast everywhere. */
