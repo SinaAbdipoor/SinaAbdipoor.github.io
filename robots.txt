@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sinaabdipoor.github.io/sitemap.xml
